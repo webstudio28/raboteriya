@@ -34,3 +34,13 @@ Example:
 ```
 
 Reference: `src/_includes/sections/home-about.njk` (heading + paragraphs).
+
+## Centered section intro (Why Raboteriya, The space)
+
+For sections with a centered heading + single intro paragraph, use the same spacing:
+
+- **Heading → paragraph gap:** `mt-6 md:mt-8`
+- **Intro paragraph width:** `max-w-2xl mx-auto`
+- **Paragraph:** `text-lg` + appropriate text color (`text-gray-900` on light bg, `text-white` on dark)
+
+Reference: `src/_includes/sections/home-why.njk`, `src/_includes/sections/home-the-space.njk`.

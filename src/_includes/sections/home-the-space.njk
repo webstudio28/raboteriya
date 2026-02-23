@@ -1,0 +1,21 @@
+{# The space — centered heading + intro; same spacing as Why Raboteriya; 4 cards with bg image, title, bottom overlay + text #}
+<section class="section-padding bg-page" id="the-space">
+  <div class="container-custom">
+    {% set s = home.theSpace if home and home.theSpace else {} %}
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">{{ s.heading | default('The space') }}</h2>
+      <p class="mt-6 md:mt-8 max-w-2xl mx-auto text-lg text-gray-900">{{ s.paragraph | default('') }}</p>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      {% for card in (s.cards or []) %}
+      <article class="relative overflow-hidden rounded-lg min-h-[320px] md:min-h-[380px] bg-gray-200 bg-cover bg-center" style="background-image: url('{{ card.image | default("/assets/images/the-space-default.png") }}');">
+        <h3 class="absolute top-0 left-0 text-md font-bold tracking-wider text-white uppercase p-[1em] [text-shadow:0_1px_3px_rgba(0,0,0,0.8)]">{{ (card.title | default("")) | replace("\n", "<br>") | safe }}</h3>
+        <div class="absolute bottom-0 left-0 right-0 min-h-[50%] flex flex-col justify-end p-[1em] bg-gradient-to-t from-black/100 via-black/50 to-transparent">
+          <p class="text-sm md:text-md text-white text-left leading-relaxed">{{ card.description }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -31,6 +31,16 @@
       { "icon": "placeholder", "title": "24/7 ACCESS", "description": "Ideal for professionals who don't fit into a 9-5 routine." }
     ]
   },
+  "theSpace": {
+    "heading": "The space",
+    "paragraph": "Raboteriya is designed to support different work styles - from deep focus to relaxed collaboration, with thoughtful spaces and everything you need included.",
+    "cards": [
+      { "image": "/assets/images/the-space-default.png", "title": "COMMUNITY\nSPACE", "description": "A space with atmosphere where working next to others feels motivating, not distracting." },
+      { "image": "/assets/images/the-space-default.png", "title": "QUIET\nROOM", "description": "A dedicated room for those moments when you need absolute silence and deep focus to get work done." },
+      { "image": "/assets/images/the-space-default.png", "title": "PHONE\nBOOTH", "description": "A private phone booth for Zoom meetings, calls, and anything that shouldn't happen at a shared desk." },
+      { "image": "/assets/images/the-space-default.png", "title": "THE GARDEN", "description": "A small but much-loved space where we host BBQs, take breaks, and enjoy a drink or fresh air." }
+    ]
+  },
   "features": [],
   "socialProof": [],
   "faq": [],
