@@ -19,6 +19,7 @@ Recommended minimal structure for a one-page landing (based on this repo’s str
 ├─ package.json
 ├─ tailwind.config.js
 ├─ scripts/
+│  ├─ copy-pdfjs.js
 │  ├─ optimize-images.js
 │  └─ generate-responsive-images.js
 └─ src/
@@ -57,3 +58,22 @@ Recommended minimal structure for a one-page landing (based on this repo’s str
 | [06-seo-indexability.md](./06-seo-indexability.md) | Canonical, OG/Twitter, sitemap, robots |
 | [07-environment-deployment.md](./07-environment-deployment.md) | .env, pathPrefix, secrets |
 | [08-recipe-and-checklist.md](./08-recipe-and-checklist.md) | How to build a landing + copy/paste checklist |
+
+---
+
+## Step 1: Project scaffold — npm commands
+
+After creating the scaffold (`.eleventy.js`, `package.json`, `tailwind.config.js`, `src/` structure, Tailwind CSS entry), use these scripts. `postinstall` runs automatically after `npm install`.
+
+| Command | What it runs |
+|--------|----------------|
+| `npm start` | `npm-run-all --parallel css:watch serve` — Tailwind watch + 11ty dev server |
+| `npm run dev` | `npm start` — same as above |
+| `npm run serve` | `eleventy --serve` — 11ty dev server only |
+| `npm run build` | `eleventy` — build site into `_site/` |
+| `npm run css:build` | `tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/assets/css/styles.css --minify` — build + minify CSS |
+| `npm run css:watch` | `tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/assets/css/styles.css --watch` — watch and rebuild CSS |
+| `npm run deploy` | `echo 'Use GitHub Actions instead'` — placeholder |
+| *(automatic)* `postinstall` | `node scripts/copy-pdfjs.js` — runs after `npm install` |
+
+For a full production build (CSS + site), run `npm run css:build` then `npm run build`.
