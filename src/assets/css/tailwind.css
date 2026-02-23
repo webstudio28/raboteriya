@@ -1,6 +1,43 @@
+/* Helvetica Now Display – woff2 only, font-display: swap for performance */
+@font-face {
+  font-family: "Helvetica Now Display";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/HelveticaNowDisplay-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/HelveticaNowDisplay-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/HelveticaNowDisplay-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/HelveticaNowDisplay-Bold.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen bg-page;
+    font-family: "Helvetica Now Display", ui-sans-serif, system-ui, sans-serif;
+  }
+}
 
 /* Template utility classes (alignment docs) */
 @layer components {
@@ -9,5 +46,9 @@
   }
   .section-padding {
     @apply py-16 md:py-24;
+  }
+  /* Header: shadow when scrolled (toggled by JS) */
+  .site-header.is-scrolled {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 }

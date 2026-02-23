@@ -20,7 +20,8 @@
   "nav": {
     "header": [
       { "label": "About", "url": "#about" },
-      { "label": "Contact", "url": "#contact" }
+      { "label": "Contact", "url": "#contact" },
+      { "label": "Book now", "url": "#", "isCta": true }
     ],
     "footer": [
       { "label": "Privacy", "url": "/privacy" },

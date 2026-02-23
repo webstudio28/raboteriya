@@ -9,6 +9,7 @@ module.exports = {
           secondary: "var(--color-brand-secondary)",
           accent: "var(--color-brand-accent)",
         },
+        page: "#faf9f6",
       },
     },
   },
