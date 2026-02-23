@@ -1,4 +1,10 @@
 module.exports = function (eleventyConfig) {
+  // Allow access from phone/other devices on same WiFi
+  eleventyConfig.setServerOptions({
+    showAllHosts: true, // print local network URL for device testing
+    watch: ["_site/**/*.css"], // pick up Tailwind rebuilds
+  });
+
   // Passthrough copy: src/assets → _site/assets
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
