@@ -1,0 +1,12 @@
+{# Dummy about — redo later #}
+<section class="section-padding" id="about">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader %}
+    {% set a = home.about if home and home.about else {} %}
+    {{ sectionHeader(a.eyebrow | default('About'), a.title | default('About us'), '') }}
+    <p style="max-width: 40ch;">{{ a.body | default('Placeholder copy for the about section.') }}</p>
+    {% if a.cta and a.cta.label %}
+    <a href="{{ a.cta.url }}">{{ a.cta.label }}</a>
+    {% endif %}
+  </div>
+</section>

@@ -1,1 +1,8 @@
-{# Reusable UI macros — add sectionHeader(), cards, etc. as we build sections #}
+{# Dummy macros — redo later #}
+{% macro sectionHeader(eyebrow, title, subtitle) %}
+<div class="section-header">
+  {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+  <h2 class="section-title">{{ title }}</h2>
+  {% if subtitle %}<p class="section-subtitle">{{ subtitle }}</p>{% endif %}
+</div>
+{% endmacro %}

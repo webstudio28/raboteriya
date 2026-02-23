@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% if site and site.brand %}{{ site.brand.language }}{% else %}en{% endif %}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or site?.seo?.defaultTitle or "Landing" }}</title>
+  <title>{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% else %}Landing{% endif %}</title>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
 </head>
-<body>
-  {% block content %}{% endblock %}
+<body{% if site and site.colors %} style="--color-brand-primary: {{ site.colors.primary }}; --color-brand-secondary: {{ site.colors.secondary }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
+  {{ content | safe }}
 </body>
 </html>

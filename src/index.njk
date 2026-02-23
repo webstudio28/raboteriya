@@ -3,10 +3,8 @@ layout: base.njk
 title: Home
 ---
 
-{% block content %}
-  <main class="section-padding">
-    <div class="container-custom">
-      <p>Landing template — step 1 scaffold ready.</p>
-    </div>
-  </main>
-{% endblock %}
+<main>
+  {% include "sections/home-hero.njk" %}
+  {% include "sections/home-about.njk" %}
+  {% include "sections/home-cta.njk" %}
+</main>
