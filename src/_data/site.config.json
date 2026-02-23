@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Landing",
-    "logo": "/assets/images/logo.svg",
+    "logo": "/assets/images/logo.png",
     "logoAlt": "Logo",
     "language": "en"
   },
@@ -19,10 +19,12 @@
   },
   "nav": {
     "header": [
-      { "label": "About", "url": "#about" },
+      { "label": "Gallery", "url": "#gallery" },
+      { "label": "Info", "url": "#info" },
       { "label": "Contact", "url": "#contact" },
-      { "label": "Book now", "url": "#", "isCta": true }
+      { "label": "Photos", "url": "#photos" }
     ],
+    "headerCta": { "label": "Reserve your spot", "url": "#" },
     "footer": [
       { "label": "Privacy", "url": "/privacy" },
       { "label": "Imprint", "url": "/imprint" }

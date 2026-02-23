@@ -1,0 +1,18 @@
+{# Why Raboteriya — centered heading + intro, two rows of features (icon, title all caps, paragraph) #}
+<section class="section-padding bg-brown-900" id="why-raboteriya">
+  <div class="container-custom text-center">
+    {% set w = home.whyRaboteriya if home and home.whyRaboteriya else {} %}
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white">{{ w.heading | default('Why Raboteriya?') }}</h2>
+    <p class="mt-2 md:mt-8 max-w-2xl mx-auto text-lg text-white">{{ w.paragraph | default('') }}</p>
+
+    <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+      {% for f in (w.features or []) %}
+      <div class="text-center">
+        <img src="/assets/images/feature-default-icon.png" alt="" class="w-12 h-12 object-contain mb-4 mx-auto" loading="lazy" aria-hidden="true" />
+        <h3 class="text-xl font-bold tracking-wider text-white uppercase">{{ f.title }}</h3>
+        <p class="mt-2 text-lg text-white max-w-[300px] mx-auto">{{ f.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

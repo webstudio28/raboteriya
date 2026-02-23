@@ -1,18 +1,35 @@
 {
   "hero": {
-    "eyebrow": "Welcome",
-    "headline": "Your headline here",
-    "subheadline": "Short supporting line.",
-    "ctaPrimary": { "label": "Get started", "url": "#contact" },
-    "ctaSecondary": { "label": "Learn more", "url": "#about" },
+    "headline": "Cozy coworking space in Plovdiv for freelances and remote workers",
+    "headlineLine1": "Cozy coworking space in Plovdiv",
+    "headlineLine2": "for freelances and remote workers",
+    "ctaPrimary": { "label": "Reserve Your Spot", "url": "#" },
+    "ctaSecondary": { "label": "Discover how we can help you", "url": "#" },
     "image": "/assets/images/hero.jpg"
   },
   "about": {
-    "eyebrow": "About",
-    "title": "About us",
-    "body": "Placeholder copy for the about section.",
-    "image": "/assets/images/about.jpg",
-    "cta": { "label": "Read more", "url": "#" }
+    "headingLine1": "Raboteriya is where",
+    "headingLine2": "\"working from home\"",
+    "headingLine3": "finally feels good again.",
+    "paragraphs": [
+      "You come in with your laptop, tempted by our great prices, but you stay because something about the space just clicks.",
+      "It's warm. It's calm. It feels like people, not just desks.",
+      "Enjoy fast wifi, cozy corners, and a community-oriented coworking space right in the heart of Plovdiv."
+    ],
+    "image": "/assets/images/about.png",
+    "cta": { "label": "Explore our benefits", "url": "#" }
+  },
+  "whyRaboteriya": {
+    "heading": "Why Raboteriya?",
+    "paragraph": "At Raboteriya, everything is designed to make your workday easier, calmer, and more productive - whether you're here for a few hours or the whole day.",
+    "features": [
+      { "icon": "placeholder", "title": "FAST WIFI", "description": "Work without interruptions on reliable, high-speed Coool box internet." },
+      { "icon": "placeholder", "title": "DRINKS & SNACKS", "description": "Enjoy coffee, tea, snacks, and access to our fully stocked kitchenette." },
+      { "icon": "placeholder", "title": "FLEXIBLE SPACES", "description": "Set up comfortably at spacious desks or a cozy corner." },
+      { "icon": "placeholder", "title": "AFFORDABLE MEMBERSHIPS", "description": "Access some of the most affordable memberships in the city." },
+      { "icon": "placeholder", "title": "COMMUNITY", "description": "Work alongside the friendliest people instead of sitting alone at home." },
+      { "icon": "placeholder", "title": "24/7 ACCESS", "description": "Ideal for professionals who don't fit into a 9-5 routine." }
+    ]
   },
   "features": [],
   "socialProof": [],

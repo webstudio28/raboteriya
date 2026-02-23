@@ -1,0 +1,36 @@
+---
+description: Section heading and base text typography for Raboteriya
+globs: "**/*.njk,**/tailwind.css"
+alwaysApply: false
+---
+
+# Typography (Raboteriya)
+
+Use these typography styles consistently across sections.
+
+## Section headings (e.g. About, feature blocks)
+
+- **Font weight:** `font-black` (900)
+- **Size:** `text-3xl md:text-4xl lg:text-5xl`
+- **Line height:** `leading-tight`
+- **Color:** `text-gray-900` when on light background
+
+Example:
+```html
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">...</h2>
+```
+
+## Base text (paragraphs, body copy)
+
+- **Size:** `text-lg`
+- **Color:** `text-gray-900`
+- Use for all body paragraphs and readable content in sections.
+
+Example:
+```html
+<p class="text-lg text-gray-900">...</p>
+<!-- or wrapper: -->
+<div class="text-lg text-gray-900 space-y-4">...</div>
+```
+
+Reference: `src/_includes/sections/home-about.njk` (heading + paragraphs).

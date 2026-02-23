@@ -15,6 +15,8 @@
   <meta name="twitter:title" content="{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% endif %}">
   <meta name="twitter:description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
   <meta name="twitter:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | url }}">
+  <link rel="preload" href="{{ '/assets/fonts/HelveticaNowDisplay-Black.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
 </head>
 <body{% if site and site.colors %} style="--color-brand-primary: {{ site.colors.primary }}; --color-brand-secondary: {{ site.colors.secondary }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>

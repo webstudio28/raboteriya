@@ -1,21 +1,22 @@
-<header class="site-header sticky top-0 z-10 bg-page transition-shadow duration-200" id="site-header">
+<header class="site-header sticky top-0 z-[100] bg-page transition-shadow duration-200" id="site-header">
   <div class="container-custom flex items-center justify-between py-4">
-    <a href="{{ '/' | url }}" class="font-semibold text-lg" aria-label="{{ site.brand.name }} home">
+    <a href="{{ '/' | url }}" class="font-semibold text-lg flex items-center gap-2" aria-label="{{ site.brand.name }} home">
       {% if site.brand.logo %}
-        <span class="text-brand-primary">{{ site.brand.name }}</span>
+        <img src="{{ site.brand.logo | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-8 w-auto md:h-9" width="120" height="36" fetchpriority="high">
       {% else %}
-        <span>{{ site.brand.name }}</span>
+        <span class="text-brand-primary">{{ site.brand.name }}</span>
       {% endif %}
     </a>
-    <nav class="hidden lg:flex items-center gap-6" aria-label="Main">
-      {% for item in site.nav.header %}
-        {% if item.isCta %}
-          <a href="{{ item.url }}" class="px-4 py-2 rounded-md bg-brand-primary text-white font-medium hover:opacity-90">{{ item.label }}</a>
-        {% else %}
-          <a href="{{ item.url }}" class="text-gray-700 hover:text-brand-primary">{{ item.label }}</a>
-        {% endif %}
-      {% endfor %}
-    </nav>
+    <div class="hidden lg:flex items-center gap-8">
+      <nav class="flex items-center gap-6" aria-label="Main">
+        {% for item in site.nav.header %}
+          <a href="{{ item.url }}" class="text-gray-700 hover:text-brand-primary text-sm lg:text-lg">{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+      {% if site.nav.headerCta %}
+      <a href="{{ site.nav.headerCta.url }}" class="px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 shrink-0">{{ site.nav.headerCta.label }}</a>
+      {% endif %}
+    </div>
     <button type="button" class="lg:hidden p-2 text-gray-700" aria-label="Open menu">Menu</button>
   </div>
 </header>

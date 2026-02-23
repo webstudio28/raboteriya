@@ -27,6 +27,13 @@
   font-display: swap;
   src: url("../fonts/HelveticaNowDisplay-Bold.woff2") format("woff2");
 }
+@font-face {
+  font-family: "Helvetica Now Display";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/HelveticaNowDisplay-Black.woff2") format("woff2");
+}
 
 @tailwind base;
 @tailwind components;
@@ -50,5 +57,34 @@
   /* Header: shadow when scrolled (toggled by JS) */
   .site-header.is-scrolled {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+  /* Hero: fill viewport minus header so no extra scroll (100dvh = dynamic viewport on mobile) */
+  .hero-section {
+    min-height: calc(100vh - 5rem);
+    min-height: calc(100dvh - 5rem);
+  }
+  /* Hero: headline uses font-black (900) – Helvetica Now Display Black is loaded */
+  .hero-headline {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  }
+  /* Hero: full-width/height div behind content */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url("/assets/images/hero-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* Hero: dark overlay, bottom (dark) → top (transparent) */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+    pointer-events: none;
   }
 }

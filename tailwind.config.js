@@ -10,6 +10,9 @@ module.exports = {
           accent: "var(--color-brand-accent)",
         },
         page: "#faf9f6",
+        brown: {
+          900: "#1A120B",
+        },
       },
     },
   },

@@ -1,12 +1,30 @@
-{# About — alignment only (section-padding + container-custom + text-left); layout redo later #}
-<section class="section-padding" id="about">
+{# About — two columns on desktop: left text (black), right image #}
+<section class="section-padding bg-page" id="about">
   <div class="container-custom">
-    {% from "macros/ui.njk" import sectionHeader %}
     {% set a = home.about if home and home.about else {} %}
-    {{ sectionHeader(a.eyebrow | default('About'), a.title | default('About us'), '') }}
-    <p class="max-w-prose text-gray-700">{{ a.body | default('Placeholder copy for the about section.') }}</p>
-    {% if a.cta and a.cta.label %}
-    <div class="flex justify-end mt-4"><a href="{{ a.cta.url }}" class="text-brand-primary font-medium">{{ a.cta.label }}</a></div>
-    {% endif %}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="text-gray-900 order-2 lg:order-1">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight">
+          {{ a.headingLine1 | default('Raboteriya is where') }}<br>
+          {{ a.headingLine2 | default('"working from home"') }}<br>
+          {{ a.headingLine3 | default('finally feels good again.') }}
+        </h2>
+        <div class="mt-6 md:mt-8 space-y-4 text-lg text-gray-900">
+          {% for p in (a.paragraphs or []) %}
+          <p>{{ p }}</p>
+          {% endfor %}
+        </div>
+        {% if a.cta and a.cta.label %}
+        <div class="mt-8">
+          <a href="{{ a.cta.url }}" class="inline-block px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-transparent text-gray-900 font-extrabold border-[3px] border-gray-900 hover:bg-gray-900 hover:text-white transition-colors">{{ a.cta.label }}</a>
+        </div>
+        {% endif %}
+      </div>
+      <div class="order-1 lg:order-2">
+        {% if a.image %}
+        <img src="{{ a.image }}" alt="" class="w-full h-auto object-cover" loading="lazy" />
+        {% endif %}
+      </div>
+    </div>
   </div>
 </section>
