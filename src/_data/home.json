@@ -41,6 +41,26 @@
       { "image": "/assets/images/the-space-default.png", "title": "THE GARDEN", "description": "A small but much-loved space where we host BBQs, take breaks, and enjoy a drink or fresh air." }
     ]
   },
+  "extras": {
+    "heading": "... and a few more extras",
+    "paragraph": "Everything is included in your day pass or membership - we don't believe in hidden fees.",
+    "items": [
+      { "title": "Additional screens", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Ear plugs for extra focus", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Printer use included", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Power outlets everywhere", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Stationery supplies", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Additional screens", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Ear plugs for extra focus", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Printer use included", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Power outlets everywhere", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Additional screens", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Ear plugs for extra focus", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Printer use included", "icon": "/assets/images/extras-default-icon.png" },
+      { "title": "Power outlets everywhere", "icon": "/assets/images/extras-default-icon.png" }
+    ],
+    "cta": { "label": "Check out our memberships", "url": "#" }
+  },
   "features": [],
   "socialProof": [],
   "faq": [],
