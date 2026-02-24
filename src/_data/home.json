@@ -41,6 +41,16 @@
       { "image": "/assets/images/the-space-default.png", "title": "THE GARDEN", "description": "A small but much-loved space where we host BBQs, take breaks, and enjoy a drink or fresh air." }
     ]
   },
+  "memberships": {
+    "heading": "Memberships, Day Passes & Pricing",
+    "paragraph": "Simple, flexible and affordable options - whether you're visiting for a day or making Raboteriya your work home.",
+    "cards": [
+      { "title": "STANDARD PASS", "price": "€60 / monthly", "showAsExcluded": true, "inclusions": ["Use any available desk", "All benefits included", "All amenities included", "24/7 access"], "excludedInclusions": ["Your own designated desk", "Personal storage", "Pause your membership for one week when you're on holiday or away", "All amenities included", "24/7 access"] },
+      { "title": "PREMIUM PLAN", "price": "€80 / monthly", "featured": true, "inclusions": ["Your own designated desk", "Personal storage", "Pause your membership for one week when you're on holiday or away", "All amenities included", "24/7 access"] },
+      { "title": "WEEKLY PASS", "price": "€40", "inclusions": ["Seven consecutive days", "All benefits included", "All amenities included", "24/7 access"] },
+      { "title": "DAY PASS", "price": "€11", "inclusions": ["Your own desk", "All benefits included", "All amenities included", "Access from 08:00 to 20:00"] }
+    ]
+  },
   "extras": {
     "heading": "... and a few more extras",
     "paragraph": "Everything is included in your day pass or membership - we don't believe in hidden fees.",
