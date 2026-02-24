@@ -1,0 +1,34 @@
+{# Testimonials — title only; moving/draggable strip like extras; each card: 5 stars, quote in "", name #}
+<section class="section-padding bg-page" id="testimonials">
+  <div class="container-custom">
+    {% set t = home.testimonials if home and home.testimonials else {} %}
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900 text-left">{{ t.heading | default('A few words from our members') }}</h2>
+  </div>
+
+  <div class="testimonials-strip-wrapper mt-12 md:mt-16 pb-8 md:pb-12">
+    <div class="testimonials-strip" aria-label="Member testimonials">
+      <div class="testimonials-strip-set">
+        {% for item in (t.items or []) %}
+        <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col">
+          <div class="flex gap-0.5 mb-4" aria-hidden="true">
+            <span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span>
+          </div>
+          <p class="text-gray-900 font-normal not-italic flex-1">"{{ item.quote }}"</p>
+          <p class="mt-4 text-gray-700 font-medium">– {{ item.name }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="testimonials-strip-set">
+        {% for item in (t.items or []) %}
+        <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col">
+          <div class="flex gap-0.5 mb-4" aria-hidden="true">
+            <span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span>
+          </div>
+          <p class="text-gray-900 font-normal not-italic flex-1">"{{ item.quote }}"</p>
+          <p class="mt-4 text-gray-700 font-medium">– {{ item.name }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

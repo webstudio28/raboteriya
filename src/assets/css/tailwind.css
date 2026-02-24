@@ -107,4 +107,23 @@
     gap: 1rem;
     padding-left: 1rem;
   }
+  /* Testimonials: slow moving strip (same pattern as extras, speed in JS) */
+  .testimonials-strip-wrapper {
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .testimonials-strip {
+    display: flex;
+    width: max-content;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .testimonials-strip-set {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1.5rem;
+    padding-left: 1rem;
+  }
 }

@@ -11,6 +11,7 @@ module.exports = {
         },
         page: "#faf9f6",
         brown: {
+          300: "#c4b59a",
           900: "#1A120B",
         },
       },
