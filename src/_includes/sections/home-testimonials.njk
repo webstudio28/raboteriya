@@ -1,8 +1,8 @@
 {# Testimonials — title only; moving/draggable strip like extras; each card: 5 stars, quote in "", name #}
 <section class="section-padding bg-page" id="testimonials">
-  <div class="container-custom">
+  <div class="container-custom text-center">
     {% set t = home.testimonials if home and home.testimonials else {} %}
-    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900 text-left">{{ t.heading | default('A few words from our members') }}</h2>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">{{ t.heading | default('A few words from our members') }}</h2>
   </div>
 
   <div class="testimonials-strip-wrapper mt-12 md:mt-16 pb-8 md:pb-12">

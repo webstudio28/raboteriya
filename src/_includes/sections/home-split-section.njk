@@ -1,0 +1,34 @@
+{# Two-column section: left box 1/3 (image), right box 2/3 (testimony text) #}
+<section class="bg-page pt-0 pb-16 md:pb-24" id="split-section">
+  <div class="container-custom lg:flex lg:items-stretch lg:gap-12">
+    {# Left box: placeholder image, 1/3 of the section (hidden on mobile) #}
+    <div class="hidden lg:block lg:w-1/3">
+      <div class="h-full rounded-xl bg-gray-200 overflow-hidden flex items-center justify-center">
+        <div class="w-full aspect-[3/4] bg-gray-300 flex items-center justify-center text-gray-600 text-sm md:text-base">
+          Placeholder image
+        </div>
+      </div>
+    </div>
+
+    {# Right box (jimmy): remaining width; inner text box (stephen) same height as image and centered vertically #}
+    <div class="mt-12 lg:mt-0 w-full lg:w-2/3 flex items-stretch">
+      <div class="rounded-xl border border-gray-200 bg-white shadow-xl p-6 md:p-8 max-w-full h-full flex items-center">
+        <div class="w-full">
+          {# Mobile-only image, inline with the text #}
+          <span class="inline-block float-left mr-4 mb-2 w-48 h-48 bg-gray-300 rounded-lg lg:hidden"></span>
+          <p class="text-base md:text-lg text-gray-900 whitespace-pre-line">“I started coming to Raboteriya because I needed a place to focus. As a software engineer, working from home sounded great in theory but in reality, I needed a proper workspace.
+
+After a few days of joining the coworking space, I ended up sharing a table with a guy who I later found out was a marketing specialist. We started chatting during coffee breaks - about work, clients, random stuff.
+
+At some point, it just clicked. I was building websites, he was running Google Ads and we realized we could help each other’s clients.
+
+Now we regularly collaborate on projects. Some of my clients use his services, and some of his clients need websites. It all started here, without any forced networking - just two people working in the same space.”</p>
+          <p class="mt-6 text-right text-base md:text-lg font-semibold text-gray-900">
+            Andon Goshev, WebStudio28
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
