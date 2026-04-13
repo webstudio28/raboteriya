@@ -91,12 +91,76 @@
       { "quote": "Whether you're looking for a spacious place to work at, or a quiet one so you can be more focused they have it all. Extremely friendly atmosphere, amazing host, chill vibes and comfy couches. They are the best at what they provide!!", "name": "Kiro Iliev" }
     ]
   },
+  "thankYou": {
+    "heading": "And as a thank you...",
+    "paragraphs": [
+      "We host monthly member events - from themed parties and sunny garden BBQs to relaxed, laughter-filled game nights.",
+      "We believe shared positive experiences drive happiness and productivity. That's why Raboteriya isn't just a coworking space - it's a place to connect, build friendships, and belong."
+    ],
+    "galleryImages": [
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png"
+    ]
+  },
+  "contact": {
+    "heading": "Ready to join us?",
+    "description": "Give us a call or fill out the enquiry form.\nWe'll get back to you as soon as possible.",
+    "note": "P.S. We kindly ask that you book your visit at least one day in advance so we can make sure there's space waiting for you.",
+    "email": "cwsaprilov@gmail.com",
+    "phone": "+359 897 005 887",
+    "address": "bul. Vasil Aprilov 49, Plovdiv, 4000",
+    "formPlaceholder": "Let us know when you'd like to visit, or simply leave your phone number and we'll give you a call",
+    "submitLabel": "Submit your message",
+    "socialsHeading": "See what's happening at Raboteriya",
+    "socials": [
+      { "platform": "Facebook", "url": "https://facebook.com/raboteriya", "icon": "facebook" },
+      { "platform": "Instagram", "url": "https://instagram.com/raboteriya", "icon": "instagram" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com/company/raboteriya", "icon": "linkedin" },
+      { "platform": "TikTok", "url": "https://tiktok.com/@raboteriya", "icon": "tiktok" }
+    ]
+  },
   "features": [],
   "socialProof": [],
-  "faq": [],
-  "cta": {
-    "title": "Get in touch",
-    "description": "Ready to start? Reach out.",
-    "button": { "label": "Contact", "url": "#contact" }
+  "location": {
+    "heading": "Location",
+    "address": "bul. Vasil Aprilov 49, Plovdiv",
+    "directions": "You will find us right next to ‘Porta Nova’ shop or opposite Burger Chef.",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.3488094759623!2d24.730150376692606!3d42.14282204879763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd10d9e8c4cad%3A0x9657eeb8b56554e7!2sRABOTERIYA%20COWORKING%20SPACE%20PLOVDIV!5e0!3m2!1sen!2sbg!4v1776067819622!5m2!1sen!2sbg",
+    "mapTitle": "Raboteriya Coworking Space Plovdiv on Google Maps"
+  },
+  "faq": {
+    "subheading": "We know choosing a coworking space comes with questions. Here are the answers to the ones we’re asked most often.",
+    "items": [
+      {
+        "question": "Do I need to book in advance?",
+        "answer": "Dummy answer for now."
+      },
+      {
+        "question": "What’s the parking situation like?",
+        "answer": "Dummy answer for now."
+      },
+      {
+        "question": "Are there places to eat nearby?",
+        "answer": "Dummy answer for now."
+      },
+      {
+        "question": "How does entry to the space work?",
+        "answer": "Dummy answer for now."
+      },
+      {
+        "question": "Can I visit the space before deciding?",
+        "answer": "Dummy answer for now."
+      },
+      {
+        "question": "Do memberships come with contracts?",
+        "answer": "Dummy answer for now."
+      }
+    ]
   }
 }

@@ -1,0 +1,39 @@
+{# FAQ — centered heading + accordion list #}
+<section class="section-padding bg-page" id="faq" data-faq>
+  <div class="container-custom">
+    {% set f = home.faq if home and home.faq else {} %}
+
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight text-gray-900">FAQ</h2>
+      <p class="mt-4 text-base md:text-lg text-gray-700">
+        {{ f.subheading | default("We know choosing a coworking space comes with questions. Here are the answers to the ones we’re asked most often.") }}
+      </p>
+    </div>
+
+    {% set items = (f.items or []) %}
+    {% if items.length %}
+    <div class="mt-10 md:mt-12 w-full space-y-4">
+      {% for item in items %}
+      <details class="faq-item w-full rounded-2xl border border-gray-900/60 bg-white px-5 py-4 md:px-6 md:py-4">
+        <summary class="faq-summary flex w-full items-center justify-between gap-3 text-left text-base md:text-lg font-bold text-gray-900">
+          <span class="min-w-0 flex-1">{{ item.question }}</span>
+          <span class="faq-chevron inline-flex shrink-0 text-gray-900" aria-hidden="true">
+            <svg class="h-4 w-4 md:h-[1.125rem] md:w-[1.125rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </span>
+        </summary>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-body pt-3 text-sm md:text-base text-gray-700 leading-relaxed">
+              {{ item.answer | default("Dummy answer for now.") }}
+            </div>
+          </div>
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+

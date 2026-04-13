@@ -21,7 +21,6 @@
     "header": [
       { "label": "Gallery", "url": "#gallery" },
       { "label": "Info", "url": "#info" },
-      { "label": "Contact", "url": "#contact" },
       { "label": "Photos", "url": "#photos" }
     ],
     "headerCta": { "label": "Reserve your spot", "url": "#" },

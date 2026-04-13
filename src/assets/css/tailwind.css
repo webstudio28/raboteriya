@@ -54,6 +54,70 @@
   .section-padding {
     @apply py-16 md:py-24;
   }
+  .faq-summary {
+    @apply list-none cursor-pointer select-none;
+  }
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+  /* FAQ: panel + chevron + content — smooth, decelerated motion */
+  .faq-item {
+    transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .faq-item[open] {
+    box-shadow: 0 10px 40px -12px rgba(17, 24, 39, 0.12);
+  }
+  /* Height animation is driven in faq-accordion.js (reliable smooth expand/collapse) */
+  .faq-answer {
+    overflow: hidden;
+  }
+  .faq-item:not([open]) .faq-answer {
+    height: 0;
+  }
+  .faq-answer-inner {
+    min-height: 0;
+  }
+  .faq-chevron {
+    transform-origin: 50% 55%;
+    transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  details[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+  .faq-answer-body {
+    opacity: 0;
+    transform: translate3d(0, -0.375rem, 0);
+    /* Closing: slightly quicker so the panel doesn’t feel sluggish */
+    transition:
+      opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0s;
+  }
+  details[open] .faq-answer-body {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    /* Opening: in sync with panel height (JS) */
+    transition:
+      opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1),
+      transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    transition-delay: 0.04s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item {
+      transition-duration: 0.01ms;
+    }
+    .faq-chevron {
+      transition-duration: 0.01ms;
+    }
+    .faq-answer-body {
+      transition-duration: 0.01ms;
+      transition-delay: 0s !important;
+      transform: none;
+    }
+    details[open] .faq-answer-body {
+      opacity: 1;
+    }
+  }
   /* Header: shadow when scrolled (toggled by JS) */
   .site-header.is-scrolled {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);

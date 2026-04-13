@@ -1,0 +1,81 @@
+{# Community / thank-you — copy + gallery (main image with overlay chevrons; thumbnails below) #}
+<section class="section-padding bg-page" id="thank-you">{%- set ty = home.thankYou if home and home.thankYou else {} -%}
+{%- set gallery = ty.galleryImages or [] -%}
+{%- set defaultImg = '/assets/images/the-space-default.png' -%}
+{%- set mainSrc = gallery[0] if gallery | length else defaultImg -%}
+
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">
+        {{ ty.heading | default('And as a thank you...') }}
+      </h2>
+      {% for para in (ty.paragraphs or []) %}
+      <p class="mt-6 md:mt-8 text-lg text-gray-900 text-center">{{ para }}</p>
+      {% endfor %}
+    </div>
+
+    <div
+      class="mt-12 md:mt-16"
+      data-thank-you-gallery
+      {% if gallery | length %}data-gallery-count="{{ gallery | length }}"{% endif %}
+    >
+      <div class="thank-you-gallery-main relative overflow-hidden rounded-xl border border-gray-200 bg-gray-200 shadow-xl">
+        <img
+          data-gallery-main
+          src="{{ mainSrc | url }}"
+          alt=""
+          class="w-full h-auto max-h-[min(70vh,520px)] object-cover object-center"
+          width="1280"
+          height="720"
+          loading="lazy"
+        />
+        <button
+          type="button"
+          class="thank-you-gallery-overlay-chevron absolute left-1 top-1/2 z-10 -translate-y-1/2 cursor-pointer border-0 bg-transparent p-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900/50 md:left-3"
+          data-gallery-prev
+          aria-label="Previous image"
+        >
+          <svg class="h-8 w-8 md:h-10 md:w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.85)) drop-shadow(0 1px 2px rgba(0,0,0,0.9));">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="thank-you-gallery-overlay-chevron absolute right-1 top-1/2 z-10 -translate-y-1/2 cursor-pointer border-0 bg-transparent p-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900/50 md:right-3"
+          data-gallery-next
+          aria-label="Next image"
+        >
+          <svg class="h-8 w-8 md:h-10 md:w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.85)) drop-shadow(0 1px 2px rgba(0,0,0,0.9));">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        class="thank-you-gallery-thumbs mt-4 flex w-full flex-nowrap gap-2 overflow-x-auto py-1 [-webkit-overflow-scrolling:touch] sm:gap-2 md:gap-3 lg:grid lg:overflow-x-visible lg:pb-0"
+        style="grid-template-columns: repeat({{ gallery | length if gallery | length else 8 }}, minmax(0, 1fr));"
+        data-gallery-thumbs
+      >
+        {% for img in gallery %}
+        <button
+          type="button"
+          class="thank-you-gallery-thumb min-w-[128px] w-[128px] shrink-0 overflow-hidden rounded-lg border-2 border-transparent ring-offset-2 transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 lg:min-w-0 lg:w-full {% if loop.first %}is-active ring-2 ring-gray-900{% endif %}"
+          data-gallery-thumb
+          data-src="{{ img | url }}"
+          aria-label="Show image {{ loop.index }} of {{ gallery | length }}"
+          aria-current="{% if loop.first %}true{% else %}false{% endif %}"
+        >
+          <img
+            src="{{ img | url }}"
+            alt=""
+            class="block aspect-[4/3] w-full object-cover"
+            width="160"
+            height="120"
+            loading="lazy"
+          />
+        </button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
