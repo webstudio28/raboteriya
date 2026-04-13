@@ -190,4 +190,24 @@
     gap: 1.5rem;
     padding-left: 1rem;
   }
+
+  /* Mobile menu: burger → X */
+  #mobile-menu-toggle.active .burger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  #mobile-menu-toggle.active .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu-toggle.active .burger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .mobile-menu-panel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    contain: paint;
+  }
+  .mobile-menu-panel::-webkit-scrollbar {
+    display: none;
+  }
 }
