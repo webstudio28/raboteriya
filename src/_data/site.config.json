@@ -19,11 +19,20 @@
   },
   "nav": {
     "header": [
-      { "label": "Gallery", "url": "#gallery" },
-      { "label": "Info", "url": "#info" },
-      { "label": "Photos", "url": "#photos" }
+      { "label": "Home", "url": "#hero", "hideOnDesktop": true },
+      { "label": "About", "url": "#about" },
+      { "label": "Why Raboteriya", "url": "#why-raboteriya", "hideOnDesktop": true },
+      { "label": "The space", "url": "#the-space" },
+      { "label": "Memberships", "url": "#memberships" },
+      { "label": "Extras", "url": "#extras", "hideOnDesktop": true },
+      { "label": "Testimonials", "url": "#testimonials", "hideOnDesktop": true },
+      { "label": "Community", "url": "#split-section", "hideOnDesktop": true },
+      { "label": "Events", "url": "#thank-you", "hideOnDesktop": true },
+      { "label": "FAQ", "url": "#faq" },
+      { "label": "Location", "url": "#location", "hideOnDesktop": true },
+      { "label": "Contact", "url": "#contact" }
     ],
-    "headerCta": { "label": "Reserve your spot", "url": "#" },
+    "headerCta": { "label": "Reserve your spot", "url": "#contact" },
     "footer": [
       { "label": "Privacy", "url": "/privacy" },
       { "label": "Imprint", "url": "/imprint" }

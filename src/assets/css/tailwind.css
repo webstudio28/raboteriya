@@ -40,6 +40,15 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
   body {
     @apply min-h-screen bg-page;
     font-family: "Helvetica Now Display", ui-sans-serif, system-ui, sans-serif;

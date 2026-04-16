@@ -8,9 +8,11 @@
       {% endif %}
     </a>
     <div class="hidden lg:flex items-center gap-8">
-      <nav class="flex items-center gap-6" aria-label="Main">
+      <nav class="flex items-center gap-5 xl:gap-6" aria-label="Main">
         {% for item in site.nav.header %}
-          <a href="{{ item.url }}" class="text-gray-700 hover:text-brand-primary text-sm lg:text-lg">{{ item.label }}</a>
+          {% if not item.hideOnDesktop %}
+          <a href="{{ item.url }}" class="text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap">{{ item.label }}</a>
+          {% endif %}
         {% endfor %}
       </nav>
       {% if site.nav.headerCta %}
