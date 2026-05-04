@@ -5,7 +5,7 @@
   <div class="container-custom relative z-10 flex-1 min-h-0 flex justify-center">
     <div class="grid grid-rows-3 w-full min-h-0 flex-1 place-items-center text-center">
       {% set h = home.hero if home and home.hero else {} %}
-      <h1 class="hero-headline text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight row-start-2 -translate-y-6">{{ h.headlineLine1 | default('Cozy coworking space in Plovdiv') }}<br class="hidden lg:block"><span class="block mt-3 lg:mt-5">{{ h.headlineLine2 | default('for freelancers and remote workers') }}</span></h1>
+      <h1 class="hero-headline text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight lg:!leading-relaxed row-start-2 -translate-y-6">{{ h.headline | default('Cozy coworking space in Plovdiv for freelancers and remote workers') }}</h1>
       <div class="flex flex-wrap gap-4 justify-center items-center row-start-3">
         {% if h.ctaPrimary %}
         {% if h.ctaPrimary.openDiscountModal %}
