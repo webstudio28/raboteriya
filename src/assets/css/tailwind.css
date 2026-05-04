@@ -224,4 +224,52 @@
   .mobile-menu-panel::-webkit-scrollbar {
     display: none;
   }
+
+  /* Discount modal: backdrop + panel fade / scale from center */
+  dialog.discount-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  dialog.discount-modal[open]::backdrop {
+    animation: discount-modal-backdrop-in 0.26s ease-out forwards;
+  }
+  @keyframes discount-modal-backdrop-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  dialog.discount-modal .discount-modal-panel {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  dialog.discount-modal[open] .discount-modal-panel {
+    animation: discount-modal-panel-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes discount-modal-panel-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    dialog.discount-modal[open]::backdrop {
+      animation: none;
+      opacity: 1;
+    }
+    dialog.discount-modal .discount-modal-panel {
+      opacity: 1;
+      transform: none;
+    }
+    dialog.discount-modal[open] .discount-modal-panel {
+      animation: none;
+    }
+  }
 }
