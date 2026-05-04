@@ -52,8 +52,8 @@
     ]
   },
   "extras": {
-    "heading": "... and a few more extras",
-    "paragraph": "Everything is included in your day pass or membership - we don't believe in hidden fees.",
+    "heading": "We don't believe in hidden fees",
+    "paragraph": "Everything you need to work better is included in your day pass or membership.",
     "items": [
       { "title": "Additional screens", "icon": "/assets/images/extras-default-icon.png" },
       { "title": "Ear plugs for extra focus", "icon": "/assets/images/extras-default-icon.png" },
