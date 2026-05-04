@@ -63,6 +63,23 @@
   .section-padding {
     @apply py-16 md:py-24;
   }
+  /* Memberships: gentle gradient on dark band; premium card gets a whisper of warm lift */
+  .memberships-section {
+    background-color: #1a120b;
+    background-image:
+      radial-gradient(ellipse 125% 90% at 50% -30%, rgba(196, 181, 154, 0.075) 0%, transparent 55%),
+      linear-gradient(168deg, #1e170f 0%, #1a120b 42%, #151009 100%);
+  }
+  .memberships-card {
+    background-color: #faf9f6;
+  }
+  .memberships-card--featured {
+    background-color: #faf9f6;
+    background-image: linear-gradient(152deg, #fefcf9 0%, #faf9f6 48%, #efe8de 100%);
+    box-shadow:
+      0 24px 48px -18px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.14);
+  }
   .faq-summary {
     @apply list-none cursor-pointer select-none;
   }
