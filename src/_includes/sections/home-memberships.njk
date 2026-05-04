@@ -7,9 +7,10 @@
       <p class="mt-6 max-w-2xl mx-auto text-lg text-white md:mt-8">{{ m.paragraph | default('') }}</p>
     </div>
 
-    <div class="mt-12 md:mt-16 grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
+    <div class="mt-12 md:mt-16 max-sm:-mx-4 max-sm:px-4">
+      <div class="memberships-cards-row flex max-sm:flex-nowrap max-sm:items-stretch max-sm:gap-5 max-sm:overflow-x-auto max-sm:overflow-y-visible max-sm:pb-3 [-webkit-overflow-scrolling:touch] sm:grid sm:grid-cols-2 sm:items-center sm:gap-6 sm:overflow-visible sm:pb-0 md:gap-8 lg:grid-cols-4">
       {% for card in (m.cards or []) %}
-      <article class="memberships-card flex flex-col rounded-xl border border-gray-200 p-6 text-gray-900 shadow-xl transition-transform duration-300 hover:scale-[1.02] {{ 'memberships-card--featured min-h-[380px] scale-105 border-2 shadow-2xl relative z-10' if card.featured else 'min-h-[360px]' }}">
+      <article class="memberships-card flex flex-col max-sm:w-[min(280px,88vw)] max-sm:max-w-[280px] max-sm:shrink-0 rounded-xl border border-gray-200 p-6 text-gray-900 shadow-xl transition-transform duration-300 hover:scale-[1.02] sm:max-w-none sm:w-auto {{ 'memberships-card--featured min-h-[380px] max-sm:order-first max-sm:scale-100 sm:order-none sm:scale-105 border-2 shadow-2xl relative z-10' if card.featured else 'min-h-[360px]' }}">
         <h3 class="text-base font-bold uppercase tracking-wider text-gray-900">{{ card.title | default('') }}</h3>
         <p class="mt-8 text-lg font-semibold text-gray-900">{{ card.price | default('') }}</p>
         <hr class="mb-4 mt-3 border-gray-200" />
@@ -39,6 +40,7 @@
         </ul>
       </article>
       {% endfor %}
+      </div>
     </div>
   </div>
 </section>
