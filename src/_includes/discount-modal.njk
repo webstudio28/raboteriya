@@ -1,22 +1,26 @@
 {# First-month discount — opened from hero primary CTA #}
 <dialog
   id="discount-modal"
-  class="discount-modal fixed inset-0 z-[200] m-0 flex h-full max-h-none w-full max-w-none items-center justify-center overflow-y-auto border-0 bg-transparent p-4 [&::backdrop]:bg-black/45 [&::backdrop]:backdrop-blur-sm"
+  class="discount-modal fixed inset-0 z-[200] m-0 h-full max-h-none w-full max-w-none overflow-y-auto border-0 bg-transparent p-4 open:flex open:items-center open:justify-center [&::backdrop]:bg-black/45 [&::backdrop]:backdrop-blur-sm"
   aria-labelledby="discount-modal-title"
 >
-  <div class="relative w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-xl md:p-8">
-    <button
-      type="button"
-      id="discount-modal-close"
-      class="absolute right-4 top-4 rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
-      aria-label="Close"
-    >
-      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-    </button>
-    <h2 id="discount-modal-title" class="pr-10 text-2xl font-black leading-tight text-gray-900 md:text-3xl">
+  <div class="w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-xl md:p-8">
+    <div class="flex justify-end">
+      <button
+        type="button"
+        id="discount-modal-close"
+        class="-m-2 rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
+        aria-label="Close"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <h2 id="discount-modal-title" class="mt-1 text-xl font-black leading-tight tracking-tight text-gray-900 sm:text-2xl whitespace-nowrap">
       Get 10% off your first month
     </h2>
     <form id="discount-modal-form" class="mt-6 flex flex-col gap-4" action="#" method="post" novalidate>
+      <input type="hidden" name="access_key" value="2b37c752-1bab-422c-ae2f-332fb1ae5d8d">
+      <p id="discount-form-error" class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" role="alert"></p>
       <div>
         <label for="discount-name" class="mb-1.5 block text-sm font-medium text-gray-700">Name</label>
         <input
@@ -63,3 +67,4 @@
     </form>
   </div>
 </dialog>
+<div id="discount-success-toast" class="pointer-events-none fixed bottom-6 left-1/2 z-[250] hidden max-w-[min(100vw-2rem,24rem)] -translate-x-1/2 rounded-xl border border-gray-200 bg-white px-4 py-3 text-center text-sm text-gray-900 shadow-xl" role="status" aria-live="polite"></div>
