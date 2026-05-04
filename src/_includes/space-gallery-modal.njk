@@ -1,0 +1,20 @@
+{# The space — minimal lightbox; content uses same gutters as .container-custom #}
+<div
+  id="space-gallery"
+  class="space-gallery"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <div class="space-gallery__backdrop" data-space-gallery-close tabindex="-1"></div>
+  <button type="button" class="space-gallery__close" data-space-gallery-close aria-label="Close">&times;</button>
+  <div class="space-gallery__frame">
+    <img id="space-gallery-img" class="space-gallery__img" src="" alt="" decoding="async" width="1600" height="1067" />
+    <button type="button" id="space-gallery-prev" class="space-gallery__nav space-gallery__nav--prev" aria-label="Previous photo">
+      <span class="space-gallery__nav-icon" aria-hidden="true">&#8249;</span>
+    </button>
+    <button type="button" id="space-gallery-next" class="space-gallery__nav space-gallery__nav--next" aria-label="Next photo">
+      <span class="space-gallery__nav-icon" aria-hidden="true">&#8250;</span>
+    </button>
+  </div>
+</div>

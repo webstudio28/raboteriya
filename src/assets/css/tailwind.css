@@ -272,4 +272,123 @@
       animation: none;
     }
   }
+
+  /* Space gallery — minimal lightbox; gutters match .container-custom (px-4 / md:px-6) */
+  .space-gallery {
+    position: fixed;
+    inset: 0;
+    z-index: 210;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  @media (min-width: 768px) {
+    .space-gallery {
+      padding: 1.5rem;
+    }
+  }
+  .space-gallery.is-open {
+    display: flex;
+  }
+  .space-gallery__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+  }
+  .space-gallery__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
+    display: flex;
+    min-width: 3rem;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  @media (min-width: 768px) {
+    .space-gallery__close {
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+  }
+  .space-gallery__close:hover {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+  .space-gallery__frame {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 80rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    background: transparent;
+  }
+  .space-gallery__img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: min(90vh, 56rem);
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .space-gallery__nav {
+    position: absolute;
+    top: 50%;
+    z-index: 20;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-top: -2.25rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .space-gallery__nav:hover {
+    opacity: 0.88;
+    transform: scale(1.05);
+  }
+  .space-gallery__nav--prev {
+    left: 0.25rem;
+  }
+  .space-gallery__nav--next {
+    right: 0.25rem;
+  }
+  @media (min-width: 640px) {
+    .space-gallery__nav--prev {
+      left: 0.5rem;
+    }
+    .space-gallery__nav--next {
+      right: 0.5rem;
+    }
+  }
+  .space-gallery__nav-icon {
+    font-size: 3.75rem;
+    font-weight: 200;
+    line-height: 1;
+    user-select: none;
+    margin-top: -0.06em;
+  }
 }

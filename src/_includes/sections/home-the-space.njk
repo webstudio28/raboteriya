@@ -9,10 +9,26 @@
 
     <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {% for card in (s.cards or []) %}
-      <article class="relative overflow-hidden rounded-lg min-h-[320px] md:min-h-[380px] bg-gray-200 bg-cover bg-center" style="background-image: url('{{ card.image | default("/assets/images/the-space-default.png") }}');">
-        <h3 class="absolute top-0 left-0 text-md font-bold tracking-wider text-white uppercase p-[1em] [text-shadow:0_1px_3px_rgba(0,0,0,0.8)]">{{ (card.title | default("")) | replace("\n", "<br>") | safe }}</h3>
-        <div class="absolute bottom-0 left-0 right-0 min-h-[50%] flex flex-col justify-end p-[1em] bg-gradient-to-t from-black/100 via-black/50 to-transparent">
-          <p class="text-sm md:text-md text-white text-left leading-relaxed">{{ card.description }}</p>
+      {% set cardImg = card.image | default("/assets/images/the-space-default.png") %}
+      {% set galleryImgs = card.gallery if card.gallery and (card.gallery | length) else [cardImg] %}
+      {% set titlePlain = (card.title | default("")) | replace("\n", " ") %}
+      <article
+        class="group relative min-h-[320px] overflow-hidden rounded-lg bg-gray-200 bg-cover bg-center md:min-h-[380px]"
+        style="background-image: url('{{ cardImg | url }}');"
+      >
+        <button
+          type="button"
+          data-space-gallery-trigger
+          data-gallery-images="{% for img in galleryImgs %}{{ img | url }}{% if not loop.last %}|{% endif %}{% endfor %}"
+          data-gallery-title="{{ titlePlain | escape }}"
+          class="absolute inset-0 z-10 cursor-pointer border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
+          aria-label="View photos: {{ titlePlain | escape }}"
+        >
+          <span class="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10 group-focus-within:bg-black/15" aria-hidden="true"></span>
+        </button>
+        <h3 class="pointer-events-none relative z-0 p-[1em] text-md font-bold tracking-wider text-white uppercase [text-shadow:0_1px_3px_rgba(0,0,0,0.8)]">{{ (card.title | default("")) | replace("\n", "<br>") | safe }}</h3>
+        <div class="pointer-events-none absolute bottom-0 left-0 right-0 z-0 flex min-h-[50%] flex-col justify-end bg-gradient-to-t from-black/100 via-black/50 to-transparent p-[1em]">
+          <p class="text-sm leading-relaxed text-white md:text-md">{{ card.description }}</p>
         </div>
       </article>
       {% endfor %}
