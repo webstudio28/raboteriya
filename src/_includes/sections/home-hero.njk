@@ -6,7 +6,7 @@
     <div class="flex w-full min-w-0 max-w-full flex-col items-center gap-6 text-center lg:gap-10">
       {% set h = home.hero if home and home.hero else {} %}
       <h1 class="hero-headline w-full min-w-0 max-w-full break-words text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight lg:!leading-tight">{{ h.headline | default('Cozy coworking space in Plovdiv for freelancers and remote workers') }}</h1>
-      <div class="flex w-full min-w-0 max-w-full flex-wrap items-center justify-center gap-4 pt-4 lg:pt-0">
+      <div class="flex w-full min-w-0 max-w-full flex-wrap items-center justify-center gap-4 pt-10 lg:pt-0">
         {% if h.ctaPrimary %}
         {% if h.ctaPrimary.openDiscountModal %}
         <button type="button" id="discount-modal-trigger" class="px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-white text-gray-900 font-bold border-2 border-white hover:bg-gray-100 cursor-pointer text-center">{{ h.ctaPrimary.label }}</button>
