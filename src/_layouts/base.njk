@@ -22,11 +22,13 @@
 <body{% if site and site.colors %} style="--color-brand-primary: {{ site.colors.primary }}; --color-brand-secondary: {{ site.colors.secondary }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
   {% include "header.njk" %}
   {{ content | safe }}
+  {% include "discount-modal.njk" %}
   <script src="{{ '/assets/js/header-scroll.js' | url }}"></script>
   <script src="{{ '/assets/js/mobile-menu.js' | url }}"></script>
   <script src="{{ '/assets/js/extras-strip.js' | url }}"></script>
   <script src="{{ '/assets/js/testimonials-strip.js' | url }}"></script>
   <script src="{{ '/assets/js/thank-you-gallery.js' | url }}"></script>
   <script src="{{ '/assets/js/faq-accordion.js' | url }}"></script>
+  <script src="{{ '/assets/js/discount-modal.js' | url }}"></script>
 </body>
 </html>

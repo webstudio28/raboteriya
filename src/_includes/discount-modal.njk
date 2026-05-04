@@ -1,0 +1,65 @@
+{# First-month discount — opened from hero primary CTA #}
+<dialog
+  id="discount-modal"
+  class="discount-modal fixed inset-0 z-[200] m-0 flex h-full max-h-none w-full max-w-none items-center justify-center overflow-y-auto border-0 bg-transparent p-4 [&::backdrop]:bg-black/45 [&::backdrop]:backdrop-blur-sm"
+  aria-labelledby="discount-modal-title"
+>
+  <div class="relative w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-xl md:p-8">
+    <button
+      type="button"
+      id="discount-modal-close"
+      class="absolute right-4 top-4 rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
+      aria-label="Close"
+    >
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <h2 id="discount-modal-title" class="pr-10 text-2xl font-black leading-tight text-gray-900 md:text-3xl">
+      Get 10% off your first month
+    </h2>
+    <form id="discount-modal-form" class="mt-6 flex flex-col gap-4" action="#" method="post" novalidate>
+      <div>
+        <label for="discount-name" class="mb-1.5 block text-sm font-medium text-gray-700">Name</label>
+        <input
+          id="discount-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          required
+          class="w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none transition-colors focus:border-gray-900"
+          placeholder="Your name"
+        >
+      </div>
+      <div>
+        <label for="discount-email" class="mb-1.5 block text-sm font-medium text-gray-700">Email</label>
+        <input
+          id="discount-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          class="w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none transition-colors focus:border-gray-900"
+          placeholder="you@example.com"
+        >
+      </div>
+      <label class="flex cursor-pointer items-start gap-3">
+        <input
+          id="discount-consent"
+          name="consent"
+          type="checkbox"
+          class="mt-1 h-4 w-4 shrink-0 rounded border-2 border-gray-900 text-gray-900 focus:ring-gray-900"
+        >
+        <span class="text-sm leading-snug text-gray-800">Yes, send me my discount + updates from Raboteriya</span>
+      </label>
+      <div class="pt-1">
+        <button
+          type="submit"
+          id="discount-modal-submit"
+          disabled
+          class="inline-flex w-full justify-center rounded-xl bg-gray-900 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-gray-800 disabled:pointer-events-none disabled:opacity-40 sm:w-auto"
+        >
+          Unlock my 10% off
+        </button>
+      </div>
+    </form>
+  </div>
+</dialog>

@@ -152,12 +152,17 @@
     background-position: center;
     background-repeat: no-repeat;
   }
-  /* Hero: dark overlay, bottom (dark) → top (transparent) */
+  /* Hero: dark overlay — full-area dim so white headline/CTAs read clearly; stronger at bottom */
   .hero-overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.42) 50%,
+      rgba(0, 0, 0, 0.36) 100%
+    );
     pointer-events: none;
   }
   /* Extras: slowly moving strip (marquee) */

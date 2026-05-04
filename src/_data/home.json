@@ -1,10 +1,10 @@
 {
   "hero": {
-    "headline": "Cozy coworking space in Plovdiv for freelances and remote workers",
+    "headline": "Cozy coworking space in Plovdiv for freelancers and remote workers",
     "headlineLine1": "Cozy coworking space in Plovdiv",
-    "headlineLine2": "for freelances and remote workers",
-    "ctaPrimary": { "label": "Reserve Your Spot", "url": "#" },
-    "ctaSecondary": { "label": "Discover how we can help you", "url": "#" },
+    "headlineLine2": "for freelancers and remote workers",
+    "ctaPrimary": { "label": "Get 10% off your first month", "openDiscountModal": true },
+    "ctaSecondary": { "label": "Take a look inside", "url": "#about" },
     "image": "/assets/images/hero.jpg"
   },
   "about": {
