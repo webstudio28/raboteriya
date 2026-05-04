@@ -104,7 +104,7 @@
       { "title": "Printer use included", "icon": "/assets/images/extras-default-icon.png" },
       { "title": "Power outlets everywhere", "icon": "/assets/images/extras-default-icon.png" }
     ],
-    "cta": { "label": "Check out our memberships", "url": "#" }
+    "cta": { "label": "Check out the best benefits", "url": "#thank-you" }
   },
   "testimonials": {
     "heading": "A few words from our members",
@@ -127,7 +127,7 @@
     ]
   },
   "thankYou": {
-    "heading": "And as a thank you...",
+    "heading": "Join a community, not just a desk",
     "paragraphs": [
       "We host monthly member events - from themed parties and sunny garden BBQs to relaxed, laughter-filled game nights.",
       "We believe shared positive experiences drive happiness and productivity. That's why Raboteriya isn't just a coworking space - it's a place to connect, build friendships, and belong."
