@@ -1,14 +1,19 @@
-{# About — two columns on desktop: left text (black), right image #}
+{# About — mobile: title → image → copy + CTA; desktop: copy left, image right #}
 <section class="section-padding bg-page" id="about">
   <div class="container-custom">
     {% set a = home.about if home and home.about else {} %}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="text-gray-900 order-2 lg:order-1">
+      <div class="text-center text-gray-900 lg:text-left">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight">
           {{ a.headingLine1 | default('Raboteriya is where') }}<br>
           {{ a.headingLine2 | default('"working from home"') }}<br>
           {{ a.headingLine3 | default('finally feels good again.') }}
         </h2>
+        {% if a.image %}
+        <div class="mt-6 flex justify-center lg:hidden">
+          <img src="{{ a.image }}" alt="" class="h-auto w-full max-w-md object-cover" loading="lazy" decoding="async" />
+        </div>
+        {% endif %}
         <div class="mt-6 md:mt-8 space-y-4 text-lg text-gray-900">
           {% for p in (a.paragraphs or []) %}
           <p>{{ p }}</p>
@@ -20,11 +25,11 @@
         </div>
         {% endif %}
       </div>
-      <div class="order-1 lg:order-2">
-        {% if a.image %}
-        <img src="{{ a.image }}" alt="" class="w-full h-auto object-cover" loading="lazy" />
-        {% endif %}
+      {% if a.image %}
+      <div class="hidden lg:block">
+        <img src="{{ a.image }}" alt="" class="h-auto w-full object-cover" loading="lazy" decoding="async" />
       </div>
+      {% endif %}
     </div>
   </div>
 </section>

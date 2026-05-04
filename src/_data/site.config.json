@@ -21,7 +21,7 @@
     "header": [
       { "label": "Home", "url": "#hero", "hideOnDesktop": true },
       { "label": "About", "url": "#about" },
-      { "label": "Why Raboteriya", "url": "#why-raboteriya", "hideOnDesktop": true },
+      { "label": "Why choose us", "url": "#why-raboteriya", "hideOnDesktop": true },
       { "label": "The space", "url": "#the-space" },
       { "label": "Memberships", "url": "#memberships" },
       { "label": "Extras", "url": "#extras", "hideOnDesktop": true },
