@@ -30,8 +30,8 @@
     ]
   },
   "theSpace": {
-    "heading": "The space",
-    "paragraph": "Raboteriya is designed to support different work styles - from deep focus to relaxed collaboration, with thoughtful spaces and everything you need included.",
+    "headingLine1": "Take a look inside",
+    "headingLine2": "your new favourite workspace",
     "cards": [
       {
         "image": "/assets/images/the-space-default.png",

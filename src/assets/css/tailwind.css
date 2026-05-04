@@ -225,6 +225,17 @@
     display: none;
   }
 
+  /* The space: horizontal card strip on small screens — scrollbar hidden */
+  .the-space-cards-row {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .the-space-cards-row::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
   /* Discount modal: backdrop + panel fade / scale from center */
   dialog.discount-modal::backdrop {
     background-color: rgba(0, 0, 0, 0.45);
