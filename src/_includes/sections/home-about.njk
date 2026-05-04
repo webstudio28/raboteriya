@@ -1,5 +1,5 @@
 {# About — mobile: title → image → copy + CTA; desktop: copy left, image right #}
-<section class="section-padding bg-page" id="about">
+<section class="section-padding overflow-x-hidden bg-page" id="about">
   <div class="container-custom">
     {% set a = home.about if home and home.about else {} %}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -10,7 +10,7 @@
           {{ a.headingLine3 | default('finally feels good again.') }}
         </h2>
         {% if a.image %}
-        <div class="mt-6 flex justify-center overflow-visible pb-6 pt-6 lg:hidden">
+        <div class="mt-6 flex justify-center overflow-x-hidden pb-6 pt-6 lg:hidden">
           <img src="{{ a.image }}" alt="" class="h-auto w-full max-w-md rotate-[-15deg] object-cover" loading="lazy" decoding="async" />
         </div>
         {% endif %}
