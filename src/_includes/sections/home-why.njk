@@ -2,8 +2,16 @@
 <section class="section-padding bg-brown-900" id="why-raboteriya">
   <div class="container-custom text-center">
     {% set w = home.whyRaboteriya if home and home.whyRaboteriya else {} %}
-    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white">{{ w.heading | default('Why remote workers choose us over working from home or cafes') }}</h2>
-    <p class="mt-2 md:mt-8 max-w-2xl mx-auto text-lg text-white">{{ w.paragraph | default('') }}</p>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white">
+      {%- if w.headingLine1 and w.headingLine2 -%}
+      {{ w.headingLine1 }}<span class="inline lg:hidden"> </span><br class="hidden lg:block" aria-hidden="true" />{{ w.headingLine2 }}
+      {%- else -%}
+      {{ w.heading | default('Why remote workers choose us over working from home or cafes') }}
+      {%- endif -%}
+    </h2>
+    {% if w.paragraph %}
+    <p class="mt-2 md:mt-8 max-w-2xl mx-auto text-lg text-white">{{ w.paragraph }}</p>
+    {% endif %}
 
     <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
       {% for f in (w.features or []) %}

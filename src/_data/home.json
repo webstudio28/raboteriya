@@ -18,8 +18,8 @@
     "cta": { "label": "See your options & pricing", "url": "#memberships" }
   },
   "whyRaboteriya": {
-    "heading": "Why remote workers choose us over working from home or cafes",
-    "paragraph": "At Raboteriya, everything is designed to make your workday easier, calmer, and more productive - whether you're here for a few hours or the whole day.",
+    "headingLine1": "Why remote workers choose us",
+    "headingLine2": "over working from home or cafes",
     "features": [
       { "icon": "/assets/images/icons/wifi.png", "title": "FAST WIFI", "description": "Work without interruptions on reliable, high-speed Coool box internet." },
       { "icon": "/assets/images/icons/snacks.png", "title": "DRINKS & SNACKS", "description": "Enjoy coffee, tea, snacks, and access to our fully stocked kitchenette." },
