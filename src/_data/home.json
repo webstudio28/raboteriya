@@ -15,6 +15,7 @@
       "Enjoy fast wifi, cozy corners, and a community-oriented coworking space right in the heart of Plovdiv."
     ],
     "image": "/assets/images/about.png",
+    "imageMobile": "/assets/images/about-mobile.png",
     "cta": { "label": "See your options & pricing", "url": "#memberships" }
   },
   "whyRaboteriya": {

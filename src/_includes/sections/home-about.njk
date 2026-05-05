@@ -9,9 +9,9 @@
           {{ a.headingLine2 | default('"working from home"') }}<br>
           {{ a.headingLine3 | default('finally feels good again.') }}
         </h2>
-        {% if a.image %}
+        {% if (a.imageMobile or a.image) %}
         <div class="mt-6 lg:hidden">
-          <img src="{{ a.image }}" alt="" class="h-auto w-full object-cover" loading="lazy" decoding="async" />
+          <img src="{{ a.imageMobile or a.image }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
         </div>
         {% endif %}
         <div class="mt-6 md:mt-8 space-y-4 text-lg text-gray-900">
@@ -27,7 +27,7 @@
       </div>
       {% if a.image %}
       <div class="hidden lg:block">
-        <img src="{{ a.image }}" alt="" class="h-auto w-full object-cover" loading="lazy" decoding="async" />
+        <img src="{{ a.image }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
       </div>
       {% endif %}
     </div>
