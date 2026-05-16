@@ -1,4 +1,11 @@
-`(function () {
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const jsDir = path.join(__dirname, "..", "src", "assets", "js");
+
+const discountModal = `(function () {
   var WEB3FORMS_URL = "https://api.web3forms.com/submit";
   var dialog = document.getElementById("discount-modal");
   var trigger = document.getElementById("discount-modal-trigger");
@@ -147,20 +154,20 @@
       var code = discountCodeFromEmail(email);
       var when = new Date().toISOString();
       var adminMessage =
-        "Raboteriya — 10% first-month discount request (modal)\n\n" +
+        "Raboteriya — 10% first-month discount request (modal)\\n\\n" +
         "Name: " +
         name +
-        "\n" +
+        "\\n" +
         "Email: " +
         email +
-        "\n" +
+        "\\n" +
         "Suggested promo code (for your manual email to them): " +
         code +
-        "\n" +
+        "\\n" +
         "Submitted (UTC): " +
         when +
-        "\n\n" +
-        "Web3Forms uses the email field as reply-to so you can reply directly to the visitor.\n";
+        "\\n\\n" +
+        "Web3Forms uses the email field as reply-to so you can reply directly to the visitor.\\n";
 
       var defaultLabel = "Unlock my 10% off";
       submitBtn.disabled = true;
@@ -209,4 +216,15 @@
         });
     });
   }
-})()
+})();
+`;
+
+const visitBookingModal = fs.readFileSync(
+  path.join(__dirname, "visit-booking-modal.source.txt"),
+  "utf8"
+);
+
+fs.mkdirSync(jsDir, { recursive: true });
+fs.writeFileSync(path.join(jsDir, "discount-modal.js"), discountModal);
+fs.writeFileSync(path.join(jsDir, "visit-booking-modal.js"), visitBookingModal);
+console.log("Wrote discount-modal.js and visit-booking-modal.js");

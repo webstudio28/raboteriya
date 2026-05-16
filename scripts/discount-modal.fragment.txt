@@ -147,20 +147,20 @@
       var code = discountCodeFromEmail(email);
       var when = new Date().toISOString();
       var adminMessage =
-        "Raboteriya — 10% first-month discount request (modal)\n\n" +
+        "Raboteriya — 10% first-month discount request (modal)\\n\\n" +
         "Name: " +
         name +
-        "\n" +
+        "\\n" +
         "Email: " +
         email +
-        "\n" +
+        "\\n" +
         "Suggested promo code (for your manual email to them): " +
         code +
-        "\n" +
+        "\\n" +
         "Submitted (UTC): " +
         when +
-        "\n\n" +
-        "Web3Forms uses the email field as reply-to so you can reply directly to the visitor.\n";
+        "\\n\\n" +
+        "Web3Forms uses the email field as reply-to so you can reply directly to the visitor.\\n";
 
       var defaultLabel = "Unlock my 10% off";
       submitBtn.disabled = true;

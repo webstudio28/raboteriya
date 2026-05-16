@@ -24,10 +24,15 @@
         Choose a date and time for your visit
       </p>
 
-      <form id="booking-modal-form" class="mt-6 flex flex-col gap-4" action="#" method="post" novalidate>
+      <form id="booking-modal-form" class="mt-6 flex flex-col gap-4" action="https://api.web3forms.com/submit" method="post" novalidate>
         <input type="hidden" name="access_key" value="2b37c752-1bab-422c-ae2f-332fb1ae5d8d">
+        <input type="hidden" name="subject" id="booking-form-subject" value="Raboteriya — visit booking request">
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <input type="hidden" id="booking-visit-date" name="visit_date" value="">
         <input type="hidden" id="booking-visit-time" name="visit_time" value="">
+        <input type="hidden" id="booking-membership-plan" name="membership_plan" value="">
+        <input type="hidden" id="booking-membership-price" name="membership_price" value="">
+        <textarea name="message" id="booking-form-message" class="hidden" aria-hidden="true" tabindex="-1"></textarea>
 
         <p id="booking-form-error" class="hidden rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700" role="alert"></p>
 
