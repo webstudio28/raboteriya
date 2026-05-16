@@ -82,17 +82,30 @@
     "paragraph": "Simple, flexible and affordable options - whether you're visiting for a day or making Raboteriya your work home.",
     "cards": [
       {
-        "title": "STANDARD PASS",
-        "price": "€60",
+        "title": "Flex Membership",
+        "price": "€79",
         "period": "/month",
-        "inclusions": ["24/7 access", "All amenities & benefits included"]
+        "inclusions": [
+          "24/7 access",
+          "Work from any available desk",
+          "Quiet room & phone booth access",
+          "Free coffee, tea & kitchenette snacks",
+          "Full access to all amenities & community events"
+        ]
       },
       {
-        "title": "PREMIUM PLAN",
-        "price": "€80",
+        "title": "Resident Membership",
+        "price": "€119",
         "period": "/month",
         "featured": true,
-        "inclusions": ["Your own designated desk", "Personal storage", "Pause for a week when you're away", "All amenities included", "24/7 access"]
+        "badge": "Most Loved",
+        "inclusions": [
+          "Your own designated desk",
+          "Leave your setup exactly how you like it",
+          "Dedicated additional screen",
+          "Phone booth & quiet room priority",
+          "Membership pause flexibility included"
+        ]
       },
       {
         "title": "WEEKLY PASS",

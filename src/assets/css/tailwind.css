@@ -68,6 +68,11 @@
       0 4px 6px -1px rgba(0, 0, 0, 0.07),
       0 10px 32px -8px rgba(0, 0, 0, 0.12);
   }
+  .pricing-card--featured {
+    box-shadow:
+      0 8px 16px -4px rgba(0, 0, 0, 0.1),
+      0 20px 40px -12px rgba(0, 0, 0, 0.14);
+  }
   .pricing-cta {
     background: linear-gradient(to right, #1a1a1a 0%, #303030 100%);
   }
