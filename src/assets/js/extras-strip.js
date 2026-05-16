@@ -10,7 +10,7 @@
   var dragging = false;
   var startX = 0;
   var startPos = 0;
-  var speed = 0.8;
+  var speed = 0.35;
 
   function getClientX(e) {
     return e.touches ? e.touches[0].clientX : e.clientX;
@@ -27,14 +27,17 @@
   }
 
   function onDown(e) {
+    if (e.button !== undefined && e.button !== 0) return;
     dragging = true;
     startX = getClientX(e);
     startPos = position;
     strip.style.cursor = "grabbing";
+    if (e.cancelable) e.preventDefault();
   }
 
   function onMove(e) {
     if (!dragging) return;
+    if (e.cancelable) e.preventDefault();
     var x = getClientX(e);
     position = startPos + (x - startX);
   }
@@ -49,10 +52,13 @@
   strip.style.cursor = "grab";
   strip.style.willChange = "transform";
 
+  strip.addEventListener("dragstart", function (e) {
+    e.preventDefault();
+  });
   strip.addEventListener("mousedown", onDown);
-  strip.addEventListener("touchstart", onDown, { passive: true });
+  strip.addEventListener("touchstart", onDown, { passive: false });
   window.addEventListener("mousemove", onMove);
-  window.addEventListener("touchmove", onMove, { passive: true });
+  window.addEventListener("touchmove", onMove, { passive: false });
   window.addEventListener("mouseup", onUp);
   window.addEventListener("touchend", onUp);
 

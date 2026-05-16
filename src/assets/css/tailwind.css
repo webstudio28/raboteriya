@@ -68,11 +68,6 @@
       0 4px 6px -1px rgba(0, 0, 0, 0.07),
       0 10px 32px -8px rgba(0, 0, 0, 0.12);
   }
-  .pricing-card--featured {
-    box-shadow:
-      0 8px 16px -4px rgba(0, 0, 0, 0.1),
-      0 20px 40px -12px rgba(0, 0, 0, 0.14);
-  }
   .pricing-cta {
     background: linear-gradient(to right, #1a1a1a 0%, #303030 100%);
   }
@@ -185,8 +180,52 @@
   .extras-strip-wrapper {
     overflow: hidden;
     width: 100%;
+    padding-bottom: 0.5rem;
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .extras-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 5.5rem;
+    padding: 0;
+    text-align: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  .extras-card__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+  @media (min-width: 768px) {
+    .extras-card {
+      width: 6.5rem;
+    }
+    .extras-card__icon {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  }
+  .extras-card__title {
+    margin: 0.5rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: #111827;
+    user-select: none;
+  }
+  @media (min-width: 768px) {
+    .extras-card__title {
+      font-size: 0.8125rem;
+    }
   }
   .extras-strip {
     display: flex;
@@ -198,8 +237,15 @@
   .extras-strip-set {
     display: flex;
     flex-shrink: 0;
-    gap: 1rem;
-    padding-left: 1rem;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-left: 2rem;
+  }
+  @media (min-width: 768px) {
+    .extras-strip-set {
+      gap: 2.5rem;
+      padding-left: 2.5rem;
+    }
   }
   /* Testimonials: slow moving strip (same pattern as extras, speed in JS) */
   .testimonials-strip-wrapper {
@@ -252,15 +298,27 @@
     height: 0;
   }
 
-  /* Memberships: horizontal pricing strip on small screens — scrollbar hidden */
-  .pricing-row {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .pricing-row::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
+  /* Memberships: mobile horizontal strip — bleed right, gutter snap at end */
+  @media (max-width: 639px) {
+    .pricing-row-scroll {
+      overflow-x: auto;
+      overflow-y: visible;
+      padding-left: 1rem;
+      padding-bottom: 0.75rem;
+      scroll-padding-inline: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .pricing-row-scroll::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    .pricing-row__end {
+      flex: 0 0 1rem;
+      width: 1rem;
+    }
   }
 
   /* Discount modal: backdrop + panel fade / scale from center */
