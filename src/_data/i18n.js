@@ -18,7 +18,7 @@ const navBg = {
     { label: "Локация", url: "#location", hideOnDesktop: true },
     { label: "Контакт", url: "#contact" },
   ],
-  headerCta: { label: "Запази място", url: "#contact" },
+  headerCta: { label: "Запази място", url: "#memberships" },
   footer: [
     { label: "Поверителност", url: "/privacy" },
     { label: "Импресум", url: "/imprint" },

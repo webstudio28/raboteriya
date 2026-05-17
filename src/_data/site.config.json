@@ -32,7 +32,7 @@
       { "label": "Location", "url": "#location", "hideOnDesktop": true },
       { "label": "Contact", "url": "#contact" }
     ],
-    "headerCta": { "label": "Reserve your spot", "url": "#contact" },
+    "headerCta": { "label": "Reserve your spot", "url": "#memberships" },
     "footer": [
       { "label": "Privacy", "url": "/privacy" },
       { "label": "Imprint", "url": "/imprint" }

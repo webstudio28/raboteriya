@@ -81,14 +81,13 @@
     "cards": [
       {
         "title": "Flex Membership",
+        "badge": "Most loved",
         "price": "€79",
         "period": "/month",
         "inclusions": [
           "24/7 access",
           "Work from any available desk",
-          "Quiet room & phone booth access",
-          "Free coffee, tea & kitchenette snacks",
-          "Full access to all amenities & community events"
+          "Quiet room & phone booth access"
         ]
       },
       {
