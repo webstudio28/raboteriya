@@ -68,13 +68,11 @@
     "headingLine2": "новото си любимо работно място",
     "cards": [
       {
-        "image": "/assets/images/the-space-default.png",
+        "image": "/assets/images/community-space/community1.png",
         "title": "ОБЩНО\nПРОСТРАНСТВО",
         "description": "Пространство с атмосфера, в което работата до други хора е мотивираща, не разсейваща.",
         "gallery": [
-          "/assets/images/the-space-default.png",
-          "/assets/images/about.png",
-          "/assets/images/icons/community.png"
+          "/assets/images/community-space/community1.png"
         ]
       },
       {
