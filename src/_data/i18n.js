@@ -28,6 +28,8 @@ const navBg = {
 const uiEn = {
   bookVisit: "Book a visit",
   faqTitle: "FAQ",
+  faqSeeMore: "See more",
+  faqSeeLess: "See less",
   emailLabel: "E-mail",
   phoneLabel: "Phone Number",
   addressLabel: "Address",
@@ -52,6 +54,8 @@ const uiEn = {
 const uiBg = {
   bookVisit: "Запази посещение",
   faqTitle: "ЧЗВ",
+  faqSeeMore: "Виж още",
+  faqSeeLess: "По-малко",
   emailLabel: "Имейл",
   phoneLabel: "Телефон",
   addressLabel: "Адрес",

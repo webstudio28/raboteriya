@@ -1,8 +1,39 @@
-{# FAQ — centered heading + accordion list #}
+{# FAQ — centered heading + accordion list; first 7 visible, rest behind fade + See more #}
 {% from "macros/i18n.njk" import localeClass %}
+
+{% macro faqItem(item) %}
+<details class="faq-item w-full rounded-2xl border border-gray-900/60 bg-white px-5 py-4 md:px-6 md:py-4">
+  <summary class="faq-summary flex w-full items-center justify-between gap-3 text-left text-base md:text-lg font-bold text-gray-900">
+    <span class="min-w-0 flex-1">{{ item.question }}</span>
+    <span class="faq-chevron inline-flex shrink-0 text-gray-900" aria-hidden="true">
+      <svg class="h-4 w-4 md:h-[1.125rem] md:w-[1.125rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    </span>
+  </summary>
+  <div class="faq-answer">
+    <div class="faq-answer-inner">
+      <div class="faq-answer-body pt-3 text-sm md:text-base text-gray-700 leading-relaxed">
+        {% if item.answer %}<p{% if item.list or item.answerFooter %} class="mb-0"{% endif %}>{{ item.answer }}</p>{% endif %}
+        {% if item.list %}
+        <ul class="mt-3 list-disc space-y-1.5 pl-5">
+          {% for li in item.list %}
+          <li>{{ li }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if item.answerFooter %}<p class="mt-3">{{ item.answerFooter }}</p>{% endif %}
+      </div>
+    </div>
+  </div>
+</details>
+{% endmacro %}
+
 <section class="section-padding bg-page" id="faq" data-faq>
   {% for locale in i18n.locales %}
   {% set f = i18n.home[locale].faq %}
+  {% set items = (f.items or []) %}
+  {% set faqVisibleCount = 7 %}
   <div class="container-custom {{ localeClass(locale) }}" data-locale="{{ locale }}">
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="text-4xl md:text-5xl font-black tracking-tight text-gray-900">{{ i18n.ui[locale].faqTitle }}</h2>
@@ -11,36 +42,43 @@
       </p>
     </div>
 
-    {% set items = (f.items or []) %}
     {% if items.length %}
-    <div class="mt-10 md:mt-12 w-full space-y-4">
-      {% for item in items %}
-      <details class="faq-item w-full rounded-2xl border border-gray-900/60 bg-white px-5 py-4 md:px-6 md:py-4">
-        <summary class="faq-summary flex w-full items-center justify-between gap-3 text-left text-base md:text-lg font-bold text-gray-900">
-          <span class="min-w-0 flex-1">{{ item.question }}</span>
-          <span class="faq-chevron inline-flex shrink-0 text-gray-900" aria-hidden="true">
-            <svg class="h-4 w-4 md:h-[1.125rem] md:w-[1.125rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-        </summary>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <div class="faq-answer-body pt-3 text-sm md:text-base text-gray-700 leading-relaxed">
-              {% if item.answer %}<p{% if item.list or item.answerFooter %} class="mb-0"{% endif %}>{{ item.answer }}</p>{% endif %}
-              {% if item.list %}
-              <ul class="mt-3 list-disc space-y-1.5 pl-5">
-                {% for li in item.list %}
-                <li>{{ li }}</li>
-                {% endfor %}
-              </ul>
-              {% endif %}
-              {% if item.answerFooter %}<p class="mt-3">{{ item.answerFooter }}</p>{% endif %}
-            </div>
-          </div>
+    <div class="faq-list mt-10 md:mt-12 w-full" data-faq-list>
+      <div class="space-y-4">
+        {% for item in items %}
+        {% if loop.index0 < faqVisibleCount %}
+        {{ faqItem(item) }}
+        {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if items.length > faqVisibleCount %}
+      <div class="faq-extra relative mt-4" data-faq-extra>
+        <div class="faq-extra-inner space-y-4" data-faq-extra-inner>
+          {% for item in items %}
+          {% if loop.index0 >= faqVisibleCount %}
+          {{ faqItem(item) }}
+          {% endif %}
+          {% endfor %}
         </div>
-      </details>
-      {% endfor %}
+        <div class="faq-extra-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28" data-faq-fade aria-hidden="true"></div>
+      </div>
+      <div class="relative z-[2] mt-6 flex justify-center">
+        <button
+          type="button"
+          class="faq-see-more inline-flex items-center gap-2 rounded-xl border-2 border-gray-900 bg-page px-6 py-3 text-base font-semibold text-gray-900 transition-colors hover:bg-gray-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+          data-faq-expand
+          aria-expanded="false"
+          data-label-more="{{ i18n.ui[locale].faqSeeMore }}"
+          data-label-less="{{ i18n.ui[locale].faqSeeLess }}"
+        >
+          <span data-faq-expand-label>{{ i18n.ui[locale].faqSeeMore }}</span>
+          <svg class="faq-see-more-icon h-4 w-4 shrink-0 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+      </div>
+      {% endif %}
     </div>
     {% endif %}
   </div>
