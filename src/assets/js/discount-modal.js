@@ -1,4 +1,4 @@
-`(function () {
+(function () {
   var WEB3FORMS_URL = "https://api.web3forms.com/submit";
   var dialog = document.getElementById("discount-modal");
   var triggers = document.querySelectorAll(".discount-modal-trigger");
