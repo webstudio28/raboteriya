@@ -178,7 +178,7 @@
     "description": "Give us a call or fill out the enquiry form.\nWe'll get back to you as soon as possible.",
     "note": "P.S. We kindly ask that you book your visit at least one day in advance so we can make sure there's space waiting for you.",
     "email": "cwsaprilov@gmail.com",
-    "phone": "+359 897 005 887",
+    "phone": "+359 89 443 1048",
     "address": "bul. Vasil Aprilov 49, Plovdiv, 4000",
     "formPlaceholder": "Let us know when you'd like to visit, or simply leave your phone number and we'll give you a call",
     "submitLabel": "Submit your message",
@@ -188,8 +188,8 @@
       { "platform": "Instagram", "url": "https://instagram.com/raboteriya", "icon": "instagram" },
       { "platform": "LinkedIn", "url": "https://linkedin.com/company/raboteriya", "icon": "linkedin" },
       { "platform": "TikTok", "url": "https://tiktok.com/@raboteriya", "icon": "tiktok" },
-      { "platform": "WhatsApp", "url": "https://wa.me/359897005887", "icon": "whatsapp" },
-      { "platform": "Viber", "url": "https://invite.viber.com/?number=%2B359897005887", "icon": "viber" }
+      { "platform": "WhatsApp", "url": "https://wa.me/359894431048", "icon": "whatsapp" },
+      { "platform": "Viber", "url": "https://invite.viber.com/?number=%2B359894431048", "icon": "viber" }
     ]
   },
   "features": [],
@@ -202,31 +202,55 @@
     "mapTitle": "Raboteriya Coworking Space Plovdiv on Google Maps"
   },
   "faq": {
-    "subheading": "We know choosing a coworking space comes with questions. Here are the answers to the ones we’re asked most often.",
+    "subheading": "We know choosing a coworking space comes with questions. Here are the answers to the ones we're asked most often.",
     "items": [
       {
         "question": "Do I need to book in advance?",
-        "answer": "Dummy answer for now."
+        "answer": "Yes - please do. Because we're a cozy, community-focused space, availability can be limited. Contact us at least one day in advance so we can make sure there's a spot waiting for you."
       },
       {
-        "question": "What’s the parking situation like?",
-        "answer": "Dummy answer for now."
+        "question": "What's the parking situation like?",
+        "answer": "Surprisingly easy. Even though we're in the city centre, Raboteriya is located in a residential area. All surrounding streets offer free parking, and there are usually plenty of spaces available."
       },
       {
         "question": "Are there places to eat nearby?",
-        "answer": "Dummy answer for now."
+        "answer": "So many. Within a few minutes' walk you'll find:",
+        "list": [
+          "Filibeto - supermarket with cooked food",
+          "Nolita - Bulgarian restaurant with affordable lunch menus",
+          "La Forchetta (Italian)",
+          "Burger Chef",
+          "Gyroland",
+          "Arab Taste",
+          "BBQ Brothers",
+          "2+2 shop",
+          "Kasem Foods"
+        ],
+        "answerFooter": "Mall Plovdiv and Sombrero Mexican Restaurant are also just a 10-minute walk away, so lunch options are never a problem."
       },
       {
         "question": "How does entry to the space work?",
-        "answer": "Dummy answer for now."
+        "answer": "Once you become a member, we give you an access card - you simply tap your card and you're in. If it's your first visit, we'll be there to welcome you and show you around."
       },
       {
         "question": "Can I visit the space before deciding?",
-        "answer": "Dummy answer for now."
+        "answer": "Of course. We're always happy to arrange viewings for individuals or small teams who want to see the space, feel the vibe, and decide if Raboteriya is right for them."
       },
       {
         "question": "Do memberships come with contracts?",
-        "answer": "Dummy answer for now."
+        "answer": "No. All memberships are pay-as-you-go and paid month to month. We don't believe in locking people in — we'd rather you stay because you genuinely love working here."
+      },
+      {
+        "question": "Can the space be booked for events?",
+        "answer": "Yes! Raboteriya can be booked for a variety of events. We've hosted team buildings, seminars, workshops, birthdays, and even small weddings of up to 40 people."
+      },
+      {
+        "question": "Is the space serviced?",
+        "answer": "Absolutely. Our team takes care of keeping Raboteriya clean, tidy, and welcoming at all times — so you can simply come in, focus on your work, and enjoy the space."
+      },
+      {
+        "question": "Is Raboteriya pet-friendly?",
+        "answer": "Absolutely. We love having furry friends around and you're more than welcome to bring your pet with you. We also recycle our plastic and donate the earnings to Animal Rescue Sofia - caring for animals is something we genuinely believe in. So yes, please do bring your furry companion along."
       }
     ]
   }

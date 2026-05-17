@@ -27,7 +27,15 @@
         <div class="faq-answer">
           <div class="faq-answer-inner">
             <div class="faq-answer-body pt-3 text-sm md:text-base text-gray-700 leading-relaxed">
-              {{ item.answer | default("Dummy answer for now.") }}
+              {% if item.answer %}<p{% if item.list or item.answerFooter %} class="mb-0"{% endif %}>{{ item.answer }}</p>{% endif %}
+              {% if item.list %}
+              <ul class="mt-3 list-disc space-y-1.5 pl-5">
+                {% for li in item.list %}
+                <li>{{ li }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% if item.answerFooter %}<p class="mt-3">{{ item.answerFooter }}</p>{% endif %}
             </div>
           </div>
         </div>
