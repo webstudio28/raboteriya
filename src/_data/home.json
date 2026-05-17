@@ -238,7 +238,7 @@
       },
       {
         "question": "Do memberships come with contracts?",
-        "answer": "No. All memberships are pay-as-you-go and paid month to month. We don't believe in locking people in — we'd rather you stay because you genuinely love working here."
+        "answer": "No. All memberships are pay-as-you-go and paid month to month. We don't believe in locking people in - we'd rather you stay because you genuinely love working here."
       },
       {
         "question": "Can the space be booked for events?",
@@ -246,11 +246,31 @@
       },
       {
         "question": "Is the space serviced?",
-        "answer": "Absolutely. Our team takes care of keeping Raboteriya clean, tidy, and welcoming at all times — so you can simply come in, focus on your work, and enjoy the space."
+        "answer": "Absolutely. Our team takes care of keeping Raboteriya clean, tidy, and welcoming at all times - so you can simply come in, focus on your work, and enjoy the space."
       },
       {
         "question": "Is Raboteriya pet-friendly?",
         "answer": "Absolutely. We love having furry friends around and you're more than welcome to bring your pet with you. We also recycle our plastic and donate the earnings to Animal Rescue Sofia - caring for animals is something we genuinely believe in. So yes, please do bring your furry companion along."
+      },
+      {
+        "question": "Do you have a static IP address?",
+        "answer": "Yes - our WiFi comes with a static IP, so your work setup can stay nice and predictable."
+      },
+      {
+        "question": "Can I work with an additional screen?",
+        "answer": "Yes. We have extra screens available at Raboteriya. Resident members get priority, but so far our Flex members and day pass visitors have always been able to use one too."
+      },
+      {
+        "question": "Can I register my company at Raboteriya's address?",
+        "answer": "Yes - Raboteriya members can use our address as their official business address. It's a practical option if you don't want to register your company at home, or you need a stable place for business correspondence."
+      },
+      {
+        "question": "Is Raboteriya convenient if I live in Smirnenski or near Peshtersko Shose?",
+        "answer": "Yes - Raboteriya is a homey coworking space close to the city centre, but also very convenient if you're coming from Hristo Smirnenski, Peshtersko Shose, or the western side of Plovdiv. You get an easy-to-reach workspace without having to cross the whole city."
+      },
+      {
+        "question": "Is Raboteriya easy to reach by train or bus?",
+        "answer": "Yes - we're 10 minute walk from Plovdiv's Central Train Station and main bus station, which makes Raboteriya a convenient coworking space for people coming from another nearby town, or another city for the day."
       }
     ]
   }
