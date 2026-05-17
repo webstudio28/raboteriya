@@ -37,7 +37,8 @@
     document.querySelectorAll(".lang-toggle__btn").forEach(function (btn) {
       var active = btn.getAttribute("data-lang") === locale;
       btn.classList.toggle("is-active", active);
-      btn.classList.toggle("bg-gray-900", active);
+      btn.classList.remove("bg-gray-900");
+      btn.classList.toggle("bg-brown-900", active);
       btn.classList.toggle("text-white", active);
       btn.classList.toggle("text-gray-600", !active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");

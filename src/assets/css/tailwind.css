@@ -60,7 +60,7 @@
 }
 
 .lang-toggle__btn:not(.is-active):hover {
-  @apply text-gray-900;
+  @apply text-brown-900;
 }
 
 /* Template utility classes (alignment docs) */
@@ -71,7 +71,8 @@
   .section-padding {
     @apply py-16 md:py-24;
   }
-  .pricing-card {
+  .pricing-card,
+  .the-space-card {
     box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.07),
       0 10px 32px -8px rgba(0, 0, 0, 0.12);

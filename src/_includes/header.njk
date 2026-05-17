@@ -23,7 +23,7 @@
       {% for locale in i18n.locales %}
       {% set nav = i18n.nav[locale] %}
       {% if nav.headerCta %}
-      <a href="{{ nav.headerCta.url }}" class="{{ localeClass(locale) }} px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 shrink-0" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
+      <a href="{{ nav.headerCta.url }}" class="{{ localeClass(locale) }} px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-brown-900 text-white font-medium hover:brightness-110 shrink-0 transition-[filter]" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
       {% endif %}
       {% endfor %}
     </div>
@@ -51,7 +51,7 @@
         <a href="{{ item.url }}" class="mobile-menu-link rounded-xl border-2 border-gray-900/15 px-5 py-4 text-base font-medium text-gray-900 hover:bg-gray-900/5 transition-colors">{{ item.label }}</a>
       {% endfor %}
       {% if nav.headerCta %}
-        <a href="{{ nav.headerCta.url }}" class="mobile-menu-link mt-1 rounded-xl bg-gray-900 px-5 py-4 text-center text-base font-semibold text-white hover:bg-gray-800 transition-colors">{{ nav.headerCta.label }}</a>
+        <a href="{{ nav.headerCta.url }}" class="mobile-menu-link mt-1 rounded-xl bg-brown-900 px-5 py-4 text-center text-base font-semibold text-white hover:brightness-110 transition-[filter]">{{ nav.headerCta.label }}</a>
       {% endif %}
     </nav>
     {% endfor %}
