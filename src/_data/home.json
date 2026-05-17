@@ -185,12 +185,14 @@
     "address": "bul. Vasil Aprilov 49, Plovdiv, 4000",
     "formPlaceholder": "Let us know when you'd like to visit, or simply leave your phone number and we'll give you a call",
     "submitLabel": "Submit your message",
-    "socialsHeading": "See what's happening at Raboteriya",
+    "socialsHeading": "Connect with Raboteriya",
     "socials": [
       { "platform": "Facebook", "url": "https://facebook.com/raboteriya", "icon": "facebook" },
       { "platform": "Instagram", "url": "https://instagram.com/raboteriya", "icon": "instagram" },
       { "platform": "LinkedIn", "url": "https://linkedin.com/company/raboteriya", "icon": "linkedin" },
-      { "platform": "TikTok", "url": "https://tiktok.com/@raboteriya", "icon": "tiktok" }
+      { "platform": "TikTok", "url": "https://tiktok.com/@raboteriya", "icon": "tiktok" },
+      { "platform": "WhatsApp", "url": "https://wa.me/359897005887", "icon": "whatsapp" },
+      { "platform": "Viber", "url": "https://invite.viber.com/?number=%2B359897005887", "icon": "viber" }
     ]
   },
   "features": [],

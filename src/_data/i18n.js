@@ -100,6 +100,10 @@ module.exports = {
       bookingSuccessBody:
         "Thanks! We've got your details and will call you shortly to confirm your visit.",
       bookingDone: "Done",
+      contactSuccessTitle: "Message sent",
+      contactSuccessBody:
+        "Thanks for reaching out! We've received your message and will get back to you as soon as possible.",
+      contactDone: "Done",
       bookingPrevMonth: "Previous month",
       bookingNextMonth: "Next month",
       bookingChooseDate: "Choose date",
@@ -127,6 +131,10 @@ module.exports = {
       bookingSuccessBody:
         "Благодарим! Получихме данните ви и ще ви се обадим скоро, за да потвърдим посещението.",
       bookingDone: "Готово",
+      contactSuccessTitle: "Съобщението е изпратено",
+      contactSuccessBody:
+        "Благодарим, че се свързахте с нас! Получихме съобщението ви и ще ви отговорим възможно най-скоро.",
+      contactDone: "Готово",
       bookingPrevMonth: "Предишен месец",
       bookingNextMonth: "Следващ месец",
       bookingChooseDate: "Изберете дата",

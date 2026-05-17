@@ -170,7 +170,7 @@ bg.contact = {
   address: en.contact.address,
   formPlaceholder: "Кажете ни кога искате да дойдете или оставете телефон и ще ви се обадим",
   submitLabel: "Изпрати съобщението",
-  socialsHeading: "Виж какво се случва в Raboteriya",
+  socialsHeading: "Свържи се с Raboteriya",
   socials: en.contact.socials,
 };
 bg.location = {
