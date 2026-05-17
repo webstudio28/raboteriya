@@ -163,58 +163,26 @@
     "heading": "Не вярваме в скрити такси",
     "paragraph": "Всичко необходимо за по-добра работа е включено в дневния ви абонамент или членство.",
     "items": [
-      {
-        "title": "Допълнителни екрани",
-        "icon": "/assets/images/benefit-default-icon3.png"
-      },
-      {
-        "title": "Тапи за фокус",
-        "icon": "/assets/images/benefit-default-icon5.png"
-      },
-      {
-        "title": "Принтер включен",
-        "icon": "/assets/images/benefit-default-icon.png"
-      },
-      {
-        "title": "Контакти навсякъде",
-        "icon": "/assets/images/benefit-default-icon2.png"
-      },
-      {
-        "title": "Канцеларски материали",
-        "icon": "/assets/images/benefit-default-icon4.png"
-      },
-      {
-        "title": "Допълнителни екрани",
-        "icon": "/assets/images/benefit-default-icon2.png"
-      },
-      {
-        "title": "Тапи за фокус",
-        "icon": "/assets/images/benefit-default-icon.png"
-      },
-      {
-        "title": "Принтер включен",
-        "icon": "/assets/images/benefit-default-icon5.png"
-      },
-      {
-        "title": "Контакти навсякъде",
-        "icon": "/assets/images/benefit-default-icon3.png"
-      },
-      {
-        "title": "Допълнителни екрани",
-        "icon": "/assets/images/benefit-default-icon4.png"
-      },
-      {
-        "title": "Тапи за фокус",
-        "icon": "/assets/images/benefit-default-icon5.png"
-      },
-      {
-        "title": "Принтер включен",
-        "icon": "/assets/images/benefit-default-icon2.png"
-      },
-      {
-        "title": "Контакти навсякъде",
-        "icon": "/assets/images/benefit-default-icon.png"
-      }
+      { "title": "Допълнителни монитори", "icon": "/assets/images/icons2/extra-screen.png" },
+      { "title": "Офис консумативи", "icon": "/assets/images/icons2/desk-supplies.png" },
+      { "title": "Зона за печат", "icon": "/assets/images/icons2/printer.png" },
+      { "title": "Получаване на пратки", "icon": "/assets/images/icons2/delivery-pickup.png" },
+      { "title": "Маси за групова работа", "icon": "/assets/images/icons2/group-desks.png" },
+      { "title": "Стая за тиха работа", "icon": "/assets/images/icons2/quiet-focus-room.png" },
+      { "title": "Телефонна кабина", "icon": "/assets/images/icons2/phone-booth.png" },
+      { "title": "Лаундж зона", "icon": "/assets/images/icons2/lounge-area.png" },
+      { "title": "Книги за четене", "icon": "/assets/images/icons2/books-to-borrow.png" },
+      { "title": "PlayStation почивки", "icon": "/assets/images/icons2/playstation.png" },
+      { "title": "Безплатно кафе, чай и напитки", "icon": "/assets/images/icons2/free-coffee.png" },
+      { "title": "Свежи плодове", "icon": "/assets/images/icons2/fresh-fruits.png" },
+      { "title": "Безплатни снаксове", "icon": "/assets/images/icons2/snacks.png" },
+      { "title": "Безплатно улично паркиране", "icon": "/assets/images/icons2/parking.png" },
+      { "title": "Охрана 24/7", "icon": "/assets/images/icons2/cctv.png" },
+      { "title": "Бюра за работа прав", "icon": "/assets/images/icons2/standing-desk.png" },
+      { "title": "Удобни кресла", "icon": "/assets/images/icons2/comfy-chairs.png" },
+      { "title": "Мултимедийна зона", "icon": "/assets/images/icons2/projector.png" },
+      { "title": "Тапи за уши", "icon": "/assets/images/icons2/earplug.png" },
+      { "title": "Удобни контакти", "icon": "/assets/images/icons2/power-outlet.png" }
     ],
     "cta": {
       "label": "Виж най-добрите предимства",
