@@ -1,0 +1,380 @@
+{
+  "hero": {
+    "headline": "Уютно коворкинг пространство в Пловдив за фрийлансъри и хора на дистанционна работа",
+    "ctaPrimary": {
+      "label": "10% отстъпка за първия месец",
+      "openDiscountModal": true
+    },
+    "ctaSecondary": {
+      "label": "Разгледай пространството",
+      "url": "#about"
+    },
+    "image": "/assets/images/hero.jpg"
+  },
+  "about": {
+    "headingLine1": "Raboteriya е мястото,",
+    "headingLine2": "където „работата от вкъщи“",
+    "headingLine3": "отново започва да се усеща добре.",
+    "paragraphs": [
+      "Идвате с лаптопа, привлечени от добрите ни цени, но оставате, защото нещо в пространството просто ви пасва.",
+      "Топло е. Спокойно е. Усеща се като хора, не само като бюра.",
+      "Бърз Wi-Fi, уютни ъгълчета и общностно ориентирано коворкинг пространство в сърцето на Пловдив."
+    ],
+    "image": "/assets/images/about.png",
+    "imageMobile": "/assets/images/about-mobile.png",
+    "cta": {
+      "label": "Виж опциите и цените",
+      "url": "#memberships"
+    }
+  },
+  "whyRaboteriya": {
+    "headingLine1": "Защо хората на дистанционна работа ни избират",
+    "headingLine2": "пред дома или кафенетата",
+    "features": [
+      {
+        "icon": "/assets/images/icons/wifi.png",
+        "title": "БЪРЗ WI-FI",
+        "description": "Работете без прекъсвания с надежден, високоскоростен Coool box интернет."
+      },
+      {
+        "icon": "/assets/images/icons/snacks.png",
+        "title": "НАПИТКИ И СНАКСОВЕ",
+        "description": "Кафе, чай, снаксове и напълно оборудвана кухненска зона."
+      },
+      {
+        "icon": "/assets/images/icons/flixible-spaces.png",
+        "title": "ГЪВКАВИ ПРОСТРАНСТВА",
+        "description": "Удобно на просторни бюра или в уютен ъгъл."
+      },
+      {
+        "icon": "/assets/images/icons/affordable.png",
+        "title": "ДОСТЪПНИ ЧЛЕНСТВА",
+        "description": "Едни от най-достъпните членства в града."
+      },
+      {
+        "icon": "/assets/images/icons/community.png",
+        "title": "ОБЩНОСТ",
+        "description": "Работете сред приятелски хора вместо да седите сами вкъщи."
+      },
+      {
+        "icon": "/assets/images/icons/24.png",
+        "title": "ДОСТЪП 24/7",
+        "description": "Идеално за професионалисти извън 9–17 рутината."
+      }
+    ]
+  },
+  "theSpace": {
+    "headingLine1": "Разгледай отвътре",
+    "headingLine2": "новото си любимо работно място",
+    "cards": [
+      {
+        "image": "/assets/images/the-space-default.png",
+        "title": "ОБЩНО\nПРОСТРАНСТВО",
+        "description": "Пространство с атмосфера, в което работата до други хора е мотивираща, не разсейваща.",
+        "gallery": [
+          "/assets/images/the-space-default.png",
+          "/assets/images/about.png",
+          "/assets/images/icons/community.png"
+        ]
+      },
+      {
+        "image": "/assets/images/the-space-default.png",
+        "title": "ТИХА\nСТАЯ",
+        "description": "Отделна стая за моменти, когато ви трябва абсолютна тишина и дълбок фокус.",
+        "gallery": [
+          "/assets/images/about.png",
+          "/assets/images/the-space-default.png",
+          "/assets/images/icons/wifi.png"
+        ]
+      },
+      {
+        "image": "/assets/images/the-space-default.png",
+        "title": "ТЕЛЕФОННА\nКАБИНА",
+        "description": "Частна телефонна кабина за Zoom срещи и обаждания извън споделеното бюро.",
+        "gallery": [
+          "/assets/images/the-space-default.png",
+          "/assets/images/icons/snacks.png",
+          "/assets/images/about.png"
+        ]
+      },
+      {
+        "image": "/assets/images/the-space-default.png",
+        "title": "ГРАДИНАТА",
+        "description": "Малко, но обичано място за BBQ, почивки и глътка свеж въздух.",
+        "gallery": [
+          "/assets/images/about.png",
+          "/assets/images/icons/flixible-spaces.png",
+          "/assets/images/the-space-default.png",
+          "/assets/images/icons/24.png"
+        ]
+      }
+    ]
+  },
+  "memberships": {
+    "heading": "Не вярваме в скрити такси",
+    "paragraph": "Всичко необходимо за по-добра работа е включено в дневния ви абонамент или членство.",
+    "cards": [
+      {
+        "title": "Flex членство",
+        "price": "€79",
+        "period": "/месец",
+        "inclusions": [
+          "Достъп 24/7",
+          "Работа от всяко свободно бюро",
+          "Тиха стая и телефонна кабина",
+          "Безплатно кафе, чай и снаксове",
+          "Пълен достъп до удобства и събития"
+        ]
+      },
+      {
+        "title": "Resident членство",
+        "price": "€119",
+        "period": "/месец",
+        "inclusions": [
+          "Собствено определено бюро",
+          "Оставяте си настройката както ви харесва",
+          "Допълнителен екран",
+          "Приоритет за кабина и тиха стая",
+          "Възможност за пауза на членството"
+        ]
+      },
+      {
+        "title": "СЕДМИЧЕН ПРОПУСК",
+        "price": "€40",
+        "period": "/седмица",
+        "inclusions": [
+          "Седем последователни дни",
+          "Всички предимства включени",
+          "Всички удобства включени",
+          "Достъп 24/7"
+        ]
+      },
+      {
+        "title": "ДНЕВЕН ПРОПУСК",
+        "price": "€11",
+        "period": "/ден",
+        "inclusions": [
+          "Собствено бюро",
+          "Всички предимства включени",
+          "Всички удобства включени",
+          "Достъп от 08:00 до 20:00"
+        ]
+      }
+    ]
+  },
+  "extras": {
+    "heading": "Не вярваме в скрити такси",
+    "paragraph": "Всичко необходимо за по-добра работа е включено в дневния ви абонамент или членство.",
+    "items": [
+      {
+        "title": "Допълнителни екрани",
+        "icon": "/assets/images/benefit-default-icon3.png"
+      },
+      {
+        "title": "Тапи за фокус",
+        "icon": "/assets/images/benefit-default-icon5.png"
+      },
+      {
+        "title": "Принтер включен",
+        "icon": "/assets/images/benefit-default-icon.png"
+      },
+      {
+        "title": "Контакти навсякъде",
+        "icon": "/assets/images/benefit-default-icon2.png"
+      },
+      {
+        "title": "Канцеларски материали",
+        "icon": "/assets/images/benefit-default-icon4.png"
+      },
+      {
+        "title": "Допълнителни екрани",
+        "icon": "/assets/images/benefit-default-icon2.png"
+      },
+      {
+        "title": "Тапи за фокус",
+        "icon": "/assets/images/benefit-default-icon.png"
+      },
+      {
+        "title": "Принтер включен",
+        "icon": "/assets/images/benefit-default-icon5.png"
+      },
+      {
+        "title": "Контакти навсякъде",
+        "icon": "/assets/images/benefit-default-icon3.png"
+      },
+      {
+        "title": "Допълнителни екрани",
+        "icon": "/assets/images/benefit-default-icon4.png"
+      },
+      {
+        "title": "Тапи за фокус",
+        "icon": "/assets/images/benefit-default-icon5.png"
+      },
+      {
+        "title": "Принтер включен",
+        "icon": "/assets/images/benefit-default-icon2.png"
+      },
+      {
+        "title": "Контакти навсякъде",
+        "icon": "/assets/images/benefit-default-icon.png"
+      }
+    ],
+    "cta": {
+      "label": "Виж най-добрите предимства",
+      "url": "#thank-you"
+    }
+  },
+  "testimonials": {
+    "heading": "Няколко думи от нашите членове",
+    "items": [
+      {
+        "quote": "The place has such a cozy and welcoming atmosphere. The owners are absolute sunshines - they genuinely care about their clients and always go the extra mile to make everyone feel comfortable. They're open to new ideas and are constantly thinking about how to make the coworking space even better. You can really feel the heart and passion behind every decision that has been made.",
+        "name": "Gergana Andreeva"
+      },
+      {
+        "quote": "I've been working at Coworking Space Raboteriya Plovdiv for nearly a year, and it has been an absolute pleasure! The environment is both professional and fun, making it the perfect place to focus and connect with like-minded people. The owners are truly wonderful—friendly, approachable, and always willing to help or enhance the space based on members' needs.",
+        "name": "Anton Tonev"
+      },
+      {
+        "quote": "Such a lovely space which is filled with even lovelier people. The atmosphere is soothing and perfect to work in, it is spacious and welcoming. The desks and work spaces are large and well spaced out, meaning you can stay here all day and get on with any work necessary. There is a kitchen area which is fully equipped with a microwave, kettle, coffee machine and fridge. I really couldn't recommend this space enough.",
+        "name": "Liz Shamsee"
+      },
+      {
+        "quote": "Top place to work, very nice atmosphere! They offer coffee and tea, people are always open for conversation, even for 10 minutes a day it is a great relief from the stressful everyday life. There are two separate rooms, which makes it convenient for holding business meetings. Super fresh!",
+        "name": "Valya Matovska"
+      },
+      {
+        "quote": "A great place where you can combine work with fun. Fresh and pleasant atmosphere with friendly, smiling and radiant people. I recommend!",
+        "name": "Vasil Koychev"
+      },
+      {
+        "quote": "Gorgeous place, I highly recommend it! Very cozy, calm, friendly atmosphere and everything you need to feel good while working!",
+        "name": "Megi Ivanova"
+      },
+      {
+        "quote": "Cws is seriously amazing, It's open 24/7! The environment there makes me be so productive with loads of comfy seating to choose from. It's always clean, plus they've got coffee and snacks, which is a major win. Location is so convenient too, around the corner there is a shop and many street food places. Totally recommend it!",
+        "name": "Maya"
+      },
+      {
+        "quote": "This is my favourite place to get some work done! The atmosphere and design is great. I love that there's amenities to help me get through my long work days at the space. The space is also located in an ideal area, close to many shops and establishments used by students and workers. It honestly feels like a second home, and the owner is so sweet & accommodating, which makes it a pleasure to always come back. I recommend this place to anyone who wants to work in a lovely, comfortable environment.",
+        "name": "Sinat Azeez"
+      },
+      {
+        "quote": "Such a warm and inviting place to get my work done! Not to mention, the management is amazing, always super responsive and makes the space feel like a home away from home ❤️",
+        "name": "Berry Jude"
+      },
+      {
+        "quote": "Absolutely obsessed with this place!! It has everything I need and so much more. Love the chill atmosphere and I'm always able to get so much work done whenever I visit. Plus the owner is amazing and super welcoming. Great place to work. Super comfortable and very well thought of, couldn't have asked for a better place to be!!",
+        "name": "Gamze Zengin"
+      },
+      {
+        "quote": "Really nice co-working place! Owners are chill and fix problems fast. It's cozy, convenient location, and price is fair. Also, new coffee beans are excellent :)",
+        "name": "Ivaylo Petrov"
+      },
+      {
+        "quote": "The best place for coworking in Plovdiv. I highly recommend it 🙌",
+        "name": "Nadejda Ilieva"
+      },
+      {
+        "quote": "Very nice atmosphere, I liked it. Each work area has its own style and feel. It's obvious that it was made with love and care. The prices are competitive. I use it on days when I'm tired of working from home in shorts!",
+        "name": "Martin Gatev"
+      },
+      {
+        "quote": "Very cosy place, extremely polite hosts, nice environment. Highly recommend for teams, events, and freelancers.",
+        "name": "Tsanislav Georgiev"
+      },
+      {
+        "quote": "Whether you're looking for a spacious place to work at, or a quiet one so you can be more focused they have it all. Extremely friendly atmosphere, amazing host, chill vibes and comfy couches. They are the best at what they provide!!",
+        "name": "Kiro Iliev"
+      }
+    ]
+  },
+  "thankYou": {
+    "heading": "Присъединете се към общност, не само към бюро",
+    "paragraphs": [
+      "Всеки месец организираме събития за членове – от тематични партита и BBQ в градината до спокойни вечери с игри.",
+      "Вярваме, че споделените положителни преживявания водят до щастие и продуктивност. Raboteriya не е просто коворкинг – място за връзки, приятелства и принадлежност."
+    ],
+    "galleryImages": [
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png",
+      "/assets/images/the-space-default.png"
+    ]
+  },
+  "contact": {
+    "heading": "Готови ли сте да се присъедините?",
+    "description": "Обадете ни се или попълнете формата.\nЩе ви отговорим възможно най-скоро.",
+    "note": "Моля, запазвайте посещението си поне един ден предварително, за да сме сигурни, че има място за вас.",
+    "email": "cwsaprilov@gmail.com",
+    "phone": "+359 897 005 887",
+    "address": "bul. Vasil Aprilov 49, Plovdiv, 4000",
+    "formPlaceholder": "Кажете ни кога искате да дойдете или оставете телефон и ще ви се обадим",
+    "submitLabel": "Изпрати съобщението",
+    "socialsHeading": "Виж какво се случва в Raboteriya",
+    "socials": [
+      {
+        "platform": "Facebook",
+        "url": "https://facebook.com/raboteriya",
+        "icon": "facebook"
+      },
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/raboteriya",
+        "icon": "instagram"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/company/raboteriya",
+        "icon": "linkedin"
+      },
+      {
+        "platform": "TikTok",
+        "url": "https://tiktok.com/@raboteriya",
+        "icon": "tiktok"
+      }
+    ]
+  },
+  "features": [],
+  "socialProof": [],
+  "location": {
+    "heading": "Локация",
+    "address": "bul. Vasil Aprilov 49, Plovdiv",
+    "directions": "Намираме се до магазин „Porta Nova“ или срещу Burger Chef.",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.3488094759623!2d24.730150376692606!3d42.14282204879763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd10d9e8c4cad%3A0x9657eeb8b56554e7!2sRABOTERIYA%20COWORKING%20SPACE%20PLOVDIV!5e0!3m2!1sen!2sbg!4v1776067819622!5m2!1sen!2sbg",
+    "mapTitle": "Raboteriya Coworking Space Plovdiv в Google Maps"
+  },
+  "faq": {
+    "subheading": "Знаем, че изборът на коворкинг води до въпроси. Ето отговорите на най-често задаваните.",
+    "items": [
+      {
+        "question": "Трябва ли да резервирам предварително?",
+        "answer": "Временен отговор."
+      },
+      {
+        "question": "Какво е положението с паркирането?",
+        "answer": "Временен отговор."
+      },
+      {
+        "question": "Има ли места за хранене наблизо?",
+        "answer": "Временен отговор."
+      },
+      {
+        "question": "Как става влизането в пространството?",
+        "answer": "Временен отговор."
+      },
+      {
+        "question": "Мога ли да посетя пространството преди да реша?",
+        "answer": "Временен отговор."
+      },
+      {
+        "question": "Има ли договори при членствата?",
+        "answer": "Временен отговор."
+      }
+    ]
+  }
+}

@@ -1,12 +1,13 @@
 {# FAQ — centered heading + accordion list #}
+{% from "macros/i18n.njk" import localeClass %}
 <section class="section-padding bg-page" id="faq" data-faq>
-  <div class="container-custom">
-    {% set f = home.faq if home and home.faq else {} %}
-
+  {% for locale in i18n.locales %}
+  {% set f = i18n.home[locale].faq %}
+  <div class="container-custom {{ localeClass(locale) }}" data-locale="{{ locale }}">
     <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-4xl md:text-5xl font-black tracking-tight text-gray-900">FAQ</h2>
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight text-gray-900">{{ i18n.ui[locale].faqTitle }}</h2>
       <p class="mt-4 text-base md:text-lg text-gray-700">
-        {{ f.subheading | default("We know choosing a coworking space comes with questions. Here are the answers to the ones we’re asked most often.") }}
+        {{ f.subheading | default("We know choosing a coworking space comes with questions. Here are the answers to the ones we're asked most often.") }}
       </p>
     </div>
 
@@ -35,5 +36,5 @@
     </div>
     {% endif %}
   </div>
+  {% endfor %}
 </section>
-

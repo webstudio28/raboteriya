@@ -1,3 +1,4 @@
+{% from "macros/i18n.njk" import localeClass %}
 <header class="site-header sticky top-0 z-[100] bg-page transition-shadow duration-200" id="site-header">
   <div class="container-custom flex items-center justify-between py-4">
     <a href="{{ '/' | url }}" class="font-semibold text-lg flex items-center gap-2" aria-label="{{ site.brand.name }} home">
@@ -7,39 +8,52 @@
         <span class="text-brand-primary">{{ site.brand.name }}</span>
       {% endif %}
     </a>
-    <div class="hidden lg:flex items-center gap-8">
-      <nav class="flex items-center gap-5 xl:gap-6" aria-label="Main">
-        {% for item in site.nav.header %}
+    <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+      {% for locale in i18n.locales %}
+      {% set nav = i18n.nav[locale] %}
+      <nav class="flex items-center gap-5 xl:gap-6 {{ localeClass(locale) }}" data-locale="{{ locale }}" aria-label="Main">
+        {% for item in nav.header %}
           {% if not item.hideOnDesktop %}
           <a href="{{ item.url }}" class="text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap">{{ item.label }}</a>
           {% endif %}
         {% endfor %}
       </nav>
-      {% if site.nav.headerCta %}
-      <a href="{{ site.nav.headerCta.url }}" class="px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 shrink-0">{{ site.nav.headerCta.label }}</a>
+      {% endfor %}
+      {% include "lang-toggle.njk" %}
+      {% for locale in i18n.locales %}
+      {% set nav = i18n.nav[locale] %}
+      {% if nav.headerCta %}
+      <a href="{{ nav.headerCta.url }}" class="{{ localeClass(locale) }} px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 shrink-0" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
       {% endif %}
+      {% endfor %}
     </div>
-    <button type="button" id="mobile-menu-toggle" class="mobile-burger lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/25" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
-      <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
-      <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out"></span>
-    </button>
+    <div class="flex items-center gap-2 lg:hidden">
+      {% include "lang-toggle.njk" %}
+      <button type="button" id="mobile-menu-toggle" class="mobile-burger flex flex-col justify-center items-center w-10 h-10 rounded-xl text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/25" aria-label="{{ i18n.ui.en.openMenu }}" data-i18n-ui="openMenu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
+        <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
+        <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out"></span>
+      </button>
+    </div>
   </div>
 </header>
 
 <div id="mobile-menu-backdrop" class="fixed inset-0 z-[110] lg:hidden bg-black/45 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true" hidden></div>
 <div id="mobile-menu" class="mobile-menu-panel fixed top-0 right-0 bottom-0 w-[85%] max-w-md z-[120] lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out bg-page border-l border-gray-200 shadow-2xl" aria-hidden="true" hidden>
   <div class="h-full flex flex-col pt-16 pb-8 px-6 overflow-y-auto">
-    <button type="button" id="mobile-menu-close" class="absolute top-4 right-4 p-2 rounded-full text-gray-900 hover:bg-gray-200/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/25" aria-label="Close menu">
+    <button type="button" id="mobile-menu-close" class="absolute top-4 right-4 p-2 rounded-full text-gray-900 hover:bg-gray-200/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/25" aria-label="{{ i18n.ui.en.closeMenu }}" data-i18n-ui="closeMenu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
-    <nav class="flex flex-col gap-3 mt-2" aria-label="Mobile">
-      {% for item in site.nav.header %}
+    {% for locale in i18n.locales %}
+    {% set nav = i18n.nav[locale] %}
+    <nav class="flex flex-col gap-3 mt-2 {{ localeClass(locale) }}" data-locale="{{ locale }}" aria-label="Mobile">
+      {% for item in nav.header %}
         <a href="{{ item.url }}" class="mobile-menu-link rounded-xl border-2 border-gray-900/15 px-5 py-4 text-base font-medium text-gray-900 hover:bg-gray-900/5 transition-colors">{{ item.label }}</a>
       {% endfor %}
-      {% if site.nav.headerCta %}
-        <a href="{{ site.nav.headerCta.url }}" class="mobile-menu-link mt-1 rounded-xl bg-gray-900 px-5 py-4 text-center text-base font-semibold text-white hover:bg-gray-800 transition-colors">{{ site.nav.headerCta.label }}</a>
+      {% if nav.headerCta %}
+        <a href="{{ nav.headerCta.url }}" class="mobile-menu-link mt-1 rounded-xl bg-gray-900 px-5 py-4 text-center text-base font-semibold text-white hover:bg-gray-800 transition-colors">{{ nav.headerCta.label }}</a>
       {% endif %}
     </nav>
+    {% endfor %}
   </div>
 </div>

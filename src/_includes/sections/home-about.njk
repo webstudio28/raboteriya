@@ -1,33 +1,37 @@
 {# About — mobile: title → image → copy + CTA; desktop: copy left, image right #}
+{% from "macros/i18n.njk" import localeClass %}
 <section class="section-padding overflow-x-hidden bg-page" id="about">
   <div class="container-custom">
-    {% set a = home.about if home and home.about else {} %}
+    {% set aEn = i18n.home.en.about %}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div class="text-center text-gray-900 lg:text-left">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight">
-          {{ a.headingLine1 | default('Raboteriya is where') }}<br>
-          {{ a.headingLine2 | default('"working from home"') }}<br>
-          {{ a.headingLine3 | default('finally feels good again.') }}
-        </h2>
-        {% if (a.imageMobile or a.image) %}
-        <div class="mt-6 lg:hidden">
-          <img src="{{ a.imageMobile or a.image }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+        {% for locale in i18n.locales %}
+        {% set a = i18n.home[locale].about %}
+        <div class="{{ localeClass(locale) }}" data-locale="{{ locale }}">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight">
+            {{ a.headingLine1 | default('Raboteriya is where') }}<br>
+            {{ a.headingLine2 | default('"working from home"') }}<br>
+            {{ a.headingLine3 | default('finally feels good again.') }}
+          </h2>
+          <div class="mt-6 lg:hidden">
+            <img src="{{ (a.imageMobile or a.image) | url }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+          </div>
+          <div class="mt-6 md:mt-8 space-y-4 text-lg text-gray-900">
+            {% for p in (a.paragraphs or []) %}
+            <p>{{ p }}</p>
+            {% endfor %}
+          </div>
+          {% if a.cta and a.cta.label %}
+          <div class="mt-8">
+            <a href="{{ a.cta.url }}" class="inline-block px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-transparent text-gray-900 font-extrabold border-[3px] border-gray-900 hover:bg-gray-900 hover:text-white transition-colors">{{ a.cta.label }}</a>
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
-        <div class="mt-6 md:mt-8 space-y-4 text-lg text-gray-900">
-          {% for p in (a.paragraphs or []) %}
-          <p>{{ p }}</p>
-          {% endfor %}
-        </div>
-        {% if a.cta and a.cta.label %}
-        <div class="mt-8">
-          <a href="{{ a.cta.url }}" class="inline-block px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-transparent text-gray-900 font-extrabold border-[3px] border-gray-900 hover:bg-gray-900 hover:text-white transition-colors">{{ a.cta.label }}</a>
-        </div>
-        {% endif %}
+        {% endfor %}
       </div>
-      {% if a.image %}
+      {% if aEn.image %}
       <div class="hidden lg:block">
-        <img src="{{ a.image }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+        <img src="{{ aEn.image | url }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
       </div>
       {% endif %}
     </div>

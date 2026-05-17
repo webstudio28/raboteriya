@@ -1,4 +1,4 @@
-{# Visit booking — opened from pricing "Get started" CTAs #}
+{# Visit booking — opened from pricing CTAs #}
 <dialog
   id="booking-modal"
   class="booking-modal fixed inset-0 z-[200] m-0 h-full max-h-none w-full max-w-none overflow-y-auto border-0 bg-transparent p-4 open:flex open:items-center open:justify-center"
@@ -10,23 +10,24 @@
         type="button"
         id="booking-modal-close"
         class="-m-2 rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
-        aria-label="Close"
+        aria-label="{{ i18n.ui.en.close }}"
+        data-i18n-ui="close"
       >
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
     </div>
 
     <div id="booking-modal-form-view">
-      <h2 id="booking-modal-title" class="mt-1 text-xl font-black leading-tight tracking-tight text-gray-900 sm:text-2xl">
-        Book your visit
+      <h2 id="booking-modal-title" class="mt-1 text-xl font-black leading-tight tracking-tight text-gray-900 sm:text-2xl" data-i18n-modal="bookingTitle">
+        {{ i18n.modals.en.bookingTitle }}
       </h2>
-      <p class="mt-2 text-sm leading-relaxed text-gray-600">
-        Choose a date and time for your visit
+      <p class="mt-2 text-sm leading-relaxed text-gray-600" data-i18n-modal="bookingSubtitle">
+        {{ i18n.modals.en.bookingSubtitle }}
       </p>
 
       <form id="booking-modal-form" class="mt-6 flex flex-col gap-4" action="https://api.web3forms.com/submit" method="post" novalidate>
         <input type="hidden" name="access_key" value="2b37c752-1bab-422c-ae2f-332fb1ae5d8d">
-        <input type="hidden" name="subject" id="booking-form-subject" value="Raboteriya — visit booking request">
+        <input type="hidden" name="subject" id="booking-form-subject" value="{{ i18n.modals.en.bookingSubject }}" data-i18n-modal="bookingSubject">
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <input type="hidden" id="booking-visit-date" name="visit_date" value="">
         <input type="hidden" id="booking-visit-time" name="visit_time" value="">
@@ -37,7 +38,7 @@
         <p id="booking-form-error" class="hidden rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700" role="alert"></p>
 
         <div>
-          <label for="booking-name" class="mb-1.5 block text-sm font-medium text-gray-700">Name</label>
+          <label for="booking-name" class="mb-1.5 block text-sm font-medium text-gray-700" data-i18n-modal="bookingName">{{ i18n.modals.en.bookingName }}</label>
           <input
             id="booking-name"
             name="name"
@@ -45,12 +46,14 @@
             autocomplete="name"
             required
             class="booking-field w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none transition-colors focus:border-gray-900"
-            placeholder="Your name"
+            placeholder="{{ i18n.modals.en.namePlaceholder }}"
+            data-i18n-modal="namePlaceholder"
+            data-i18n-placeholder
           >
         </div>
 
         <div>
-          <label for="booking-email" class="mb-1.5 block text-sm font-medium text-gray-700">Email</label>
+          <label for="booking-email" class="mb-1.5 block text-sm font-medium text-gray-700" data-i18n-modal="bookingEmail">{{ i18n.modals.en.bookingEmail }}</label>
           <input
             id="booking-email"
             name="email"
@@ -58,12 +61,14 @@
             autocomplete="email"
             required
             class="booking-field w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none transition-colors focus:border-gray-900"
-            placeholder="you@example.com"
+            placeholder="{{ i18n.modals.en.emailPlaceholder }}"
+            data-i18n-modal="emailPlaceholder"
+            data-i18n-placeholder
           >
         </div>
 
         <div>
-          <label for="booking-phone" class="mb-1.5 block text-sm font-medium text-gray-700">Phone</label>
+          <label for="booking-phone" class="mb-1.5 block text-sm font-medium text-gray-700" data-i18n-modal="bookingPhone">{{ i18n.modals.en.bookingPhone }}</label>
           <input
             id="booking-phone"
             name="phone"
@@ -77,7 +82,7 @@
 
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div class="booking-picker-wrap relative">
-            <span class="mb-1.5 block text-sm font-medium text-gray-700">Date</span>
+            <span class="mb-1.5 block text-sm font-medium text-gray-700" data-i18n-modal="bookingDate">{{ i18n.modals.en.bookingDate }}</span>
             <button
               type="button"
               id="booking-date-trigger"
@@ -86,17 +91,17 @@
               aria-expanded="false"
               aria-controls="booking-date-panel"
             >
-              <span id="booking-date-label" class="booking-picker-label text-gray-400">Select date</span>
+              <span id="booking-date-label" class="booking-picker-label text-gray-400" data-i18n-modal="bookingSelectDate">{{ i18n.modals.en.bookingSelectDate }}</span>
               <svg class="booking-picker-chevron h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
-            <div id="booking-date-panel" class="booking-picker-panel hidden" role="dialog" aria-label="Choose date">
+            <div id="booking-date-panel" class="booking-picker-panel hidden" role="dialog" data-i18n-modal="bookingChooseDate" aria-label="{{ i18n.modals.en.bookingChooseDate }}">
               <div class="booking-calendar">
                 <div class="booking-calendar-nav">
-                  <button type="button" class="booking-calendar-prev rounded-lg p-2 text-gray-600 hover:bg-gray-100" aria-label="Previous month">
+                  <button type="button" class="booking-calendar-prev rounded-lg p-2 text-gray-600 hover:bg-gray-100" data-i18n-modal="bookingPrevMonth" aria-label="{{ i18n.modals.en.bookingPrevMonth }}">
                     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
                   </button>
                   <span id="booking-calendar-month" class="text-sm font-semibold text-gray-900"></span>
-                  <button type="button" class="booking-calendar-next rounded-lg p-2 text-gray-600 hover:bg-gray-100" aria-label="Next month">
+                  <button type="button" class="booking-calendar-next rounded-lg p-2 text-gray-600 hover:bg-gray-100" data-i18n-modal="bookingNextMonth" aria-label="{{ i18n.modals.en.bookingNextMonth }}">
                     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                   </button>
                 </div>
@@ -109,7 +114,7 @@
           </div>
 
           <div class="booking-picker-wrap relative">
-            <span class="mb-1.5 block text-sm font-medium text-gray-700">Time</span>
+            <span class="mb-1.5 block text-sm font-medium text-gray-700" data-i18n-modal="bookingTime">{{ i18n.modals.en.bookingTime }}</span>
             <button
               type="button"
               id="booking-time-trigger"
@@ -118,10 +123,10 @@
               aria-expanded="false"
               aria-controls="booking-time-panel"
             >
-              <span id="booking-time-label" class="booking-picker-label text-gray-400">Select time</span>
+              <span id="booking-time-label" class="booking-picker-label text-gray-400" data-i18n-modal="bookingSelectTime">{{ i18n.modals.en.bookingSelectTime }}</span>
               <svg class="booking-picker-chevron h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
-            <div id="booking-time-panel" class="booking-picker-panel hidden" role="listbox" aria-label="Choose time">
+            <div id="booking-time-panel" class="booking-picker-panel hidden" role="listbox" data-i18n-modal="bookingChooseTime" aria-label="{{ i18n.modals.en.bookingChooseTime }}">
               <div class="booking-time-wheel">
                 <div class="booking-time-wheel-fade booking-time-wheel-fade--top" aria-hidden="true"></div>
                 <ul id="booking-time-list" class="booking-time-list"></ul>
@@ -132,8 +137,8 @@
           </div>
         </div>
 
-        <p class="text-sm leading-snug text-gray-500">
-          We'll call you to confirm your visit.
+        <p class="text-sm leading-snug text-gray-500" data-i18n-modal="bookingConfirmNote">
+          {{ i18n.modals.en.bookingConfirmNote }}
         </p>
 
         <div class="pt-1">
@@ -141,8 +146,9 @@
             type="submit"
             id="booking-modal-submit"
             class="inline-flex w-full justify-center rounded-xl bg-gray-900 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-gray-800"
+            data-i18n-modal="bookingSubmit"
           >
-            Submit
+            {{ i18n.modals.en.bookingSubmit }}
           </button>
         </div>
       </form>
@@ -152,16 +158,17 @@
       <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600" aria-hidden="true">
         <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
-      <h2 class="mt-5 text-xl font-black text-gray-900 sm:text-2xl">Request received</h2>
-      <p class="mt-3 text-base leading-relaxed text-gray-600">
-        Thanks! We've got your details and will call you shortly to confirm your visit.
+      <h2 class="mt-5 text-xl font-black text-gray-900 sm:text-2xl" data-i18n-modal="bookingSuccessTitle">{{ i18n.modals.en.bookingSuccessTitle }}</h2>
+      <p class="mt-3 text-base leading-relaxed text-gray-600" data-i18n-modal="bookingSuccessBody">
+        {{ i18n.modals.en.bookingSuccessBody }}
       </p>
       <button
         type="button"
         id="booking-success-done"
         class="mt-8 inline-flex w-full justify-center rounded-xl bg-gray-900 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-gray-800"
+        data-i18n-modal="bookingDone"
       >
-        Done
+        {{ i18n.modals.en.bookingDone }}
       </button>
     </div>
   </div>

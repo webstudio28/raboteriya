@@ -1,0 +1,7 @@
+{% macro localeClass(locale) -%}
+i18n-locale{%- if locale != 'en' %} i18n-hidden{%- endif %}
+{%- endmacro %}
+
+{% macro localeAttr(locale) -%}
+data-locale="{{ locale }}" class="{{ localeClass(locale) }}"
+{%- endmacro %}

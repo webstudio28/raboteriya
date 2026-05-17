@@ -1,9 +1,11 @@
 {# The space — centered heading; 4 cards with bg image, title, bottom overlay + text #}
+{% from "macros/i18n.njk" import localeClass %}
 <section class="section-padding bg-page" id="the-space">
-  <div class="container-custom">
-    {% set s = home.theSpace if home and home.theSpace else {} %}
-    {% set spaceTitle1 = s.headingLine1 | default('Take a look inside') %}
-    {% set spaceTitle2 = s.headingLine2 | default('your new favourite workspace') %}
+  {% for locale in i18n.locales %}
+  {% set s = i18n.home[locale].theSpace %}
+  {% set spaceTitle1 = s.headingLine1 | default('Take a look inside') %}
+  {% set spaceTitle2 = s.headingLine2 | default('your new favourite workspace') %}
+  <div class="container-custom {{ localeClass(locale) }}" data-locale="{{ locale }}">
     <div class="text-center">
       <h2 class="mx-auto max-w-2xl text-3xl font-black leading-tight text-gray-900 md:text-4xl lg:text-5xl">
         {{- spaceTitle1 }} <br class="md:hidden" aria-hidden="true" />{{ spaceTitle2 -}}
@@ -26,7 +28,7 @@
           data-gallery-images="{% for img in galleryImgs %}{{ img | url }}{% if not loop.last %}|{% endif %}{% endfor %}"
           data-gallery-title="{{ titlePlain | escape }}"
           class="absolute inset-0 z-10 cursor-pointer border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
-          aria-label="View photos: {{ titlePlain | escape }}"
+          aria-label="{{ i18n.ui[locale].viewPhotos }}: {{ titlePlain | escape }}"
         >
           <span class="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10 group-focus-within:bg-black/15" aria-hidden="true"></span>
         </button>
@@ -39,4 +41,5 @@
       </div>
     </div>
   </div>
+  {% endfor %}
 </section>

@@ -18,6 +18,9 @@
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | url }}">
   <link rel="preload" href="{{ '/assets/fonts/HelveticaNowDisplay-Black.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+  <script>
+    window.__I18N__ = {{ i18n | dump | safe }};
+  </script>
 </head>
 <body{% if site and site.colors %} style="--color-brand-primary: {{ site.colors.primary }}; --color-brand-secondary: {{ site.colors.secondary }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
   {% include "header.njk" %}
@@ -25,6 +28,7 @@
   {% include "discount-modal.njk" %}
   {% include "booking-modal.njk" %}
   {% include "space-gallery-modal.njk" %}
+  <script src="{{ '/assets/js/i18n.js' | url }}"></script>
   <script src="{{ '/assets/js/header-scroll.js' | url }}"></script>
   <script src="{{ '/assets/js/mobile-menu.js' | url }}"></script>
   <script src="{{ '/assets/js/extras-strip.js' | url }}"></script>

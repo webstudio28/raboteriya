@@ -1,0 +1,12 @@
+{% from "macros/i18n.njk" import localeClass %}
+<div class="lang-toggle flex items-center rounded-lg border border-gray-300/80 bg-white/80 p-0.5 text-sm font-semibold leading-none" role="group" aria-label="{{ i18n.ui.en.languageToggle }}">
+  {% for locale in i18n.locales %}
+  <button
+    type="button"
+    class="lang-toggle__btn min-w-[2.25rem] rounded-md px-2 py-1.5 transition-colors{% if locale == i18n.defaultLocale %} is-active bg-gray-900 text-white{% else %} text-gray-600 hover:text-gray-900{% endif %}"
+    data-lang="{{ locale }}"
+    aria-pressed="{{ 'true' if locale == i18n.defaultLocale else 'false' }}"
+    aria-label="{{ i18n.localeLabels[locale] }}"
+  >{{ i18n.localeLabels[locale] }}</button>
+  {% endfor %}
+</div>

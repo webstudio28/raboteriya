@@ -1,7 +1,7 @@
 `(function () {
   var WEB3FORMS_URL = "https://api.web3forms.com/submit";
   var dialog = document.getElementById("discount-modal");
-  var trigger = document.getElementById("discount-modal-trigger");
+  var triggers = document.querySelectorAll(".discount-modal-trigger");
   var closeBtn = document.getElementById("discount-modal-close");
   var form = document.getElementById("discount-modal-form");
   var consent = document.getElementById("discount-consent");
@@ -98,9 +98,11 @@
   if (consent) consent.addEventListener("change", syncSubmitDisabled);
   syncSubmitDisabled();
 
-  if (trigger && dialog) {
-    trigger.addEventListener("click", function () {
-      openModal();
+  if (triggers.length && dialog) {
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        openModal();
+      });
     });
   }
 

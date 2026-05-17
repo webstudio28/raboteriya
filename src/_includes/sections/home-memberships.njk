@@ -1,8 +1,11 @@
 {# Memberships + included benefits — intro, extras carousel, pricing cards #}
+{% from "macros/i18n.njk" import localeClass %}
 <section class="section-padding bg-page" id="memberships">
+  {% for locale in i18n.locales %}
+  {% set m = i18n.home[locale].memberships %}
+  {% set e = i18n.home[locale].extras %}
+  <div class="{{ localeClass(locale) }}" data-locale="{{ locale }}">
   <div class="container-custom">
-    {% set m = home.memberships if home and home.memberships else {} %}
-    {% set e = home.extras if home and home.extras else {} %}
     <div class="text-center">
       <h2 class="text-3xl font-black leading-tight text-gray-900 md:text-4xl lg:text-5xl">{{ m.heading | default("We don't believe in hidden fees") }}</h2>
       <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-900 md:mt-8">{{ m.paragraph | default("Everything you need to work better is included in your day pass or membership.") }}</p>
@@ -14,7 +17,7 @@
       <div class="extras-strip-set">
         {% for item in (e.items or []) %}
         <div class="extras-card">
-          <img src="{{ item.icon | default('/assets/images/benefit-default-icon.png') }}" alt="" class="extras-card__icon" width="52" height="52" draggable="false" loading="lazy" />
+          <img src="{{ item.icon | default('/assets/images/benefit-default-icon.png') | url }}" alt="" class="extras-card__icon" width="52" height="52" draggable="false" loading="lazy" />
           <p class="extras-card__title">{{ item.title }}</p>
         </div>
         {% endfor %}
@@ -22,7 +25,7 @@
       <div class="extras-strip-set">
         {% for item in (e.items or []) %}
         <div class="extras-card">
-          <img src="{{ item.icon | default('/assets/images/benefit-default-icon.png') }}" alt="" class="extras-card__icon" width="52" height="52" draggable="false" loading="lazy" />
+          <img src="{{ item.icon | default('/assets/images/benefit-default-icon.png') | url }}" alt="" class="extras-card__icon" width="52" height="52" draggable="false" loading="lazy" />
           <p class="extras-card__title">{{ item.title }}</p>
         </div>
         {% endfor %}
@@ -68,7 +71,7 @@
           data-membership-plan="{{ card.title }}"
           data-membership-price="{{ card.price }}{{ card.period }}"
         >
-          Book a visit
+          {{ i18n.ui[locale].bookVisit }}
           <span aria-hidden="true" class="text-lg leading-none">→</span>
         </button>
       </div>
@@ -77,4 +80,6 @@
     </div>
     </div>
   </div>
+  </div>
+  {% endfor %}
 </section>
