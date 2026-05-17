@@ -272,7 +272,9 @@
       var phone = phoneEl && phoneEl.value ? phoneEl.value.trim() : "";
       var messageText = msgEl && msgEl.value ? msgEl.value.trim() : "";
       if (!name) { showError(form, "Please enter your name."); return; }
+      if (!phone) { showError(form, "Please enter your phone number."); return; }
       if (!email || email.indexOf("@") < 1) { showError(form, "Please enter a valid email address."); return; }
+      if (!messageText) { showError(form, "Please enter your message."); return; }
       var subjectLine = "Raboteriya — " + name + " — contact enquiry";
       var adminMessage =
         "Raboteriya — contact form enquiry\n\nName: " + name + "\nEmail: " + email +

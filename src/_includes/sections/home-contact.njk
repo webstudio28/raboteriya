@@ -66,12 +66,12 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input type="text" name="name" placeholder="{{ ui.contactNamePlaceholder }}" required
               class="w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none focus:border-gray-900 transition-colors">
-            <input type="tel" name="phone" placeholder="{{ ui.contactPhonePlaceholder }}"
+            <input type="tel" name="phone" placeholder="{{ ui.contactPhonePlaceholder }}" required
               class="w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none focus:border-gray-900 transition-colors">
           </div>
           <input type="email" name="email" placeholder="{{ ui.contactEmailPlaceholder }}" required
             class="w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none focus:border-gray-900 transition-colors">
-          <textarea name="enquiry" rows="5" placeholder="{{ c.formPlaceholder | default('Let us know when you would like to visit, or simply leave your phone number and we will give you a call') }}"
+          <textarea name="enquiry" rows="5" placeholder="{{ c.formPlaceholder | default('Let us know when you would like to visit, or simply leave your phone number and we will give you a call') }}" required
             class="w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none focus:border-gray-900 transition-colors resize-none"></textarea>
           <div>
             <button type="submit"
