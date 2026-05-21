@@ -3,32 +3,84 @@
 <section class="section-padding bg-page" id="testimonials">
   {% for locale in i18n.locales %}
   {% set t = i18n.home[locale].testimonials %}
+  {% set googleReviewsUrl = "https://www.google.com/search?sca_esv=52562783aded96c3&sxsrf=ANbL-n76SxJCXiTo8_LUUzZnwTSeLPJWow:1779388617676&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOS_Wvlvk45gwnMqgeS_m485ALUgtloUrSlMuun_7J1HLwT0AZ8qa87tpfNAlnUWQbYON5wCYntPGlArklB3vej2x0LH4jQJsIE2RrvypnC6Gycrru_MIGMG4ERxaOVtUO1Iwim0%3D&q=RABOTERIYA+COWORKING+SPACE+PLOVDIV+%D0%9E%D1%82%D0%B7%D0%B8%D0%B2%D0%B8&sa=X&ved=2ahUKEwiBiOWTg8uUAxVBRvEDHey3JO8Q0bkNegQIKhAH&biw=1600&bih=689&dpr=1.2" %}
+  {% set readAllLabel = "Read all on Google" %}
+  {% set googleLabel = "Google" %}
+  {% set defaultHeading = "Our Google love notes" %}
+  {% if locale == "bg" %}
+    {% set readAllLabel = "Виж всички в Google" %}
+    {% set defaultHeading = "Нашите Google любовни бележки" %}
+  {% endif %}
   <div class="{{ localeClass(locale) }}" data-locale="{{ locale }}">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">{{ t.heading | default('A few words from our members') }}</h2>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">{{ t.heading | default(defaultHeading) }}</h2>
+      <div class="mt-6 md:mt-8 flex flex-col items-center gap-3 text-gray-900">
+        <div class="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2">
+          <span class="text-sm font-semibold" aria-label="Google">
+            <span class="text-blue-600">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span><span class="text-blue-600">g</span><span class="text-green-600">l</span><span class="text-red-500">e</span>
+          </span>
+          <span class="text-sm text-gray-700">•</span>
+          <span class="text-sm font-semibold">5.0</span>
+          <span class="flex gap-0.5 text-sm text-yellow-500" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </span>
+          <a class="text-sm font-medium text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
+             href="{{ googleReviewsUrl }}" target="_blank" rel="noopener noreferrer">
+            {{ readAllLabel }}
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="testimonials-strip-wrapper mt-12 md:mt-16 pb-8 md:pb-12">
       <div class="testimonials-strip" aria-label="Member testimonials">
         <div class="testimonials-strip-set">
           {% for item in (t.items or []) %}
-          <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col">
-            <div class="flex gap-0.5 mb-4" aria-hidden="true">
-              <span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span>
+          {% set initial = (item.name | default('G') | first) %}
+          <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col rounded-2xl border border-gray-200 bg-white">
+            <div class="flex items-start gap-3">
+              <div class="h-10 w-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 font-semibold">
+                {{ initial | upper }}
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-3">
+                  <p class="text-gray-900 font-semibold truncate">{{ item.name }}</p>
+                  <span class="text-xs text-gray-500">{{ googleLabel }}</span>
+                </div>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="flex gap-0.5 text-sm text-yellow-500" aria-hidden="true">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </span>
+                  <span class="text-xs text-gray-500">5.0</span>
+                </div>
+              </div>
             </div>
-            <p class="text-gray-900 font-normal not-italic flex-1">"{{ item.quote }}"</p>
-            <p class="mt-4 text-gray-700 font-medium">– {{ item.name }}</p>
+            <p class="mt-4 text-gray-900 font-normal not-italic flex-1 leading-relaxed">{{ item.quote }}</p>
           </div>
           {% endfor %}
         </div>
         <div class="testimonials-strip-set">
           {% for item in (t.items or []) %}
-          <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col">
-            <div class="flex gap-0.5 mb-4" aria-hidden="true">
-              <span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span><span class="text-black">★</span>
+          {% set initial = (item.name | default('G') | first) %}
+          <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col rounded-2xl border border-gray-200 bg-white">
+            <div class="flex items-start gap-3">
+              <div class="h-10 w-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 font-semibold">
+                {{ initial | upper }}
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-3">
+                  <p class="text-gray-900 font-semibold truncate">{{ item.name }}</p>
+                  <span class="text-xs text-gray-500">{{ googleLabel }}</span>
+                </div>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="flex gap-0.5 text-sm text-yellow-500" aria-hidden="true">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </span>
+                  <span class="text-xs text-gray-500">5.0</span>
+                </div>
+              </div>
             </div>
-            <p class="text-gray-900 font-normal not-italic flex-1">"{{ item.quote }}"</p>
-            <p class="mt-4 text-gray-700 font-medium">– {{ item.name }}</p>
+            <p class="mt-4 text-gray-900 font-normal not-italic flex-1 leading-relaxed">{{ item.quote }}</p>
           </div>
           {% endfor %}
         </div>
