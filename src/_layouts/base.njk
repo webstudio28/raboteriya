@@ -17,6 +17,93 @@
   <meta name="twitter:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | url }}">
   <link rel="apple-touch-icon" href="{{ '/favicon.png' | url }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Raboteriya Coworking Space Plovdiv",
+    "alternateName": "Raboteriya",
+    "url": "https://raboteriya.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://raboteriya.com/assets/images/logo.png"
+    },
+    "image": "https://raboteriya.com/assets/images/about.png",
+    "description": "A homey coworking space in Plovdiv for freelancers and remote workers. Day pass from €11, monthly memberships from €79. Members get 24/7 keycard access. Located at bul. Vasil Aprilov 49, close to Plovdiv city centre. Staff available Monday–Sunday 08:00–20:00.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "bul. Vasil Aprilov 49",
+      "addressLocality": "Plovdiv",
+      "postalCode": "4000",
+      "addressCountry": "BG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.14282,
+      "longitude": 24.73015
+    },
+    "telephone": "+359894431048",
+    "email": "cwsaprilov@gmail.com",
+    "openingHours": "Mo-Su 08:00-20:00",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR, BGN",
+    "sameAs": [
+      "https://www.facebook.com/raboteriya",
+      "https://www.instagram.com/raboteriya",
+      "https://www.linkedin.com/company/coworking-space-aprilov/",
+      "https://www.tiktok.com/@raboteriya"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": "22"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free High-Speed WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Static IP WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "24/7 Member Access", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Private Phone Booth", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Quiet Focus Room", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Coffee and Tea", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Snacks and Fresh Fruits", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Extra Monitors", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Standing Desks", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Printing", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Street Parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Garden", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Lounge Area", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "PlayStation", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Company Address Registration", "value": true }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for item in home.faq.items %}
+      {% if item.list %}
+      {% set faqAnswer = item.answer + " " + (item.list | join(". ")) %}
+      {% if item.answerFooter %}{% set faqAnswer = faqAnswer + " " + item.answerFooter %}{% endif %}
+      {% else %}
+      {% set faqAnswer = item.answer %}
+      {% endif %}
+      {
+        "@type": "Question",
+        "name": {{ item.question | dump | safe }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ faqAnswer | dump | safe }}
+        }
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
   <link rel="preload" href="{{ '/assets/fonts/HelveticaNowDisplay-Black.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}?v={{ stylesheetVersion }}">
   <script>

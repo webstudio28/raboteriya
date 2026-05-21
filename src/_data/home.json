@@ -14,8 +14,8 @@
       "It's warm. It's calm. It feels like people, not just desks.",
       "Enjoy fast wifi, cozy corners, and a community-oriented coworking space right in the heart of Plovdiv."
     ],
-    "image": "/assets/images/about.png",
-    "imageMobile": "/assets/images/about-mobile.png",
+    "image": "/assets/images/about.jpg",
+    "imageMobile": "/assets/images/about-mobile.jpg",
     "cta": { "label": "See your options & pricing", "url": "#memberships" }
   },
   "whyRaboteriya": {
@@ -35,31 +35,35 @@
     "headingLine2": "your new favourite workspace",
     "cards": [
       {
-        "image": "/assets/images/community-space/community-cover.png",
+        "image": "/assets/images/cs2.jpg",
         "title": "COMMUNITY\nSPACE",
         "description": "A space with atmosphere where working next to others feels motivating, not distracting.",
         "gallery": [
-          "/assets/images/community-space/community1.png"
+          "/assets/images/cs1.jpg",
+          "/assets/images/cs2.jpg",
+          "/assets/images/cs3.png",
+          "/assets/images/cs4.jpg",
+          "/assets/images/cs5.png",
+          "/assets/images/cs6.jpg",
+          "/assets/images/cs7.png"
         ]
       },
       {
-        "image": "/assets/images/the-space-default.png",
-        "title": "QUIET\nROOM",
+        "image": "/assets/images/qr3.jpg",
+        "title": "QUIET FOCUS\nROOM",
         "description": "A dedicated room for those moments when you need absolute silence and deep focus to get work done.",
         "gallery": [
-          "/assets/images/about.png",
-          "/assets/images/the-space-default.png",
-          "/assets/images/icons/wifi.png"
+          "/assets/images/qr1.jpg",
+          "/assets/images/qr2.jpg",
+          "/assets/images/qr3.jpg"
         ]
       },
       {
-        "image": "/assets/images/the-space-default.png",
+        "image": "/assets/images/phonebooth.JPG",
         "title": "PHONE\nBOOTH",
         "description": "A private phone booth for Zoom meetings, calls, and anything that shouldn't happen at a shared desk.",
         "gallery": [
-          "/assets/images/the-space-default.png",
-          "/assets/images/icons/snacks.png",
-          "/assets/images/about.png"
+          "/assets/images/phonebooth.JPG"
         ]
       },
       {
@@ -67,10 +71,7 @@
         "title": "THE GARDEN",
         "description": "A small but much-loved space where we host BBQs, take breaks, and enjoy a drink or fresh air.",
         "gallery": [
-          "/assets/images/about.png",
-          "/assets/images/icons/flixible-spaces.png",
-          "/assets/images/the-space-default.png",
-          "/assets/images/icons/24.png"
+          "/assets/images/the-space-default.png"
         ]
       }
     ]
@@ -173,6 +174,9 @@
       { "quote": "Very cosy place, extremely polite hosts, nice environment. Highly recommend for teams, events, and freelancers.", "name": "Tsanislav Georgiev" },
       { "quote": "Whether you're looking for a spacious place to work at, or a quiet one so you can be more focused they have it all. Extremely friendly atmosphere, amazing host, chill vibes and comfy couches. They are the best at what they provide!!", "name": "Kiro Iliev" }
     ]
+  },
+  "splitSection": {
+    "image": "/assets/images/andton.jpg"
   },
   "community": {
     "heading": "Find your people, not just a desk",

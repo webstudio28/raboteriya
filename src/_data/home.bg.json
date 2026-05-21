@@ -20,8 +20,8 @@
       "Топло е. Спокойно е. Усеща се като хора, не само като бюра.",
       "Бърз Wi-Fi, уютни ъгълчета и общностно ориентирано коворкинг пространство в сърцето на Пловдив."
     ],
-    "image": "/assets/images/about.png",
-    "imageMobile": "/assets/images/about-mobile.png",
+    "image": "/assets/images/about.jpg",
+    "imageMobile": "/assets/images/about-mobile.jpg",
     "cta": {
       "label": "Виж опциите и цените",
       "url": "#memberships"
@@ -68,31 +68,35 @@
     "headingLine2": "новото си любимо работно място",
     "cards": [
       {
-        "image": "/assets/images/community-space/community-cover.png",
+        "image": "/assets/images/cs2.jpg",
         "title": "ОБЩА\nЗОНА",
         "description": "Пространство с атмосфера, в което работата до други хора е мотивираща, не разсейваща.",
         "gallery": [
-          "/assets/images/community-space/community1.png"
+          "/assets/images/cs1.jpg",
+          "/assets/images/cs2.jpg",
+          "/assets/images/cs3.png",
+          "/assets/images/cs4.jpg",
+          "/assets/images/cs5.png",
+          "/assets/images/cs6.jpg",
+          "/assets/images/cs7.png"
         ]
       },
       {
-        "image": "/assets/images/the-space-default.png",
-        "title": "ТИХА\nСТАЯ",
+        "image": "/assets/images/qr3.jpg",
+        "title": "ТИХА ФОКУС\nСТАЯ",
         "description": "Отделна стая за моменти, когато ви трябва абсолютна тишина и дълбок фокус.",
         "gallery": [
-          "/assets/images/about.png",
-          "/assets/images/the-space-default.png",
-          "/assets/images/icons/wifi.png"
+          "/assets/images/qr1.jpg",
+          "/assets/images/qr2.jpg",
+          "/assets/images/qr3.jpg"
         ]
       },
       {
-        "image": "/assets/images/the-space-default.png",
+        "image": "/assets/images/phonebooth.JPG",
         "title": "ТЕЛ.\nКАБИНА",
         "description": "Частна телефонна кабина за Zoom срещи и обаждания извън споделеното бюро.",
         "gallery": [
-          "/assets/images/the-space-default.png",
-          "/assets/images/icons/snacks.png",
-          "/assets/images/about.png"
+          "/assets/images/phonebooth.JPG"
         ]
       },
       {
@@ -100,10 +104,7 @@
         "title": "ГРАДИНАТА",
         "description": "Малко, но обичано място за BBQ, почивки и глътка свеж въздух.",
         "gallery": [
-          "/assets/images/about.png",
-          "/assets/images/icons/flixible-spaces.png",
-          "/assets/images/the-space-default.png",
-          "/assets/images/icons/24.png"
+          "/assets/images/the-space-default.png"
         ]
       }
     ]
@@ -286,6 +287,9 @@
         "name": "Kiro Iliev"
       }
     ]
+  },
+  "splitSection": {
+    "image": "/assets/images/andton.jpg"
   },
   "community": {
     "heading": "Намери своите хора, не само бюро",
