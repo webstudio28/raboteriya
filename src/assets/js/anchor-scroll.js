@@ -1,5 +1,5 @@
 (function () {
-  var EXTRA_OFFSET = -5;
+  var EXTRA_OFFSET = -40;
 
   function scrollOffset() {
     var header = document.getElementById("site-header");

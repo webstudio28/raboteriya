@@ -1,12 +1,12 @@
 {# Community / thank-you — copy + gallery #}
 {% from "macros/i18n.njk" import localeClass %}
-{% set galleryEn = i18n.home.en.thankYou.galleryImages or [] %}
 {% set defaultImg = '/assets/images/the-space-default.png' %}
-{% set mainSrc = galleryEn[0] if galleryEn | length else defaultImg %}
 
 <section class="section-padding bg-page" id="thank-you">
   {% for locale in i18n.locales %}
   {% set ty = i18n.home[locale].thankYou %}
+  {% set galleryImages = ty.galleryImages or [] %}
+  {% set mainSrc = galleryImages[0] if galleryImages | length else defaultImg %}
   <div class="{{ localeClass(locale) }}" data-locale="{{ locale }}">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto">
@@ -18,11 +18,10 @@
         {% endfor %}
       </div>
 
-      {% if locale == i18n.defaultLocale %}
       <div
         class="mt-12 md:mt-16"
         data-thank-you-gallery
-        {% if galleryEn | length %}data-gallery-count="{{ galleryEn | length }}"{% endif %}
+        {% if galleryImages | length %}data-gallery-count="{{ galleryImages | length }}"{% endif %}
       >
         <div class="thank-you-gallery-main relative overflow-hidden rounded-xl border border-gray-200 bg-gray-200 shadow-xl">
           <img
@@ -38,8 +37,7 @@
             type="button"
             class="thank-you-gallery-overlay-chevron absolute left-1 top-1/2 z-10 -translate-y-1/2 cursor-pointer border-0 bg-transparent p-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900/50 md:left-3"
             data-gallery-prev
-            aria-label="{{ i18n.ui.en.previousImage }}"
-            data-i18n-ui="previousImage"
+            aria-label="{{ i18n.ui[locale].previousImage }}"
           >
             <svg class="h-8 w-8 md:h-10 md:w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.85)) drop-shadow(0 1px 2px rgba(0,0,0,0.9));">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -49,8 +47,7 @@
             type="button"
             class="thank-you-gallery-overlay-chevron absolute right-1 top-1/2 z-10 -translate-y-1/2 cursor-pointer border-0 bg-transparent p-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900/50 md:right-3"
             data-gallery-next
-            aria-label="{{ i18n.ui.en.nextImage }}"
-            data-i18n-ui="nextImage"
+            aria-label="{{ i18n.ui[locale].nextImage }}"
           >
             <svg class="h-8 w-8 md:h-10 md:w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.85)) drop-shadow(0 1px 2px rgba(0,0,0,0.9));">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -60,16 +57,16 @@
 
         <div
           class="thank-you-gallery-thumbs mt-4 flex w-full flex-nowrap gap-2 overflow-x-auto py-1 [-webkit-overflow-scrolling:touch] sm:gap-2 md:gap-3 lg:grid lg:overflow-x-visible lg:pb-0"
-          style="grid-template-columns: repeat({{ galleryEn | length if galleryEn | length else 8 }}, minmax(0, 1fr));"
+          style="grid-template-columns: repeat({{ galleryImages | length if galleryImages | length else 8 }}, minmax(0, 1fr));"
           data-gallery-thumbs
         >
-          {% for img in galleryEn %}
+          {% for img in galleryImages %}
           <button
             type="button"
             class="thank-you-gallery-thumb min-w-[128px] w-[128px] shrink-0 overflow-hidden rounded-lg border-2 border-transparent ring-offset-2 transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 lg:min-w-0 lg:w-full {% if loop.first %}is-active ring-2 ring-gray-900{% endif %}"
             data-gallery-thumb
             data-src="{{ img | url }}"
-            aria-label="Show image {{ loop.index }} of {{ galleryEn | length }}"
+            aria-label="Show image {{ loop.index }} of {{ galleryImages | length }}"
             aria-current="{% if loop.first %}true{% else %}false{% endif %}"
           >
             <img
@@ -84,7 +81,6 @@
           {% endfor %}
         </div>
       </div>
-      {% endif %}
     </div>
   </div>
   {% endfor %}

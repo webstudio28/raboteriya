@@ -13,7 +13,6 @@ const navBg = {
     { label: "Екстри", url: "#extras", hideOnDesktop: true },
     { label: "Отзиви", url: "#testimonials", hideOnDesktop: true },
     { label: "Общност", url: "#split-section", hideOnDesktop: true },
-    { label: "Евенти", url: "#thank-you", hideOnDesktop: true },
     { label: "ЧЗВ", url: "#faq" },
     { label: "Локация", url: "#location", hideOnDesktop: true },
     { label: "Контакт", url: "#contact" },

@@ -106,13 +106,13 @@
         "title": "WEEKLY PASS",
         "price": "€40",
         "period": "/week",
-        "inclusions": ["Seven consecutive days", "All benefits included", "All amenities included", "24/7 access"]
+        "inclusions": ["7 consecutive days", "24/7 access", "All amenities included"]
       },
       {
         "title": "DAY PASS",
         "price": "€11",
         "period": "/day",
-        "inclusions": ["Your own desk", "All benefits included", "All amenities included", "Access from 08:00 to 20:00"]
+        "inclusions": ["Your own desk", "All amenities included", "Access from 08:00 to 20:00"]
       }
     ]
   },
@@ -141,7 +141,7 @@
       { "title": "Earplugs", "icon": "/assets/images/icons2/earplug.png" },
       { "title": "Convenient Power Outlets", "icon": "/assets/images/icons2/power-outlet.png" }
     ],
-    "cta": { "label": "Check out the best benefits", "url": "#thank-you" }
+    "cta": { "label": "Check out the best benefits", "url": "#memberships" }
   },
   "testimonials": {
     "heading": "A few words from our members",

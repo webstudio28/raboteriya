@@ -27,7 +27,6 @@
       { "label": "Extras", "url": "#extras", "hideOnDesktop": true },
       { "label": "Testimonials", "url": "#testimonials", "hideOnDesktop": true },
       { "label": "Community", "url": "#split-section", "hideOnDesktop": true },
-      { "label": "Events", "url": "#thank-you", "hideOnDesktop": true },
       { "label": "FAQ", "url": "#faq" },
       { "label": "Location", "url": "#location", "hideOnDesktop": true },
       { "label": "Contact", "url": "#contact" }

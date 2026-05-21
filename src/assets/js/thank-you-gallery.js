@@ -1,46 +1,59 @@
 (function () {
-  var root = document.querySelector("[data-thank-you-gallery]");
-  if (!root) return;
+  var boundRoots = new WeakSet();
 
-  var main = root.querySelector("[data-gallery-main]");
-  var thumbs = root.querySelectorAll("[data-gallery-thumb]");
-  var prevBtn = root.querySelector("[data-gallery-prev]");
-  var nextBtn = root.querySelector("[data-gallery-next]");
+  function bindGallery(root) {
+    if (!root || boundRoots.has(root)) return;
 
-  if (!main || !thumbs.length) return;
+    var main = root.querySelector("[data-gallery-main]");
+    var thumbs = root.querySelectorAll("[data-gallery-thumb]");
+    var prevBtn = root.querySelector("[data-gallery-prev]");
+    var nextBtn = root.querySelector("[data-gallery-next]");
 
-  function getActiveIndex() {
-    for (var i = 0; i < thumbs.length; i++) {
-      if (thumbs[i].classList.contains("is-active")) return i;
+    if (!main || !thumbs.length) return;
+
+    boundRoots.add(root);
+
+    function getActiveIndex() {
+      for (var i = 0; i < thumbs.length; i++) {
+        if (thumbs[i].classList.contains("is-active")) return i;
+      }
+      return 0;
     }
-    return 0;
-  }
 
-  function setActive(thumb) {
-    thumbs.forEach(function (t) {
-      t.classList.remove("is-active", "ring-2", "ring-gray-900");
-      t.setAttribute("aria-current", "false");
+    function setActive(thumb) {
+      thumbs.forEach(function (t) {
+        t.classList.remove("is-active", "ring-2", "ring-gray-900");
+        t.setAttribute("aria-current", "false");
+      });
+      thumb.classList.add("is-active", "ring-2", "ring-gray-900");
+      thumb.setAttribute("aria-current", "true");
+      var src = thumb.getAttribute("data-src");
+      if (src) main.setAttribute("src", src);
+    }
+
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener("click", function () {
+        setActive(thumb);
+      });
     });
-    thumb.classList.add("is-active", "ring-2", "ring-gray-900");
-    thumb.setAttribute("aria-current", "true");
-    var src = thumb.getAttribute("data-src");
-    if (src) main.setAttribute("src", src);
+
+    function go(delta) {
+      var n = thumbs.length;
+      if (!n) return;
+      var i = getActiveIndex();
+      var next = (i + delta + n) % n;
+      setActive(thumbs[next]);
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", function () { go(-1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { go(1); });
   }
 
-  thumbs.forEach(function (thumb) {
-    thumb.addEventListener("click", function () {
-      setActive(thumb);
-    });
-  });
-
-  function go(delta) {
-    var n = thumbs.length;
-    if (!n) return;
-    var i = getActiveIndex();
-    var next = (i + delta + n) % n;
-    setActive(thumbs[next]);
+  function init() {
+    document.querySelectorAll("[data-thank-you-gallery]").forEach(bindGallery);
   }
 
-  if (prevBtn) prevBtn.addEventListener("click", function () { go(-1); });
-  if (nextBtn) nextBtn.addEventListener("click", function () { go(1); });
+  init();
+
+  document.addEventListener("raboteriya:localechange", init);
 })();
