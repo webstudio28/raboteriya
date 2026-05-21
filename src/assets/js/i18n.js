@@ -23,12 +23,14 @@
   }
 
   function updateLangToggleThumbs() {
-    document.querySelectorAll(".lang-toggle").forEach(function (toggle) {
-      var thumb = toggle.querySelector(".lang-toggle__thumb");
-      var activeBtn = toggle.querySelector(".lang-toggle__btn.is-active");
-      if (!thumb || !activeBtn) return;
-      thumb.style.width = activeBtn.offsetWidth + "px";
-      thumb.style.transform = "translateX(" + activeBtn.offsetLeft + "px)";
+    requestAnimationFrame(function () {
+      document.querySelectorAll(".lang-toggle").forEach(function (toggle) {
+        var thumb = toggle.querySelector(".lang-toggle__thumb");
+        var activeBtn = toggle.querySelector(".lang-toggle__btn.is-active");
+        if (!thumb || !activeBtn) return;
+        thumb.style.width = activeBtn.offsetWidth + "px";
+        thumb.style.transform = "translateX(" + activeBtn.offsetLeft + "px)";
+      });
     });
   }
 
@@ -41,7 +43,9 @@
     document.querySelectorAll(".i18n-locale").forEach(function (el) {
       var elLocale = el.getAttribute("data-locale");
       if (!elLocale) return;
-      el.classList.toggle("i18n-hidden", elLocale !== locale);
+      var hidden = elLocale !== locale;
+      el.classList.toggle("i18n-hidden", hidden);
+      el.hidden = hidden;
     });
 
     document.querySelectorAll(".lang-toggle__btn").forEach(function (btn) {

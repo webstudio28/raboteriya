@@ -1,9 +1,16 @@
 {% from "macros/i18n.njk" import localeClass %}
+{% from "macros/image.njk" import responsiveImg %}
 <header class="site-header sticky top-0 z-[100] bg-page transition-shadow duration-200" id="site-header">
   <div class="container-custom flex items-center justify-between py-4">
     <a href="{{ '/' | url }}" class="font-semibold text-lg flex items-center gap-2" aria-label="{{ site.brand.name }} home">
       {% if site.brand.logo %}
-        <img src="{{ site.brand.logo | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-8 w-auto md:h-9" width="120" height="36" fetchpriority="high">
+        {{ responsiveImg(site.brand.logo, {
+          alt: site.brand.logoAlt | default(site.brand.name),
+          class: "h-8 w-auto md:h-9",
+          sizes: "140px",
+          maxWidth: 280,
+          loading: "eager"
+        }) }}
       {% else %}
         <span class="text-brand-primary">{{ site.brand.name }}</span>
       {% endif %}
@@ -51,12 +58,12 @@
     {% set nav = i18n.nav[locale] %}
     <nav class="mobile-menu-nav {{ localeClass(locale) }}" data-locale="{{ locale }}" aria-label="Mobile">
       <ul class="mobile-menu-list">
+        {% set mobileMenuUrls = ["#hero", "#about", "#why-raboteriya", "#the-space", "#memberships", "#testimonials", "#community", "#faq", "#contact"] %}
         {% for item in nav.header %}
-        <li><a href="{{ item.url }}" class="mobile-menu-link">{{ item.label }}</a></li>
+          {% if item.url in mobileMenuUrls %}
+          <li><a href="{{ item.url }}" class="mobile-menu-link">{{ item.label }}</a></li>
+          {% endif %}
         {% endfor %}
-        {% if nav.headerCta %}
-        <li><a href="{{ nav.headerCta.url }}" class="mobile-menu-link mobile-menu-link--cta">{{ nav.headerCta.label }}</a></li>
-        {% endif %}
       </ul>
     </nav>
     {% endfor %}

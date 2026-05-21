@@ -1,0 +1,277 @@
+{
+  "images": {
+    "images/hero-bg-mobile.jpg": [
+      {
+        "width": 640,
+        "height": 1138,
+        "url": "/assets/optimized/hero-bg-mobile-640w.webp"
+      },
+      {
+        "width": 828,
+        "height": 1472,
+        "url": "/assets/optimized/hero-bg-mobile-828w.webp"
+      }
+    ],
+    "images/hero-bg.jpg": [
+      {
+        "width": 1280,
+        "height": 699,
+        "url": "/assets/optimized/hero-bg-1280w.webp"
+      },
+      {
+        "width": 1920,
+        "height": 1048,
+        "url": "/assets/optimized/hero-bg-1920w.webp"
+      }
+    ],
+    "images/about-mobile.jpg": [
+      {
+        "width": 400,
+        "height": 322,
+        "url": "/assets/optimized/about-mobile-400w.webp"
+      },
+      {
+        "width": 800,
+        "height": 644,
+        "url": "/assets/optimized/about-mobile-800w.webp"
+      }
+    ],
+    "images/about.jpg": [
+      {
+        "width": 800,
+        "height": 856,
+        "url": "/assets/optimized/about-800w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1283,
+        "url": "/assets/optimized/about-1200w.webp"
+      }
+    ],
+    "images/andton.jpg": [
+      {
+        "width": 384,
+        "height": 492,
+        "url": "/assets/optimized/andton-384w.webp"
+      },
+      {
+        "width": 480,
+        "height": 615,
+        "url": "/assets/optimized/andton-480w.webp"
+      }
+    ],
+    "images/logo.png": [
+      {
+        "width": 140,
+        "height": 29,
+        "url": "/assets/optimized/logo-140w.webp"
+      },
+      {
+        "width": 280,
+        "height": 58,
+        "url": "/assets/optimized/logo-280w.webp"
+      }
+    ],
+    "images/the-space-default.png": [
+      {
+        "width": 400,
+        "height": 596,
+        "url": "/assets/optimized/the-space-default-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 774,
+        "url": "/assets/optimized/the-space-default-520w.webp"
+      }
+    ],
+    "images/phonebooth.JPG": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/phonebooth-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 693,
+        "url": "/assets/optimized/phonebooth-520w.webp"
+      }
+    ],
+    "images/qr1.jpg": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/qr1-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/qr1-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/qr1-1200w.webp"
+      }
+    ],
+    "images/qr2.jpg": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/qr2-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/qr2-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/qr2-1200w.webp"
+      }
+    ],
+    "images/qr3.jpg": [
+      {
+        "width": 400,
+        "height": 534,
+        "url": "/assets/optimized/qr3-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/qr3-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/qr3-1200w.webp"
+      }
+    ],
+    "images/cs1.jpg": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/cs1-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/cs1-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/cs1-1200w.webp"
+      }
+    ],
+    "images/cs2.jpg": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/cs2-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/cs2-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/cs2-1200w.webp"
+      }
+    ],
+    "images/cs3.png": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/cs3-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 693,
+        "url": "/assets/optimized/cs3-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/cs3-1200w.webp"
+      }
+    ],
+    "images/cs4.jpg": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/cs4-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/cs4-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/cs4-1200w.webp"
+      }
+    ],
+    "images/cs5.png": [
+      {
+        "width": 400,
+        "height": 534,
+        "url": "/assets/optimized/cs5-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/cs5-520w.webp"
+      },
+      {
+        "width": 1086,
+        "height": 1449,
+        "url": "/assets/optimized/cs5-1200w.webp"
+      }
+    ],
+    "images/cs6.jpg": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/cs6-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 694,
+        "url": "/assets/optimized/cs6-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/cs6-1200w.webp"
+      }
+    ],
+    "images/cs7.png": [
+      {
+        "width": 400,
+        "height": 533,
+        "url": "/assets/optimized/cs7-400w.webp"
+      },
+      {
+        "width": 520,
+        "height": 693,
+        "url": "/assets/optimized/cs7-520w.webp"
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/optimized/cs7-1200w.webp"
+      }
+    ],
+    "images/og-image.png": [
+      {
+        "width": 1200,
+        "height": 1200,
+        "url": "/assets/optimized/og-image-1200w.webp"
+      }
+    ]
+  }
+}

@@ -1,20 +1,18 @@
 {# Two-column section: left box 1/3 (image), right box 2/3 (testimony text) #}
 {% from "macros/i18n.njk" import localeClass %}
+{% from "macros/image.njk" import responsiveImg %}
 {% set splitImg = i18n.home.en.splitSection.image %}
 <section class="bg-page pt-0 pb-16 md:pb-24" id="split-section">
   <div class="container-custom lg:flex lg:items-stretch lg:gap-12">
     {% if splitImg %}
     <div class="hidden lg:block lg:w-1/3">
       <div class="h-full rounded-xl bg-gray-200 overflow-hidden">
-        <img
-          src="{{ splitImg | url }}"
-          alt=""
-          class="h-full w-full object-cover object-center"
-          width="480"
-          height="640"
-          loading="lazy"
-          decoding="async"
-        />
+        {{ responsiveImg(splitImg, {
+          alt: "Andon Goshev at Raboteriya coworking space",
+          class: "h-full w-full object-cover object-center",
+          sizes: "(min-width: 1024px) 33vw, 0px",
+          maxWidth: 480
+        }) }}
       </div>
     </div>
     {% endif %}
@@ -25,15 +23,14 @@
       <div class="rounded-xl border border-gray-200 bg-white shadow-xl p-6 md:p-8 max-w-full h-full flex items-center">
         <div class="w-full">
           {% if splitImg %}
-          <img
-            src="{{ splitImg | url }}"
-            alt=""
-            class="inline-block float-left mr-4 mb-2 h-48 w-48 rounded-lg object-cover object-center lg:hidden"
-            width="192"
-            height="192"
-            loading="lazy"
-            decoding="async"
-          />
+          <div class="float-left mr-4 mb-2 h-48 w-48 overflow-hidden rounded-lg lg:hidden">
+            {{ responsiveImg(splitImg, {
+              alt: "Andon Goshev at Raboteriya coworking space",
+              class: "h-full w-full object-cover object-center",
+              sizes: "192px",
+              maxWidth: 384
+            }) }}
+          </div>
           {% endif %}
           <p class="text-base md:text-lg text-gray-900 whitespace-pre-line">{{ ui.splitSectionQuote }}</p>
           <p class="mt-6 text-right text-base md:text-lg font-semibold text-gray-900">

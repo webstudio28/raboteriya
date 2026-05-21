@@ -16,16 +16,17 @@
       <div class="the-space-cards-row flex max-sm:flex-nowrap max-sm:gap-5 max-sm:overflow-x-auto max-sm:overflow-y-visible max-sm:pb-3 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:pb-0 md:gap-8 lg:grid-cols-4 lg:gap-4 [-webkit-overflow-scrolling:touch]">
       {% for card in (s.cards or []) %}
       {% set cardImg = card.image | default("/assets/images/the-space-default.png") %}
+      {% set cardImgWebp = cardImg | optImg(520) %}
       {% set galleryImgs = card.gallery if card.gallery and (card.gallery | length) else [cardImg] %}
       {% set titlePlain = (card.title | default("")) | replace("\n", " ") %}
       <article
         class="the-space-card max-sm:max-w-[260px] max-sm:w-[min(260px,82vw)] max-sm:shrink-0 group relative min-h-[320px] overflow-hidden rounded-3xl bg-gray-200 bg-cover bg-center sm:max-w-none sm:w-auto md:min-h-[380px]"
-        style="background-image: url('{{ cardImg | url }}');"
+        style="background-image: url('{{ cardImgWebp | url }}');"
       >
         <button
           type="button"
           data-space-gallery-trigger
-          data-gallery-images="{% for img in galleryImgs %}{{ img | url }}{% if not loop.last %}|{% endif %}{% endfor %}"
+          data-gallery-images="{% for img in galleryImgs %}{{ img | optGalleryUrl | url }}{% if not loop.last %}|{% endif %}{% endfor %}"
           data-gallery-title="{{ titlePlain | escape }}"
           class="absolute inset-0 z-10 cursor-pointer border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
           aria-label="{{ i18n.ui[locale].viewPhotos }}: {{ titlePlain | escape }}"

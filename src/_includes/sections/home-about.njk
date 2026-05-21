@@ -1,5 +1,6 @@
 {# About — mobile: title → image → copy + CTA; desktop: copy left, image right #}
 {% from "macros/i18n.njk" import localeClass %}
+{% from "macros/image.njk" import responsiveImg %}
 <section class="section-padding overflow-x-hidden bg-page" id="about">
   <div class="container-custom">
     {% set aEn = i18n.home.en.about %}
@@ -14,7 +15,12 @@
             {{ a.headingLine3 | default('finally feels good again.') }}
           </h2>
           <div class="mt-6 lg:hidden">
-            <img src="{{ (a.imageMobile or a.image) | url }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+            {{ responsiveImg(a.imageMobile or a.image, {
+              alt: "Raboteriya coworking space interior",
+              class: "h-auto w-full rounded-2xl object-cover",
+              sizes: "(max-width: 1023px) 100vw, 0px",
+              maxWidth: 800
+            }) }}
           </div>
           <div class="mt-6 md:mt-8 space-y-4 text-lg text-gray-900">
             {% for p in (a.paragraphs or []) %}
@@ -31,7 +37,12 @@
       </div>
       {% if aEn.image %}
       <div class="hidden lg:block">
-        <img src="{{ aEn.image | url }}" alt="" class="h-auto w-full rounded-2xl object-cover" loading="lazy" decoding="async" />
+        {{ responsiveImg(aEn.image, {
+          alt: "Raboteriya coworking space interior",
+          class: "h-auto w-full rounded-2xl object-cover",
+          sizes: "(min-width: 1024px) 50vw, 0px",
+          maxWidth: 1200
+        }) }}
       </div>
       {% endif %}
     </div>
