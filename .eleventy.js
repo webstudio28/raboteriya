@@ -11,6 +11,9 @@ module.exports = function (eleventyConfig) {
     filter: ["**/*", "!**/css/tailwind.css"],
   });
 
+  // Favicon at site root so browsers and crawlers find it without any path guessing
+  eleventyConfig.addPassthroughCopy({ "src/favicon.png": "favicon.png" });
+
   // Watch data so menu/config changes trigger rebuild (no need to run build manually)
   eleventyConfig.addWatchTarget("src/_data");
 

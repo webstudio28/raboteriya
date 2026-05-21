@@ -12,6 +12,7 @@
     {% set readAllLabel = "Виж всички в Google" %}
     {% set defaultHeading = "Нашите Google любовни бележки" %}
   {% endif %}
+  {% set seeMoreLabel = i18n.ui[locale].faqSeeMore %}
   <div class="{{ localeClass(locale) }}" data-locale="{{ locale }}">
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">{{ t.heading | default(defaultHeading) }}</h2>
@@ -37,12 +38,12 @@
       <div class="testimonials-strip" aria-label="Member testimonials">
         <div class="testimonials-strip-set">
           {% for item in (t.items or []) %}
-          {{ testimonialCard(item, googleLabel) }}
+          {{ testimonialCard(item, googleLabel, seeMoreLabel) }}
           {% endfor %}
         </div>
         <div class="testimonials-strip-set" aria-hidden="true">
           {% for item in (t.items or []) %}
-          {{ testimonialCard(item, googleLabel) }}
+          {{ testimonialCard(item, googleLabel, seeMoreLabel) }}
           {% endfor %}
         </div>
       </div>

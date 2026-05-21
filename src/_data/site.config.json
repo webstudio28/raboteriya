@@ -1,8 +1,8 @@
 {
   "brand": {
-    "name": "Landing",
+    "name": "Raboteriya",
     "logo": "/assets/images/logo.png",
-    "logoAlt": "Logo",
+    "logoAlt": "Raboteriya",
     "language": "en"
   },
   "colors": {
@@ -11,10 +11,10 @@
     "accent": "#e8e6e1"
   },
   "seo": {
-    "siteUrl": "https://example.com",
-    "defaultTitle": "Landing",
-    "defaultDescription": "One-page landing template.",
-    "ogImage": "/assets/images/og-image.jpg",
+    "siteUrl": "https://raboteriya.com",
+    "defaultTitle": "Raboteriya – Coworking Space in Plovdiv",
+    "defaultDescription": "A homey coworking space in Plovdiv for freelancers and remote workers. Flexible memberships, great community, and everything you need to do your best work.",
+    "ogImage": "/assets/images/og-image.png",
     "twitterCard": "summary_large_image"
   },
   "nav": {
