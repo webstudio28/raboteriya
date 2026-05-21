@@ -22,6 +22,16 @@
     }
   }
 
+  function updateLangToggleThumbs() {
+    document.querySelectorAll(".lang-toggle").forEach(function (toggle) {
+      var thumb = toggle.querySelector(".lang-toggle__thumb");
+      var activeBtn = toggle.querySelector(".lang-toggle__btn.is-active");
+      if (!thumb || !activeBtn) return;
+      thumb.style.width = activeBtn.offsetWidth + "px";
+      thumb.style.transform = "translateX(" + activeBtn.offsetLeft + "px)";
+    });
+  }
+
   function applyLocale(locale) {
     if (locale !== "en" && locale !== "bg") locale = defaultLocale;
 
@@ -37,12 +47,10 @@
     document.querySelectorAll(".lang-toggle__btn").forEach(function (btn) {
       var active = btn.getAttribute("data-lang") === locale;
       btn.classList.toggle("is-active", active);
-      btn.classList.remove("bg-gray-900");
-      btn.classList.toggle("bg-brown-900", active);
-      btn.classList.toggle("text-white", active);
-      btn.classList.toggle("text-gray-600", !active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
+
+    updateLangToggleThumbs();
 
     var pack = window.__I18N__;
     var modals = pack && pack.modals;
@@ -104,4 +112,9 @@
   });
 
   applyLocale(getStoredLocale());
+
+  window.addEventListener("resize", updateLangToggleThumbs);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateLangToggleThumbs);
+  }
 })();

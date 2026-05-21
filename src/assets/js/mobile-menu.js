@@ -1,74 +1,56 @@
 (function () {
-  var toggle = document.getElementById("mobile-menu-toggle");
-  var menu = document.getElementById("mobile-menu");
-  var backdrop = document.getElementById("mobile-menu-backdrop");
+  var input = document.getElementById("mobile-menu-input");
+  var label = document.getElementById("mobile-menu-toggle");
+  var overlay = document.getElementById("mobile-menu-overlay");
   var body = document.body;
-  var links = document.querySelectorAll(".mobile-menu-link");
-  var closeTimer = null;
+  var html = document.documentElement;
 
-  function openMenu() {
-    if (closeTimer) {
-      window.clearTimeout(closeTimer);
-      closeTimer = null;
-    }
-    toggle.classList.add("active");
-    toggle.setAttribute("aria-expanded", "true");
-    toggle.setAttribute("aria-label", "Close menu");
-    menu.removeAttribute("hidden");
-    menu.classList.add("translate-x-full");
-    menu.classList.remove("translate-x-0");
-    menu.setAttribute("aria-hidden", "false");
-    if (backdrop) {
-      backdrop.removeAttribute("hidden");
-      backdrop.setAttribute("aria-hidden", "false");
-    }
-    body.style.overflow = "hidden";
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        menu.classList.remove("translate-x-full");
-        menu.classList.add("translate-x-0");
-        if (backdrop) {
-          backdrop.classList.remove("opacity-0", "pointer-events-none");
-          backdrop.classList.add("opacity-100", "pointer-events-auto");
-        }
-      });
-    });
+  if (!input || !label) return;
+
+  function uiPack() {
+    var pack = window.__I18N__ && window.__I18N__.ui;
+    var locale = html.getAttribute("data-lang") || "en";
+    return pack && pack[locale] ? pack[locale] : null;
   }
 
-  function closeMenu() {
-    toggle.classList.remove("active");
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Open menu");
-    menu.classList.add("translate-x-full");
-    menu.classList.remove("translate-x-0");
-    menu.setAttribute("aria-hidden", "true");
-    if (backdrop) {
-      backdrop.classList.add("opacity-0", "pointer-events-none");
-      backdrop.classList.remove("opacity-100", "pointer-events-auto");
-      backdrop.setAttribute("aria-hidden", "true");
+  function syncA11y() {
+    var open = input.checked;
+    label.setAttribute("aria-expanded", open ? "true" : "false");
+    if (overlay) overlay.setAttribute("aria-hidden", open ? "false" : "true");
+    var ui = uiPack();
+    if (ui) {
+      label.setAttribute("aria-label", open ? ui.closeMenu : ui.openMenu);
     }
-    body.style.overflow = "";
-
-    closeTimer = window.setTimeout(function () {
-      menu.setAttribute("hidden", "");
-      if (backdrop) backdrop.setAttribute("hidden", "");
-      closeTimer = null;
-    }, 320);
   }
 
-  var closeBtn = document.getElementById("mobile-menu-close");
-  if (toggle && menu) {
-    toggle.addEventListener("click", function () {
-      if (menu.classList.contains("translate-x-full")) openMenu();
-      else closeMenu();
-    });
-    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
-    if (backdrop) backdrop.addEventListener("click", closeMenu);
-    links.forEach(function (link) {
-      link.addEventListener("click", closeMenu);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !menu.classList.contains("translate-x-full")) closeMenu();
-    });
+  function onChange() {
+    if (input.checked) {
+      body.style.overflow = "hidden";
+      body.style.height = "100vh";
+    } else {
+      body.style.overflow = "";
+      body.style.height = "";
+    }
+    syncA11y();
   }
+
+  input.addEventListener("change", onChange);
+
+  document.querySelectorAll(".mobile-menu-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      input.checked = false;
+      onChange();
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && input.checked) {
+      input.checked = false;
+      onChange();
+    }
+  });
+
+  document.addEventListener("raboteriya:localechange", syncA11y);
+
+  syncA11y();
 })();

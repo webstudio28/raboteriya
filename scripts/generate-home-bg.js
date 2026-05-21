@@ -8,7 +8,7 @@ bg.hero = {
   headline:
     "Уютно коворкинг пространство в Пловдив за фрийлансъри и хора на дистанционна работа",
   ctaPrimary: { label: "10% отстъпка за първия месец", openDiscountModal: true },
-  ctaSecondary: { label: "Разгледай пространството", url: "#about" },
+  ctaSecondary: { label: "Разгледай пространството", url: "#the-space" },
   image: en.hero.image,
 };
 bg.about = {
