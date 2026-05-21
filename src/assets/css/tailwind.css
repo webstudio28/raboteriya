@@ -40,9 +40,15 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --site-scroll-offset: 8rem;
+  }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: var(--site-scroll-offset);
+  }
+  section[id] {
+    scroll-margin-top: var(--site-scroll-offset);
   }
   @media (prefers-reduced-motion: reduce) {
     html {

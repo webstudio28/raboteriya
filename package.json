@@ -9,6 +9,7 @@
     "build": "eleventy",
     "css:build": "tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/assets/css/styles.css --minify",
     "css:watch": "tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/assets/css/styles.css --watch",
+    "i18n:length": "node scripts/check-i18n-length.js",
     "deploy": "echo 'Use GitHub Actions instead'",
     "postinstall": "node scripts/copy-pdfjs.js"
   },
