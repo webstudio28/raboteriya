@@ -1,0 +1,80 @@
+{# Community — copy left, poster thumbnail right (desktop); play opens modal #}
+{% from "macros/i18n.njk" import localeClass %}
+{% set communityVideo = i18n.home.en.community.video %}
+{% set videoSrc = communityVideo.src | default("/assets/videos/friends.mp4") %}
+{% set posterSrc = communityVideo.poster | default("/assets/videos/friends-cover.png") %}
+{% set videoAlt = communityVideo.alt | default("Raboteriya community") %}
+
+<section class="section-padding bg-page" id="community" data-community-section>
+  <div class="container-custom">
+    <div class="community-layout">
+      <div class="community-layout__copy">
+        {% for locale in i18n.locales %}
+        {% set c = i18n.home[locale].community %}
+        {% set paragraphs = c.paragraphs or [] %}
+        <div class="{{ localeClass(locale) }} text-center lg:text-left" data-locale="{{ locale }}">
+          <h2 class="text-3xl font-black leading-tight text-gray-900 md:text-4xl lg:text-5xl">
+            {{ c.heading | default("Find your people, not just a desk") }}
+          </h2>
+          {% for para in paragraphs %}
+          {% if loop.first %}
+          <p class="mt-6 text-lg leading-relaxed text-gray-900 md:mt-8">{{ para }}</p>
+          {% endif %}
+          {% endfor %}
+          {% if paragraphs | length > 1 %}
+          <div class="community-more" data-community-more>
+            <div class="community-more__inner" data-community-more-inner>
+              {% for para in paragraphs %}
+              {% if not loop.first %}
+              <p class="mt-6 text-lg leading-relaxed text-gray-900 lg:mt-8">{{ para }}</p>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <p class="community-see-more-wrap mt-4 lg:hidden">
+            <button
+              type="button"
+              class="community-see-more-link"
+              data-community-expand
+              aria-expanded="false"
+              data-label-more="{{ i18n.ui[locale].faqSeeMore }}"
+              data-label-less="{{ i18n.ui[locale].faqSeeLess }}"
+            >
+              <span data-community-expand-label>{{ i18n.ui[locale].faqSeeMore }}</span>
+            </button>
+          </p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <figure
+        class="community-video-bubble mx-auto lg:ms-auto lg:me-0"
+        data-community-video-trigger
+        data-community-video-src="{{ videoSrc | url }}"
+        data-community-video-label="{{ videoAlt }}"
+        role="button"
+        tabindex="0"
+        aria-label="{{ i18n.ui.en.playVideo }}"
+        data-i18n-ui="playVideo"
+      >
+        <img
+          src="{{ posterSrc | url }}"
+          alt=""
+          class="community-video-bubble__poster"
+          width="1080"
+          height="1350"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="community-video-bubble__shade" aria-hidden="true"></span>
+        <span class="community-video-bubble__badge" aria-hidden="true">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" fill="rgba(255, 255, 255, 0.92)" stroke="rgba(26, 18, 11, 0.1)" stroke-width="1" />
+            <path fill="#1a120b" d="M23 17v22l18-11-18-11Z" />
+          </svg>
+        </span>
+      </figure>
+    </div>
+  </div>
+</section>

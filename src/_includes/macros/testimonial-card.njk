@@ -1,0 +1,35 @@
+{% macro testimonialCard(item, googleLabel) %}
+{% set initial = (item.name | default('G') | first) %}
+<div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] h-[312px] md:h-[336px] p-6 flex flex-col rounded-2xl border border-gray-200 bg-white">
+  <div class="flex items-start gap-3 shrink-0">
+    <div class="h-10 w-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 font-semibold">
+      {{ initial | upper }}
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="flex items-center justify-between gap-3">
+        <p class="text-gray-900 font-semibold truncate" data-testimonial-name>{{ item.name }}</p>
+        <span class="text-xs text-gray-500 shrink-0">{{ googleLabel }}</span>
+      </div>
+      <div class="mt-1 flex items-center gap-2">
+        <span class="flex gap-0.5 text-sm text-yellow-500" aria-hidden="true">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </span>
+        <span class="text-xs text-gray-500">5.0</span>
+      </div>
+    </div>
+  </div>
+  <div class="testimonial-card__body mt-4 flex flex-1 flex-col min-h-0">
+    <div class="testimonial-card__quote-wrap min-h-0 flex-1 overflow-hidden">
+      <p class="testimonial-card__quote testimonial-card__quote--clamp text-gray-900 font-normal not-italic leading-relaxed" data-testimonial-quote>{{ item.quote }}</p>
+    </div>
+    <button
+      type="button"
+      class="testimonial-card__more mt-3 shrink-0 self-start hidden text-sm font-medium text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 cursor-pointer relative z-10"
+      data-testimonial-more
+      data-i18n-ui="faqSeeMore"
+      aria-hidden="true"
+      tabindex="-1"
+    >{{ i18n.ui.en.faqSeeMore }}</button>
+  </div>
+</div>
+{% endmacro %}

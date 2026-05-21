@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | url }}">
   <link rel="preload" href="{{ '/assets/fonts/HelveticaNowDisplay-Black.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}?v={{ stylesheetVersion }}">
   <script>
     window.__I18N__ = {{ i18n | dump | safe }};
   </script>
@@ -36,16 +36,22 @@
   {% include "booking-modal.njk" %}
   {% include "contact-success-modal.njk" %}
   {% include "space-gallery-modal.njk" %}
+  {% include "community-video-modal.njk" %}
+  {% include "testimonial-modal.njk" %}
   <script src="{{ '/assets/js/i18n.js' | url }}"></script>
   <script src="{{ '/assets/js/header-scroll.js' | url }}"></script>
   <script src="{{ '/assets/js/anchor-scroll.js' | url }}"></script>
   <script src="{{ '/assets/js/mobile-menu.js' | url }}"></script>
+  <script src="{{ '/assets/js/strip-scroll.js' | url }}"></script>
   <script src="{{ '/assets/js/extras-strip.js' | url }}"></script>
   <script src="{{ '/assets/js/testimonials-strip.js' | url }}"></script>
+  <script src="{{ '/assets/js/testimonials.js' | url }}"></script>
   <script src="{{ '/assets/js/faq-accordion.js' | url }}"></script>
   <script src="{{ '/assets/js/faq-show-more.js' | url }}"></script>
   <script src="{{ '/assets/js/discount-modal.js' | url }}"></script>
   <script src="{{ '/assets/js/visit-booking-modal.js' | url }}"></script>
   <script src="{{ '/assets/js/space-gallery.js' | url }}"></script>
+  <script src="{{ '/assets/js/community-video.js' | url }}"></script>
+  <script src="{{ '/assets/js/community-show-more.js' | url }}"></script>
 </body>
 </html>

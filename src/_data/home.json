@@ -98,9 +98,12 @@
           "Your own designated desk",
           "Leave your setup exactly how you like it",
           "Dedicated additional screen",
-          "Phone booth & quiet room priority",
-          "Membership pause flexibility included"
-        ]
+          "Phone booth & quiet room priority"
+        ],
+        "footnote": {
+          "title": "Pause your membership for up to 22 days per year",
+          "text": "Going on holiday? Your desk can wait."
+        }
       },
       {
         "title": "WEEKLY PASS",
@@ -146,6 +149,14 @@
   "testimonials": {
     "heading": "Our Google love notes",
     "items": [
+      { "quote": "The place is super cozy, calm and makes you want to work with pleasure. The two girls who created and maintain it are great people - always smiling, responsive and create a feeling that you are among friends, not just in a co-working space. There is everything you need - comfortable places to work, corners for privacy, a place to eat, and the garden is an absolute bonus. From time to time they also organize super nice gatherings - barbecues, entertainment, and recently they also organized a movie night just for girls with a movie, snacks and a very good mood. It is obvious that this place was made with desire and attitude. I recommend it with both hands!", "name": "Silvia Naydenova" },
+      { "quote": "Cozy place with great hosts! Good not only for working there, but events too!", "name": "Veneta Fm" },
+      { "quote": "Really nice co-working space. I actually made friends here, which made the whole experience special. Good atmosphere, comfortable place to work, and just a great vibe overall.", "name": "Yuliyan Petkov" },
+      { "quote": "An excellent place to work with a friendly atmosphere and comfort.", "name": "Ivan Atanassov" },
+      { "quote": "Best co-working space in Plovdiv if you want to have some fun and great conversations while you work. The day passes by quickly because you're having a good time! The owners are two lovely sisters who will make you feel welcome every time you want to visit even if you're not a regular", "name": "Aleksandra Kamenova" },
+      { "quote": "Raboteriya offers the perfect balance between productivity and community. The workspace is modern, clean, and comfortable, with fast and reliable internet—everything you need to stay focused and get work done efficiently. What truly sets this place apart is the people and the atmosphere. The community is friendly, open, and inspiring, making it easy to connect and collaborate. The team behind Raboteriya goes above and beyond to create a welcoming and positive environment. The game nights and parties are a huge highlight—they bring everyone together, create real connections, and make the whole experience much more than just a place to work. It feels like a community, not just a coworking space. If you're looking for the best coworking experience in Plovdiv, this is it. Highly recommended!", "name": "Georgi Angelov" },
+      { "quote": "A very cozy place where people can relax and be themselves. Made with taste and desire for every detail, and Alex's food is divine! There is no feeling of grayness and boredom, which is often present in the office. I recommend it with both hands!", "name": "Vesela Ganeva" },
+      { "quote": "Been here since a month and it is genuinely an amazing place to work from in Plovdiv. The hosts are extremely friendly and caring, the environment is cozy, there is everything you need in a working environment: coffee, water, snacks and most importantly a cat. They also have extra monitors for people who require more than one screen. The people attending this place are interesting, fun and hard-working. The atmosphere is also very entrepreneurial. You can learn a lot by just chatting with people in between work sessions. If you are looking for a working environment that will also satisfy your socialization needs, this is the perfect place to be. I highly recommend it.", "name": "Teodor Mironov" },
       { "quote": "The place has such a cozy and welcoming atmosphere. The owners are absolute sunshines - they genuinely care about their clients and always go the extra mile to make everyone feel comfortable. They're open to new ideas and are constantly thinking about how to make the coworking space even better. You can really feel the heart and passion behind every decision that has been made.", "name": "Gergana Andreeva" },
       { "quote": "I've been working at Coworking Space Raboteriya Plovdiv for nearly a year, and it has been an absolute pleasure! The environment is both professional and fun, making it the perfect place to focus and connect with like-minded people. The owners are truly wonderful—friendly, approachable, and always willing to help or enhance the space based on members' needs.", "name": "Anton Tonev" },
       { "quote": "Such a lovely space which is filled with even lovelier people. The atmosphere is soothing and perfect to work in, it is spacious and welcoming. The desks and work spaces are large and well spaced out, meaning you can stay here all day and get on with any work necessary. There is a kitchen area which is fully equipped with a microwave, kettle, coffee machine and fridge. I really couldn't recommend this space enough.", "name": "Liz Shamsee" },
@@ -163,22 +174,17 @@
       { "quote": "Whether you're looking for a spacious place to work at, or a quiet one so you can be more focused they have it all. Extremely friendly atmosphere, amazing host, chill vibes and comfy couches. They are the best at what they provide!!", "name": "Kiro Iliev" }
     ]
   },
-  "thankYou": {
-    "heading": "Join a community, not just a desk",
+  "community": {
+    "heading": "Find your people, not just a desk",
     "paragraphs": [
-      "We host monthly member events - from themed parties and sunny garden BBQs to relaxed, laughter-filled game nights.",
-      "We believe shared positive experiences drive happiness and productivity. That's why Raboteriya isn't just a coworking space - it's a place to connect, build friendships, and belong."
+      "At Raboteriya, you'll often meet freelancers, remote workers and small business owners - each with their own stories, ideas, skills and contacts. Sometimes the most helpful conversation of the day doesn't happen in a meeting. It starts casually, between two tasks, while making coffee in the kitchen.",
+      "That's why we make space for more than work. Every week, we gather for movie nights, board games, garden BBQs or simple evenings on the sofa after the laptops close. No forced networking. No corporate icebreakers. Just a place where people slowly become familiar - and where workdays feel a little less lonely."
     ],
-    "galleryImages": [
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png"
-    ]
+    "video": {
+      "src": "/assets/videos/friends.mp4",
+      "poster": "/assets/videos/friends-cover.png",
+      "alt": "Raboteriya community moments"
+    }
   },
   "contact": {
     "heading": "Ready to join us?",

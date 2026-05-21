@@ -59,6 +59,9 @@
     @apply min-h-screen overflow-x-hidden bg-page;
     font-family: "Helvetica Now Display", ui-sans-serif, system-ui, sans-serif;
   }
+  body.modal-open {
+    overflow: hidden;
+  }
 }
 
 .i18n-hidden {
@@ -148,6 +151,14 @@
   }
   .pricing-cta:hover {
     background: linear-gradient(to right, #111 0%, #252525 100%);
+  }
+  .pricing-card-footnote {
+    @apply w-full p-7;
+    border-radius: 1.25rem 1.25rem 0 0;
+    background-color: #f7f7f7;
+  }
+  .pricing-card-footnote p {
+    margin: 0;
   }
   .faq-summary {
     @apply list-none cursor-pointer select-none;
@@ -339,6 +350,7 @@
     width: max-content;
     user-select: none;
     -webkit-user-select: none;
+    touch-action: pan-y;
     /* Animation and drag handled by extras-strip.js */
   }
   .extras-strip-set {
@@ -366,12 +378,20 @@
     width: max-content;
     user-select: none;
     -webkit-user-select: none;
+    touch-action: pan-y;
   }
   .testimonials-strip-set {
     display: flex;
     flex-shrink: 0;
     gap: 1.5rem;
     padding-left: 1rem;
+  }
+  .testimonial-card__quote--clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    max-height: 9.75rem;
   }
 
   /* Mobile menu — full-screen overlay + animated burger (webstudio28 pattern) */
@@ -524,6 +544,223 @@
     filter: brightness(1.1);
   }
 
+  /* Community — mobile: collapse extra paragraphs + See more link */
+  .community-more__inner {
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  .community-more:not(.is-expanded) .community-more__inner {
+    max-height: 0;
+  }
+  .community-see-more-link {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font-size: inherit;
+    font-weight: 600;
+    line-height: inherit;
+    color: #1a120b;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .community-see-more-link:hover {
+    color: #3d2e24;
+  }
+  .community-see-more-link:focus-visible {
+    outline: 2px solid rgba(26, 18, 11, 0.45);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  @media (min-width: 1024px) {
+    .community-more__inner {
+      max-height: none !important;
+      overflow: visible;
+    }
+    .community-see-more-wrap {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .community-more__inner {
+      transition-duration: 0.01ms;
+    }
+  }
+
+  /* Community — two-column copy + video (Valeto lamination bubble / modal pattern) */
+  .community-layout {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .community-layout {
+      /* Wider right column so the square can reach 40rem instead of shrinking to column width */
+      grid-template-columns: minmax(0, 1fr) minmax(40rem, 1.1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+  }
+  .community-video-bubble {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    max-width: min(100%, 24rem);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0;
+    border-radius: 1.5rem;
+    background: #e8e6e1;
+    box-shadow:
+      0 24px 50px -22px rgba(26, 18, 11, 0.22),
+      0 8px 18px rgba(26, 18, 11, 0.08);
+    transition:
+      transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      box-shadow 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  @media (min-width: 1024px) {
+    .community-video-bubble {
+      justify-self: end;
+      align-self: center;
+      width: 32rem;
+      max-width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+  .community-video-bubble__poster {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  .community-video-bubble__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(26, 18, 11, 0.38);
+    pointer-events: none;
+    transition: background 220ms ease;
+  }
+  .community-video-bubble:hover .community-video-bubble__shade {
+    background: rgba(26, 18, 11, 0.32);
+  }
+  .community-video-bubble__badge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: clamp(2.65rem, 10vw, 3.4rem);
+    height: clamp(2.65rem, 10vw, 3.4rem);
+    transform: translate(-50%, -50%);
+    display: block;
+    pointer-events: none;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.28));
+    transition: transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .community-video-bubble__badge svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .community-video-bubble:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 32px 60px -22px rgba(26, 18, 11, 0.28),
+      0 14px 24px rgba(26, 18, 11, 0.1);
+  }
+  .community-video-bubble:hover .community-video-bubble__badge {
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  .community-video-bubble:focus-visible {
+    outline: 2px solid rgba(26, 18, 11, 0.45);
+    outline-offset: 4px;
+  }
+
+  .community-video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+  .community-video-modal[hidden] {
+    display: none !important;
+  }
+  .community-video-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(20, 12, 8, 0.72);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  .community-video-modal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 72rem);
+  }
+  .community-video-modal__stage {
+    background: transparent;
+    min-height: min(76vh, 42rem);
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .community-video-modal__clip {
+    width: 100%;
+    height: min(76vh, 42rem);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+  .community-video-modal__media {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 1rem;
+    background: transparent;
+  }
+  .community-video-modal__close {
+    position: absolute;
+    top: -2.7rem;
+    right: 0;
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 9999px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.92);
+    color: #1a120b;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(20, 12, 8, 0.18);
+  }
+  .community-video-modal__close:hover {
+    background: #fff;
+  }
+  @media (max-width: 767px) {
+    .community-video-modal__close {
+      position: fixed;
+      top: calc(env(safe-area-inset-top, 0px) + 0.65rem);
+      right: max(0.65rem, env(safe-area-inset-right, 0px));
+      left: auto;
+      z-index: 3;
+    }
+  }
+
   /* The space: horizontal card strip on small screens — scrollbar hidden */
   .the-space-cards-row {
     scrollbar-width: none;
@@ -602,6 +839,36 @@
       transform: none;
     }
     dialog.discount-modal[open] .discount-modal-panel {
+      animation: none;
+    }
+  }
+
+  /* Testimonial modal — same open animation as discount modal */
+  dialog.testimonial-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  dialog.testimonial-modal[open]::backdrop {
+    animation: discount-modal-backdrop-in 0.26s ease-out forwards;
+  }
+  dialog.testimonial-modal .testimonial-modal-panel {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  dialog.testimonial-modal[open] .testimonial-modal-panel {
+    animation: discount-modal-panel-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    dialog.testimonial-modal[open]::backdrop {
+      animation: none;
+      opacity: 1;
+    }
+    dialog.testimonial-modal .testimonial-modal-panel {
+      opacity: 1;
+      transform: none;
+    }
+    dialog.testimonial-modal[open] .testimonial-modal-panel {
       animation: none;
     }
   }

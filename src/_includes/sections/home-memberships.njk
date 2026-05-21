@@ -39,7 +39,8 @@
     <div class="pricing-row flex max-sm:flex-nowrap max-sm:gap-5 max-sm:w-max sm:grid sm:grid-cols-2 sm:items-stretch sm:gap-6 sm:overflow-visible md:gap-8 lg:grid-cols-4">
       {% for card in cards %}
       <div class="pricing-card-wrapper flex flex-col gap-4 max-sm:w-[min(280px,88vw)] max-sm:shrink-0 sm:h-full sm:w-auto">
-        <article class="pricing-card flex min-h-0 flex-1 flex-col bg-white rounded-3xl p-7 md:p-7">
+        <article class="pricing-card flex min-h-0 flex-1 flex-col overflow-hidden bg-white rounded-3xl">
+          <div class="pricing-card__body flex flex-col p-7 md:p-7{% if not card.footnote %} flex-1{% endif %}">
           <div class="pricing-card-header flex flex-col gap-2">
             {% if card.badge %}
             <span class="pricing-card-badge inline-flex w-fit items-center gap-1.5 rounded-full bg-rose-50 px-2.5 py-1 text-[11px] font-semibold leading-none tracking-wide text-rose-700">
@@ -59,7 +60,7 @@
 
           <hr class="pricing-card-divider mt-3 mb-4 border-gray-200" />
 
-          <ul class="flex flex-col gap-3.5 flex-1 m-0 list-none p-0">
+          <ul class="flex flex-col gap-3.5 m-0 list-none p-0{% if not card.footnote %} flex-1{% endif %}">
             {% for item in (card.inclusions or []) %}
             <li class="flex items-start gap-3">
               <span class="shrink-0 mt-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-gray-900" aria-hidden="true">
@@ -71,6 +72,13 @@
             </li>
             {% endfor %}
           </ul>
+          </div>
+
+          {% if card.footnote %}
+          <div class="pricing-card-footnote">
+            <p class="text-sm font-medium leading-snug text-gray-900">{{ card.footnote.title }}. {{ card.footnote.text }}</p>
+          </div>
+          {% endif %}
         </article>
 
         <button

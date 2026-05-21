@@ -1,0 +1,31 @@
+{# Community video lightbox — same pattern as Valeto lamination gallery modal #}
+<div
+  id="community-video-modal"
+  class="community-video-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+  hidden
+>
+  <div class="community-video-modal__backdrop" data-community-video-close></div>
+  <div class="community-video-modal__panel" role="document">
+    <button
+      type="button"
+      class="community-video-modal__close"
+      data-community-video-close
+      aria-label="{{ i18n.ui.en.close }}"
+      data-i18n-ui="close"
+    >&times;</button>
+    <div class="community-video-modal__stage">
+      <div class="community-video-modal__clip">
+        <video
+          class="community-video-modal__media"
+          data-community-video-player
+          playsinline
+          controls
+          preload="metadata"
+        ></video>
+      </div>
+    </div>
+  </div>
+</div>

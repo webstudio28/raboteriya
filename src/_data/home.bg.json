@@ -131,9 +131,12 @@
           "Собствено определено бюро",
           "Оставяте си настройката както ви харесва",
           "Допълнителен екран",
-          "Приоритет за кабина и тиха стая",
-          "Възможност за пауза на членството"
-        ]
+          "Приоритет за кабина и тиха стая"
+        ],
+        "footnote": {
+          "title": "Пауза на членството до 22 дни годишно",
+          "text": "На почивка? Бюрото ви ви чака."
+        }
       },
       {
         "title": "WEEKLY PASS",
@@ -190,6 +193,38 @@
   "testimonials": {
     "heading": "Нашите Google любовни бележки",
     "items": [
+      {
+        "quote": "The place is super cozy, calm and makes you want to work with pleasure. The two girls who created and maintain it are great people - always smiling, responsive and create a feeling that you are among friends, not just in a co-working space. There is everything you need - comfortable places to work, corners for privacy, a place to eat, and the garden is an absolute bonus. From time to time they also organize super nice gatherings - barbecues, entertainment, and recently they also organized a movie night just for girls with a movie, snacks and a very good mood. It is obvious that this place was made with desire and attitude. I recommend it with both hands!",
+        "name": "Silvia Naydenova"
+      },
+      {
+        "quote": "Cozy place with great hosts! Good not only for working there, but events too!",
+        "name": "Veneta Fm"
+      },
+      {
+        "quote": "Really nice co-working space. I actually made friends here, which made the whole experience special. Good atmosphere, comfortable place to work, and just a great vibe overall.",
+        "name": "Yuliyan Petkov"
+      },
+      {
+        "quote": "An excellent place to work with a friendly atmosphere and comfort.",
+        "name": "Ivan Atanassov"
+      },
+      {
+        "quote": "Best co-working space in Plovdiv if you want to have some fun and great conversations while you work. The day passes by quickly because you're having a good time! The owners are two lovely sisters who will make you feel welcome every time you want to visit even if you're not a regular",
+        "name": "Aleksandra Kamenova"
+      },
+      {
+        "quote": "Raboteriya offers the perfect balance between productivity and community. The workspace is modern, clean, and comfortable, with fast and reliable internet—everything you need to stay focused and get work done efficiently. What truly sets this place apart is the people and the atmosphere. The community is friendly, open, and inspiring, making it easy to connect and collaborate. The team behind Raboteriya goes above and beyond to create a welcoming and positive environment. The game nights and parties are a huge highlight—they bring everyone together, create real connections, and make the whole experience much more than just a place to work. It feels like a community, not just a coworking space. If you're looking for the best coworking experience in Plovdiv, this is it. Highly recommended!",
+        "name": "Georgi Angelov"
+      },
+      {
+        "quote": "A very cozy place where people can relax and be themselves. Made with taste and desire for every detail, and Alex's food is divine! There is no feeling of grayness and boredom, which is often present in the office. I recommend it with both hands!",
+        "name": "Vesela Ganeva"
+      },
+      {
+        "quote": "Been here since a month and it is genuinely an amazing place to work from in Plovdiv. The hosts are extremely friendly and caring, the environment is cozy, there is everything you need in a working environment: coffee, water, snacks and most importantly a cat. They also have extra monitors for people who require more than one screen. The people attending this place are interesting, fun and hard-working. The atmosphere is also very entrepreneurial. You can learn a lot by just chatting with people in between work sessions. If you are looking for a working environment that will also satisfy your socialization needs, this is the perfect place to be. I highly recommend it.",
+        "name": "Teodor Mironov"
+      },
       {
         "quote": "The place has such a cozy and welcoming atmosphere. The owners are absolute sunshines - they genuinely care about their clients and always go the extra mile to make everyone feel comfortable. They're open to new ideas and are constantly thinking about how to make the coworking space even better. You can really feel the heart and passion behind every decision that has been made.",
         "name": "Gergana Andreeva"
@@ -252,22 +287,17 @@
       }
     ]
   },
-  "thankYou": {
-    "heading": "Избери общност, не само бюро",
+  "community": {
+    "heading": "Намери своите хора, не само бюро",
     "paragraphs": [
-      "Всеки месец правим събития за членове – от тематични партита и BBQ в градината до спокойни вечери с игри.",
-      "Споделените преживявания носят щастие и продуктивност. Raboteriya не е просто коворкинг – място за хора, приятелства и принадлежност."
+      "В Raboteriya често срещаш фрийлансъри, хора на дистанционна работа и собственици на малки бизнеси - всеки със свои истории, идеи, умения и контакти. Понякога най-полезният разговор за деня не е на среща. Започва непринудено, между две задачи, докато правиш кафе в кухнята.",
+      "Затова оставяме място за повече от работа. Всяка седмица се събираме за кино вечери, настолни игри, BBQ в градината или спокойни вечери на дивана, след като лаптопите се затворят. Без насилена мрежа. Без корпоративни ледоразбивачи. Просто място, където хората постепенно стават познати - и работните дни се усещат малко по-малко самотни."
     ],
-    "galleryImages": [
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png",
-      "/assets/images/the-space-default.png"
-    ]
+    "video": {
+      "src": "/assets/videos/friends.mp4",
+      "poster": "/assets/videos/friends-cover.png",
+      "alt": "Моменти от общността в Raboteriya"
+    }
   },
   "contact": {
     "heading": "Готов/а да дойдеш",

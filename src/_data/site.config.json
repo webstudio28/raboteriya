@@ -6,9 +6,9 @@
     "language": "en"
   },
   "colors": {
-    "primary": "#2563eb",
-    "secondary": "#64748b",
-    "accent": "#f59e0b"
+    "primary": "#1a120b",
+    "secondary": "#3d2e24",
+    "accent": "#e8e6e1"
   },
   "seo": {
     "siteUrl": "https://example.com",
@@ -26,7 +26,7 @@
       { "label": "Memberships", "url": "#memberships" },
       { "label": "Extras", "url": "#extras", "hideOnDesktop": true },
       { "label": "Reviews", "url": "#testimonials", "hideOnDesktop": true },
-      { "label": "Community", "url": "#split-section", "hideOnDesktop": true },
+      { "label": "Community", "url": "#community", "hideOnDesktop": true },
       { "label": "FAQ", "url": "#faq" },
       { "label": "Location", "url": "#location", "hideOnDesktop": true },
       { "label": "Contact", "url": "#contact" }

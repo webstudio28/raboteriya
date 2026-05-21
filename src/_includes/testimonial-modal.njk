@@ -1,0 +1,40 @@
+{# Full Google review — opened from testimonial cards #}
+<dialog
+  id="testimonial-modal"
+  class="testimonial-modal fixed inset-0 z-[200] m-0 h-full max-h-none w-full max-w-none overflow-y-auto border-0 bg-transparent p-4 open:flex open:items-center open:justify-center"
+  aria-labelledby="testimonial-modal-name"
+>
+  <div class="testimonial-modal-panel relative w-full max-w-lg rounded-2xl border border-gray-200 bg-white p-6 shadow-xl md:p-8">
+    <div class="flex justify-end">
+      <button
+        type="button"
+        id="testimonial-modal-close"
+        class="-m-2 rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
+        aria-label="{{ i18n.ui.en.close }}"
+        data-i18n-ui="close"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="mt-1 flex items-start gap-3">
+      <div
+        id="testimonial-modal-avatar"
+        class="h-10 w-10 shrink-0 rounded-full border border-gray-200 bg-gray-100 flex items-center justify-center text-gray-700 font-semibold"
+        aria-hidden="true"
+      ></div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between gap-3">
+          <p id="testimonial-modal-name" class="text-gray-900 font-semibold truncate"></p>
+          <span class="text-xs text-gray-500 shrink-0">Google</span>
+        </div>
+        <div class="mt-1 flex items-center gap-2">
+          <span class="flex gap-0.5 text-sm text-yellow-500" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </span>
+          <span class="text-xs text-gray-500">5.0</span>
+        </div>
+      </div>
+    </div>
+    <p id="testimonial-modal-quote" class="mt-4 text-lg leading-relaxed text-gray-900"></p>
+  </div>
+</dialog>

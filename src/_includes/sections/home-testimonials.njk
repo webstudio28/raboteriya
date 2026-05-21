@@ -1,4 +1,5 @@
 {# Testimonials — title only; moving/draggable strip #}
+{% from "macros/testimonial-card.njk" import testimonialCard %}
 {% from "macros/i18n.njk" import localeClass %}
 <section class="section-padding bg-page" id="testimonials">
   {% for locale in i18n.locales %}
@@ -36,52 +37,12 @@
       <div class="testimonials-strip" aria-label="Member testimonials">
         <div class="testimonials-strip-set">
           {% for item in (t.items or []) %}
-          {% set initial = (item.name | default('G') | first) %}
-          <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col rounded-2xl border border-gray-200 bg-white">
-            <div class="flex items-start gap-3">
-              <div class="h-10 w-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 font-semibold">
-                {{ initial | upper }}
-              </div>
-              <div class="min-w-0 flex-1">
-                <div class="flex items-center justify-between gap-3">
-                  <p class="text-gray-900 font-semibold truncate">{{ item.name }}</p>
-                  <span class="text-xs text-gray-500">{{ googleLabel }}</span>
-                </div>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="flex gap-0.5 text-sm text-yellow-500" aria-hidden="true">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                  </span>
-                  <span class="text-xs text-gray-500">5.0</span>
-                </div>
-              </div>
-            </div>
-            <p class="mt-4 text-gray-900 font-normal not-italic flex-1 leading-relaxed">{{ item.quote }}</p>
-          </div>
+          {{ testimonialCard(item, googleLabel) }}
           {% endfor %}
         </div>
-        <div class="testimonials-strip-set">
+        <div class="testimonials-strip-set" aria-hidden="true">
           {% for item in (t.items or []) %}
-          {% set initial = (item.name | default('G') | first) %}
-          <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[380px] p-6 flex flex-col rounded-2xl border border-gray-200 bg-white">
-            <div class="flex items-start gap-3">
-              <div class="h-10 w-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 font-semibold">
-                {{ initial | upper }}
-              </div>
-              <div class="min-w-0 flex-1">
-                <div class="flex items-center justify-between gap-3">
-                  <p class="text-gray-900 font-semibold truncate">{{ item.name }}</p>
-                  <span class="text-xs text-gray-500">{{ googleLabel }}</span>
-                </div>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="flex gap-0.5 text-sm text-yellow-500" aria-hidden="true">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                  </span>
-                  <span class="text-xs text-gray-500">5.0</span>
-                </div>
-              </div>
-            </div>
-            <p class="mt-4 text-gray-900 font-normal not-italic flex-1 leading-relaxed">{{ item.quote }}</p>
-          </div>
+          {{ testimonialCard(item, googleLabel) }}
           {% endfor %}
         </div>
       </div>
