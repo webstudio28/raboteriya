@@ -48,6 +48,18 @@
         "url": "/assets/optimized/about-jpg-1200w.webp"
       }
     ],
+    "images/andton.jpg": [
+      {
+        "width": 384,
+        "height": 492,
+        "url": "/assets/optimized/andton-jpg-384w.webp"
+      },
+      {
+        "width": 480,
+        "height": 615,
+        "url": "/assets/optimized/andton-jpg-480w.webp"
+      }
+    ],
     "images/logo.png": [
       {
         "width": 140,
@@ -67,23 +79,6 @@
         "url": "/assets/optimized/og-image-png-1200w.webp"
       }
     ],
-    "images/spaces/cs1.jpg": [
-      {
-        "width": 400,
-        "height": 533,
-        "url": "/assets/optimized/spaces-cs1-jpg-400w.webp"
-      },
-      {
-        "width": 520,
-        "height": 694,
-        "url": "/assets/optimized/spaces-cs1-jpg-520w.webp"
-      },
-      {
-        "width": 1200,
-        "height": 1600,
-        "url": "/assets/optimized/spaces-cs1-jpg-1200w.webp"
-      }
-    ],
     "images/spaces/cs1.png": [
       {
         "width": 400,
@@ -101,38 +96,38 @@
         "url": "/assets/optimized/spaces-cs1-png-1200w.webp"
       }
     ],
-    "images/spaces/cs10.jpg.jpeg": [
+    "images/spaces/cs10.jpg": [
       {
         "width": 400,
         "height": 710,
-        "url": "/assets/optimized/spaces-cs10.jpg-jpeg-400w.webp"
+        "url": "/assets/optimized/spaces-cs10-jpg-400w.webp"
       },
       {
         "width": 520,
         "height": 924,
-        "url": "/assets/optimized/spaces-cs10.jpg-jpeg-520w.webp"
+        "url": "/assets/optimized/spaces-cs10-jpg-520w.webp"
       },
       {
         "width": 880,
         "height": 1563,
-        "url": "/assets/optimized/spaces-cs10.jpg-jpeg-1200w.webp"
+        "url": "/assets/optimized/spaces-cs10-jpg-1200w.webp"
       }
     ],
-    "images/spaces/cs3.jpg": [
+    "images/spaces/cs2.jpg": [
       {
         "width": 400,
         "height": 533,
-        "url": "/assets/optimized/spaces-cs3-jpg-400w.webp"
+        "url": "/assets/optimized/spaces-cs2-jpg-400w.webp"
       },
       {
         "width": 520,
         "height": 694,
-        "url": "/assets/optimized/spaces-cs3-jpg-520w.webp"
+        "url": "/assets/optimized/spaces-cs2-jpg-520w.webp"
       },
       {
         "width": 1200,
         "height": 1600,
-        "url": "/assets/optimized/spaces-cs3-jpg-1200w.webp"
+        "url": "/assets/optimized/spaces-cs2-jpg-1200w.webp"
       }
     ],
     "images/spaces/cs3.PNG": [
@@ -184,40 +179,6 @@
         "width": 1200,
         "height": 1600,
         "url": "/assets/optimized/spaces-cs5-jpg-1200w.webp"
-      }
-    ],
-    "images/spaces/cs5.png": [
-      {
-        "width": 400,
-        "height": 534,
-        "url": "/assets/optimized/spaces-cs5-png-400w.webp"
-      },
-      {
-        "width": 520,
-        "height": 694,
-        "url": "/assets/optimized/spaces-cs5-png-520w.webp"
-      },
-      {
-        "width": 1086,
-        "height": 1449,
-        "url": "/assets/optimized/spaces-cs5-png-1200w.webp"
-      }
-    ],
-    "images/spaces/cs6.jpg": [
-      {
-        "width": 400,
-        "height": 533,
-        "url": "/assets/optimized/spaces-cs6-jpg-400w.webp"
-      },
-      {
-        "width": 520,
-        "height": 694,
-        "url": "/assets/optimized/spaces-cs6-jpg-520w.webp"
-      },
-      {
-        "width": 1200,
-        "height": 1600,
-        "url": "/assets/optimized/spaces-cs6-jpg-1200w.webp"
       }
     ],
     "images/spaces/cs6.PNG": [
