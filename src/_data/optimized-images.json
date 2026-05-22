@@ -118,23 +118,6 @@
         "url": "/assets/optimized/spaces-cs10.jpg-jpeg-1200w.webp"
       }
     ],
-    "images/spaces/cs2.jpg": [
-      {
-        "width": 400,
-        "height": 533,
-        "url": "/assets/optimized/spaces-cs2-jpg-400w.webp"
-      },
-      {
-        "width": 520,
-        "height": 694,
-        "url": "/assets/optimized/spaces-cs2-jpg-520w.webp"
-      },
-      {
-        "width": 1200,
-        "height": 1600,
-        "url": "/assets/optimized/spaces-cs2-jpg-1200w.webp"
-      }
-    ],
     "images/spaces/cs3.jpg": [
       {
         "width": 400,

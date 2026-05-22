@@ -115,7 +115,7 @@
     });
   });
 
-  applyLocale(getStoredLocale());
+  applyLocale("en");
 
   window.addEventListener("resize", updateLangToggleThumbs);
   if (document.fonts && document.fonts.ready) {
