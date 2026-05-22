@@ -550,6 +550,11 @@
     padding: 0.4em 0;
   }
 
+  .mobile-menu-list .i18n-hidden,
+  .mobile-menu-list li[hidden] {
+    display: none !important;
+  }
+
   .mobile-menu-link {
     font-size: 1.125rem;
     font-weight: 500;

@@ -54,18 +54,29 @@
     aria-controls="mobile-menu-overlay"
   ><span></span></label>
   <div id="mobile-menu-overlay" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-hidden="true">
-    {% for locale in i18n.locales %}
-    {% set nav = i18n.nav[locale] %}
-    <nav class="mobile-menu-nav {{ localeClass(locale) }}" data-locale="{{ locale }}" aria-label="Mobile">
+    <nav class="mobile-menu-nav" aria-label="Mobile">
       <ul class="mobile-menu-list">
-        {% set mobileMenuUrls = ["#hero", "#about", "#why-raboteriya", "#the-space", "#memberships", "#testimonials", "#community", "#faq", "#contact"] %}
-        {% for item in nav.header %}
-          {% if item.url in mobileMenuUrls %}
-          <li><a href="{{ item.url }}" class="mobile-menu-link">{{ item.label }}</a></li>
-          {% endif %}
-        {% endfor %}
+        {# Hardcoded mobile menu — EN #}
+        <li class="i18n-locale" data-locale="en"><a href="#hero" class="mobile-menu-link">Home</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#about" class="mobile-menu-link">About</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#why-raboteriya" class="mobile-menu-link">Why choose us</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#the-space" class="mobile-menu-link">The space</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#memberships" class="mobile-menu-link">Memberships</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#testimonials" class="mobile-menu-link">Reviews</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#community" class="mobile-menu-link">Community</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#faq" class="mobile-menu-link">FAQ</a></li>
+        <li class="i18n-locale" data-locale="en"><a href="#contact" class="mobile-menu-link">Contact</a></li>
+        {# Hardcoded mobile menu — BG #}
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#hero" class="mobile-menu-link">Нач.</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#about" class="mobile-menu-link">Инфо</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#why-raboteriya" class="mobile-menu-link">Защо ние</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#the-space" class="mobile-menu-link">Място</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#memberships" class="mobile-menu-link">Членства</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#testimonials" class="mobile-menu-link">Отзиви</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#community" class="mobile-menu-link">Общност</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#faq" class="mobile-menu-link">ЧЗВ</a></li>
+        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#contact" class="mobile-menu-link">Контакт</a></li>
       </ul>
     </nav>
-    {% endfor %}
   </div>
 </div>

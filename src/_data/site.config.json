@@ -24,11 +24,11 @@
       { "label": "Why choose us", "url": "#why-raboteriya", "hideOnDesktop": true },
       { "label": "The space", "url": "#the-space" },
       { "label": "Memberships", "url": "#memberships" },
-      { "label": "Extras", "url": "#extras", "hideOnDesktop": true },
+      { "label": "Extras", "url": "#extras", "hideOnDesktop": true, "hideOnMobile": true },
       { "label": "Reviews", "url": "#testimonials", "hideOnDesktop": true },
       { "label": "Community", "url": "#community", "hideOnDesktop": true },
       { "label": "FAQ", "url": "#faq" },
-      { "label": "Location", "url": "#location", "hideOnDesktop": true },
+      { "label": "Location", "url": "#location", "hideOnDesktop": true, "hideOnMobile": true },
       { "label": "Contact", "url": "#contact" }
     ],
     "headerCta": { "label": "Reserve your spot", "url": "#memberships" },

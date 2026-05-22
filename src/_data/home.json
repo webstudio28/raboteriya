@@ -35,43 +35,48 @@
     "headingLine2": "your new favourite workspace",
     "cards": [
       {
-        "image": "/assets/images/cs2.jpg",
         "title": "COMMUNITY\nSPACE",
         "description": "A space with atmosphere where working next to others feels motivating, not distracting.",
         "gallery": [
-          "/assets/images/cs1.jpg",
-          "/assets/images/cs2.jpg",
-          "/assets/images/cs3.png",
-          "/assets/images/cs4.jpg",
-          "/assets/images/cs5.png",
-          "/assets/images/cs6.jpg",
-          "/assets/images/cs7.png"
+          "/assets/images/spaces/cs1.jpg",
+          "/assets/images/spaces/cs1.png",
+          "/assets/images/spaces/cs2.jpg",
+          "/assets/images/spaces/cs3.jpg",
+          "/assets/images/spaces/cs3.PNG",
+          "/assets/images/spaces/cs4.jpg",
+          "/assets/images/spaces/cs5.jpg",
+          "/assets/images/spaces/cs5.png",
+          "/assets/images/spaces/cs6.jpg",
+          "/assets/images/spaces/cs6.PNG",
+          "/assets/images/spaces/cs7.png",
+          "/assets/images/spaces/cs8.jpg",
+          "/assets/images/spaces/cs9.png",
+          "/assets/images/spaces/cs10.jpg.jpeg"
         ]
       },
       {
-        "image": "/assets/images/qr3.jpg",
         "title": "QUIET FOCUS\nROOM",
         "description": "A dedicated room for those moments when you need absolute silence and deep focus to get work done.",
         "gallery": [
-          "/assets/images/qr1.jpg",
-          "/assets/images/qr2.jpg",
-          "/assets/images/qr3.jpg"
+          "/assets/images/spaces/qr1.jpg",
+          "/assets/images/spaces/qr2.jpg",
+          "/assets/images/spaces/qr3.jpg"
         ]
       },
       {
-        "image": "/assets/images/phonebooth.JPG",
         "title": "PHONE\nBOOTH",
         "description": "A private phone booth for Zoom meetings, calls, and anything that shouldn't happen at a shared desk.",
         "gallery": [
-          "/assets/images/phonebooth.JPG"
+          "/assets/images/spaces/phonebooth.JPG"
         ]
       },
       {
-        "image": "/assets/images/the-space-default.png",
         "title": "THE GARDEN",
         "description": "A small but much-loved space where we host BBQs, take breaks, and enjoy a drink or fresh air.",
         "gallery": [
-          "/assets/images/the-space-default.png"
+          "/assets/images/spaces/gradina1.png",
+          "/assets/images/spaces/gradina2.png",
+          "/assets/images/spaces/gradina3.jpg.jpeg"
         ]
       }
     ]

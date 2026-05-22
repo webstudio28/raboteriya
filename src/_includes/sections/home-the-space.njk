@@ -15,9 +15,9 @@
     <div class="mt-12 md:mt-16 max-sm:-mx-4 max-sm:px-4">
       <div class="the-space-cards-row flex max-sm:flex-nowrap max-sm:gap-5 max-sm:overflow-x-auto max-sm:overflow-y-visible max-sm:pb-3 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:pb-0 md:gap-8 lg:grid-cols-4 lg:gap-4 [-webkit-overflow-scrolling:touch]">
       {% for card in (s.cards or []) %}
-      {% set cardImg = card.image | default("/assets/images/the-space-default.png") %}
+      {% set galleryImgs = card.gallery if card.gallery and (card.gallery | length) else [] %}
+      {% set cardImg = galleryImgs[0] %}
       {% set cardImgWebp = cardImg | optImg(520) %}
-      {% set galleryImgs = card.gallery if card.gallery and (card.gallery | length) else [cardImg] %}
       {% set titlePlain = (card.title | default("")) | replace("\n", " ") %}
       <article
         class="the-space-card max-sm:max-w-[260px] max-sm:w-[min(260px,82vw)] max-sm:shrink-0 group relative min-h-[320px] overflow-hidden rounded-3xl bg-gray-200 bg-cover bg-center sm:max-w-none sm:w-auto md:min-h-[380px]"

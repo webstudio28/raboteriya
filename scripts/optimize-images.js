@@ -10,35 +10,40 @@ const SRC_DIR = path.join(ROOT, "src", "assets", "images");
 const OUT_DIR = path.join(ROOT, "src", "assets", "optimized");
 const MANIFEST_PATH = path.join(ROOT, "src", "_data", "optimized-images.json");
 
+const IMAGE_EXT = /\.(jpe?g|png|webp|gif)$/i;
+const SPACES_WIDTHS = [400, 520, 1200];
+
 /** @type {{ file: string, widths: number[] }[]} */
-const JOBS = [
+const BASE_JOBS = [
   { file: "hero-bg-mobile.jpg", widths: [640, 828] },
   { file: "hero-bg.jpg", widths: [1280, 1920] },
   { file: "about-mobile.jpg", widths: [400, 800] },
   { file: "about.jpg", widths: [800, 1200] },
   { file: "andton.jpg", widths: [384, 480] },
   { file: "logo.png", widths: [140, 280] },
-  { file: "the-space-default.png", widths: [400, 520] },
-  { file: "phonebooth.JPG", widths: [400, 520] },
-  { file: "qr1.jpg", widths: [400, 520, 1200] },
-  { file: "qr2.jpg", widths: [400, 520, 1200] },
-  { file: "qr3.jpg", widths: [400, 520, 1200] },
-  { file: "cs1.jpg", widths: [400, 520, 1200] },
-  { file: "cs2.jpg", widths: [400, 520, 1200] },
-  { file: "cs3.png", widths: [400, 520, 1200] },
-  { file: "cs4.jpg", widths: [400, 520, 1200] },
-  { file: "cs5.png", widths: [400, 520, 1200] },
-  { file: "cs6.jpg", widths: [400, 520, 1200] },
-  { file: "cs7.png", widths: [400, 520, 1200] },
   { file: "og-image.png", widths: [1200] },
 ];
+
+/** @returns {{ file: string, widths: number[] }[]} */
+function discoverSpacesJobs() {
+  const spacesDir = path.join(SRC_DIR, "spaces");
+  if (!fs.existsSync(spacesDir)) return [];
+  return fs
+    .readdirSync(spacesDir)
+    .filter((name) => IMAGE_EXT.test(name) && !name.startsWith("."))
+    .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }))
+    .map((name) => ({ file: `spaces/${name}`, widths: SPACES_WIDTHS }));
+}
 
 function assetKey(file) {
   return `images/${file.replace(/\\/g, "/")}`;
 }
 
+/** Unique output stem (jpg/png variants must not collide). */
 function outBaseName(file) {
-  return path.basename(file, path.extname(file));
+  const ext = path.extname(file).replace(/^\./, "").toLowerCase() || "img";
+  const stem = file.replace(/\\/g, "/").replace(/\.[^.]+$/, "").replace(/\//g, "-");
+  return `${stem}-${ext}`;
 }
 
 async function main() {
@@ -54,7 +59,9 @@ async function main() {
   /** @type {Record<string, { width: number, height: number, url: string }[]>} */
   const manifest = { images: {} };
 
-  for (const job of JOBS) {
+  const jobs = [...BASE_JOBS, ...discoverSpacesJobs()];
+
+  for (const job of jobs) {
     const inputPath = path.join(SRC_DIR, job.file);
     if (!fs.existsSync(inputPath)) {
       console.warn(`skip (missing): ${job.file}`);
