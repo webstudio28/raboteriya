@@ -6,7 +6,7 @@
     "start": "npm-run-all --parallel css:watch serve",
     "dev": "npm start",
     "serve": "eleventy --serve",
-    "build": "npm-run-all optimize:images bundle:js css:build build:site",
+    "build": "npm-run-all bundle:js css:build build:site",
     "optimize:images": "node scripts/optimize-images.js",
     "bundle:js": "node scripts/bundle-js.js",
     "build:site": "eleventy",
