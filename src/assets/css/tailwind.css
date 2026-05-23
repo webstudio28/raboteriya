@@ -818,6 +818,23 @@
     height: 0;
   }
 
+  /* The space: subtle lift on desktop — feels tappable without crowding the grid */
+  @media (min-width: 640px) {
+    .the-space-card {
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+    }
+    .the-space-card:hover,
+    .the-space-card:focus-within {
+      transform: scale(1.025);
+      z-index: 2;
+      box-shadow:
+        0 6px 10px -2px rgba(0, 0, 0, 0.09),
+        0 14px 36px -8px rgba(0, 0, 0, 0.16);
+    }
+  }
+
   /* Memberships: mobile horizontal strip — bleed right, gutter snap at end */
   @media (max-width: 639px) {
     .pricing-row-scroll {

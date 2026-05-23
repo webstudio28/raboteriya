@@ -20,7 +20,7 @@
       {% set cardImgWebp = cardImg | optImg(520) %}
       {% set titlePlain = (card.title | default("")) | replace("\n", " ") %}
       <article
-        class="the-space-card max-sm:max-w-[260px] max-sm:w-[min(260px,82vw)] max-sm:shrink-0 group relative min-h-[320px] overflow-hidden rounded-3xl bg-gray-200 bg-cover bg-center sm:max-w-none sm:w-auto md:min-h-[380px]"
+        class="the-space-card max-sm:max-w-[260px] max-sm:w-[min(260px,82vw)] max-sm:shrink-0 group relative min-h-[320px] overflow-hidden rounded-3xl bg-gray-200 bg-cover bg-center sm:max-w-none sm:w-auto sm:cursor-pointer md:min-h-[380px]"
         style="background-image: url('{{ cardImgWebp | url }}');"
       >
         <button

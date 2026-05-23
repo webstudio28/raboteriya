@@ -31,7 +31,7 @@
       { "label": "Location", "url": "#location", "hideOnDesktop": true, "hideOnMobile": true },
       { "label": "Contact", "url": "#contact" }
     ],
-    "headerCta": { "label": "Reserve your spot", "url": "#memberships" },
+    "headerCta": { "label": "Reserve your spot", "url": "#pricing" },
     "footer": [
       { "label": "Privacy", "url": "/privacy" },
       { "label": "Imprint", "url": "/imprint" }

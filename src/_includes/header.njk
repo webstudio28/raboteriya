@@ -30,7 +30,7 @@
       {% for locale in i18n.locales %}
       {% set nav = i18n.nav[locale] %}
       {% if nav.headerCta %}
-      <a href="{{ nav.headerCta.url }}" class="header-cta {{ localeClass(locale) }} px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg shrink-0" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
+      <a href="{{ nav.headerCta.url }}" class="header-cta {{ localeClass(locale) }} px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg shrink-0" data-locale="{{ locale }}" data-pricing-scroll-adjust="96">{{ nav.headerCta.label }}</a>
       {% endif %}
       {% endfor %}
     </div>
@@ -79,7 +79,7 @@
         {% for locale in i18n.locales %}
         {% set nav = i18n.nav[locale] %}
         {% if nav.headerCta %}
-        <a href="{{ nav.headerCta.url }}" class="header-cta mobile-menu-link--cta {{ localeClass(locale) }}" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
+        <a href="{{ nav.headerCta.url }}" class="header-cta mobile-menu-link--cta {{ localeClass(locale) }}" data-locale="{{ locale }}" data-pricing-scroll-adjust-mobile="96">{{ nav.headerCta.label }}</a>
         {% endif %}
         {% endfor %}
       </div>
