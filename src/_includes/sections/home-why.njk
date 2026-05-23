@@ -5,11 +5,7 @@
   {% set w = i18n.home[locale].whyRaboteriya %}
   <div class="container-custom text-center {{ localeClass(locale) }}" data-locale="{{ locale }}">
     <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white">
-      {%- if w.headingLine1 and w.headingLine2 -%}
       {{ w.headingLine1 }}<span class="inline lg:hidden"> </span><br class="hidden lg:block" aria-hidden="true" />{{ w.headingLine2 }}
-      {%- else -%}
-      {{ w.heading | default('Why remote workers choose us over working from home or cafes') }}
-      {%- endif -%}
     </h2>
     {% if w.paragraph %}
     <p class="mt-2 md:mt-8 max-w-2xl mx-auto text-lg text-white">{{ w.paragraph }}</p>

@@ -19,14 +19,14 @@
     "cta": { "label": "See your options & pricing", "url": "#memberships" }
   },
   "whyRaboteriya": {
-    "headingLine1": "Why remote workers choose us",
-    "headingLine2": "over working from home or cafes",
+    "headingLine1": "Why people leave home and",
+    "headingLine2": "cafés for Raboteriya",
     "features": [
       { "icon": "/assets/images/icons/wifi.png", "title": "FAST WIFI", "description": "Work without interruptions on reliable, high-speed Coool box internet." },
       { "icon": "/assets/images/icons/snacks.png", "title": "DRINKS & SNACKS", "description": "Enjoy coffee, tea, snacks, and access to our fully stocked kitchenette." },
       { "icon": "/assets/images/icons/stocked-kitchenette.png", "title": "STOCKED KITCHENETTE", "description": "Bring lunch, keep it fresh in the fridge, and make yourself at home." },
       { "icon": "/assets/images/icons/affordable.png", "title": "AFFORDABLE MEMBERSHIPS", "description": "Access some of the most affordable memberships in the city." },
-      { "icon": "/assets/images/icons/community.png", "title": "COMMUNITY", "description": "Work alongside the friendliest people instead of sitting alone at home." },
+      { "icon": "/assets/images/icons/community.png", "title": "FAMILIAR FACES", "description": "Work around people who make the day feel lighter, not louder." },
       { "icon": "/assets/images/icons/24.png", "title": "24/7 ACCESS", "description": "Ideal for professionals who don't fit into a 9-5 routine." }
     ]
   },
@@ -98,9 +98,8 @@
         "period": "/month",
         "inclusions": [
           "Your own designated desk",
-          "Leave your setup exactly how you like it",
-          "Dedicated additional screen",
-          "Phone booth & quiet room priority"
+          "Leave your monitor, keyboard, notebook, and setup in place",
+          "Priority access to quiet room and phone booth"
         ],
         "footnote": {
           "title": "Pause your membership for up to 22 days per year",
