@@ -2,6 +2,7 @@
   var input = document.getElementById("mobile-menu-input");
   var label = document.getElementById("mobile-menu-toggle");
   var overlay = document.getElementById("mobile-menu-overlay");
+  var header = document.getElementById("site-header");
   var body = document.body;
   var html = document.documentElement;
 
@@ -11,6 +12,18 @@
     var pack = window.__I18N__ && window.__I18N__.ui;
     var locale = html.getAttribute("data-lang") || "en";
     return pack && pack[locale] ? pack[locale] : null;
+  }
+
+  function syncHeaderHeight() {
+    if (!header) return;
+    document.documentElement.style.setProperty(
+      "--site-header-height",
+      header.offsetHeight + "px"
+    );
+  }
+
+  function setScrollLock(locked) {
+    body.classList.toggle("modal-open", locked);
   }
 
   function syncA11y() {
@@ -24,13 +37,8 @@
   }
 
   function onChange() {
-    if (input.checked) {
-      body.style.overflow = "hidden";
-      body.style.height = "100vh";
-    } else {
-      body.style.overflow = "";
-      body.style.height = "";
-    }
+    if (input.checked) syncHeaderHeight();
+    setScrollLock(input.checked);
     syncA11y();
   }
 
@@ -52,5 +60,7 @@
 
   document.addEventListener("raboteriya:localechange", syncA11y);
 
+  syncHeaderHeight();
+  window.addEventListener("resize", syncHeaderHeight, { passive: true });
   syncA11y();
 })();

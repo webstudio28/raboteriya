@@ -265,6 +265,11 @@
   .site-header.is-scrolled {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
+
+  /* Mobile menu open: keep header + burger above the overlay panel */
+  body:has(#mobile-menu-input:checked) .site-header {
+    z-index: 108;
+  }
   /* Hero: fill viewport minus header so no extra scroll (100dvh = dynamic viewport on mobile) */
   .hero-section {
     min-height: calc(100vh - 5rem);
@@ -434,14 +439,17 @@
   }
 
   .mobile-menu-toggle {
-    position: fixed;
-    top: 1rem;
-    right: max(1rem, env(safe-area-inset-right, 0px));
+    position: relative;
     z-index: 110;
     display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 2.5rem;
+    margin-right: max(0px, env(safe-area-inset-right, 0px));
     cursor: pointer;
     user-select: none;
-    padding: 1.25rem 0.7rem;
     border-radius: 0.75rem;
   }
 
@@ -486,41 +494,48 @@
     background-color: #1a120b;
   }
 
-  .mobile-menu-input:checked ~ .mobile-menu-toggle:hover span,
-  .mobile-menu-input:checked ~ .mobile-menu-toggle span {
+  body:has(#mobile-menu-input:checked) .mobile-menu-toggle span {
     background-color: transparent;
   }
 
-  .mobile-menu-input:checked ~ .mobile-menu-toggle span::before {
-    transform: rotate(45deg) translate(7px, 7px);
-    opacity: 0.5;
+  body:has(#mobile-menu-input:checked) .mobile-menu-toggle span::before {
+    top: 0;
+    transform: rotate(45deg);
   }
 
-  .mobile-menu-input:checked ~ .mobile-menu-toggle span::after {
-    top: 1.8em;
-    transform: rotate(-45deg) translate(7px, -7px);
+  body:has(#mobile-menu-input:checked) .mobile-menu-toggle span::after {
+    top: 0;
+    transform: rotate(-45deg);
   }
 
   .mobile-menu-overlay {
     position: fixed;
-    top: 0;
+    top: var(--site-header-height, 4.5rem);
     left: 0;
-    height: 100vh;
-    height: 100dvh;
+    height: calc(100dvh - var(--site-header-height, 4.5rem));
     width: 100vw;
     z-index: 105;
+    overscroll-behavior: contain;
     background: #faf9f6;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+    transform: translateY(-0.5rem);
+    transition:
+      opacity 0.25s ease-out,
+      transform 0.25s ease-out,
+      visibility 0s 0.25s;
   }
 
   .mobile-menu-input:checked ~ .mobile-menu-overlay {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition: opacity 0.5s ease-in-out, visibility 0s;
+    transform: translateY(0);
+    transition:
+      opacity 0.25s ease-out,
+      transform 0.25s ease-out,
+      visibility 0s;
   }
 
   .header-cta {
@@ -545,7 +560,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5rem 1.5rem 1rem;
+    padding: 2rem 1.5rem 1rem;
     list-style: none;
   }
 

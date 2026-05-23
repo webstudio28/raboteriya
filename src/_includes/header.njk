@@ -36,23 +36,22 @@
     </div>
     <div class="flex items-center gap-2 lg:hidden">
       {% include "lang-toggle.njk" %}
-      <div class="mobile-nav-spacer h-10 w-12 shrink-0" aria-hidden="true"></div>
+      <label
+        for="mobile-menu-input"
+        id="mobile-menu-toggle"
+        class="mobile-menu-toggle"
+        aria-label="{{ i18n.ui.en.openMenu }}"
+        data-i18n-ui="openMenu"
+        aria-expanded="false"
+        aria-controls="mobile-menu-overlay"
+      ><span></span></label>
     </div>
   </div>
 </header>
 
-{# Mobile menu outside header so overlay + close button stay above content when scrolled #}
+{# Mobile menu: checkbox + overlay outside header; toggle label lives in header for alignment #}
 <div id="mobile-nav" class="mobile-nav lg:hidden">
   <input type="checkbox" id="mobile-menu-input" class="mobile-menu-input" aria-hidden="true" tabindex="-1" />
-  <label
-    for="mobile-menu-input"
-    id="mobile-menu-toggle"
-    class="mobile-menu-toggle"
-    aria-label="{{ i18n.ui.en.openMenu }}"
-    data-i18n-ui="openMenu"
-    aria-expanded="false"
-    aria-controls="mobile-menu-overlay"
-  ><span></span></label>
   <div id="mobile-menu-overlay" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-hidden="true">
     <nav class="mobile-menu-nav" aria-label="Mobile">
       <ul class="mobile-menu-list">
