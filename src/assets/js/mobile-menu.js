@@ -45,9 +45,19 @@
   input.addEventListener("change", onChange);
 
   document.querySelectorAll(".mobile-menu-link, .mobile-menu-link--cta").forEach(function (link) {
-    link.addEventListener("click", function () {
+    link.addEventListener("click", function (e) {
+      var href = link.getAttribute("href");
+      var isHash = href && href.charAt(0) === "#" && href.length > 1;
       input.checked = false;
       onChange();
+      if (!isHash) return;
+      e.preventDefault();
+      e.stopPropagation();
+      window.setTimeout(function () {
+        if (window.raboteriyaScrollToHash) {
+          window.raboteriyaScrollToHash(href, "smooth", link);
+        }
+      }, 0);
     });
   });
 

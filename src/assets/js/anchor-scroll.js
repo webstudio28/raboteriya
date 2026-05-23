@@ -41,33 +41,49 @@
   function resolveAnchorTarget(hash) {
     if (!hash || hash === "#") return null;
     var id = hash.charAt(0) === "#" ? hash.slice(1) : hash;
-    var inActiveLocale = document.querySelector(
-      '.i18n-locale:not(.i18n-hidden) [data-scroll-anchor="' + id + '"]'
-    );
-    if (inActiveLocale) return inActiveLocale;
-    return document.querySelector(hash);
+    var candidates = document.querySelectorAll('[data-scroll-anchor="' + id + '"]');
+    var i;
+    for (i = 0; i < candidates.length; i++) {
+      var localeRoot = candidates[i].closest(".i18n-locale");
+      if (!localeRoot || (!localeRoot.classList.contains("i18n-hidden") && !localeRoot.hidden)) {
+        return candidates[i];
+      }
+    }
+    var byId = document.getElementById(id);
+    if (!byId) return null;
+    var byIdLocale = byId.closest(".i18n-locale");
+    if (byIdLocale && (byIdLocale.classList.contains("i18n-hidden") || byIdLocale.hidden)) {
+      return null;
+    }
+    return byId;
   }
 
-  function scrollToHash(hash, behavior) {
+  function scrollToHash(hash, behavior, link) {
     if (!hash || hash === "#") return;
-    scrollToTarget(resolveAnchorTarget(hash), behavior);
+    scrollToTarget(resolveAnchorTarget(hash), behavior, link);
   }
+
+  window.raboteriyaScrollToHash = function (hash, behavior, link) {
+    if (!hash || hash === "#") return;
+    var target = resolveAnchorTarget(hash);
+    if (!target) return;
+    if (history.pushState) {
+      history.pushState(null, "", hash);
+    } else {
+      location.hash = hash;
+    }
+    scrollToTarget(target, behavior || "smooth", link);
+  };
 
   document.addEventListener("click", function (e) {
     var link = e.target.closest('a[href^="#"]');
     if (!link || link.getAttribute("href") === "#") return;
 
     var hash = link.getAttribute("href");
-    var target = resolveAnchorTarget(hash);
-    if (!target) return;
+    if (!resolveAnchorTarget(hash)) return;
 
     e.preventDefault();
-    if (history.pushState) {
-      history.pushState(null, "", hash);
-    } else {
-      location.hash = hash;
-    }
-    scrollToTarget(target, "smooth", link);
+    window.raboteriyaScrollToHash(hash, "smooth", link);
   });
 
   window.addEventListener("hashchange", function () {
