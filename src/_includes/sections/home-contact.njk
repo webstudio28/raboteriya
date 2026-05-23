@@ -89,7 +89,7 @@
           {% if c.socials and c.socials.length %}
           <div class="mt-3 flex items-center gap-3">
             {% for s in c.socials %}
-            <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ s.platform }}"
+            <a href="{{ s.url }}"{% if s.icon != "viber" %} target="_blank" rel="noopener noreferrer"{% endif %} aria-label="{{ s.platform }}"
               class="flex-shrink-0 w-10 h-10 rounded-full bg-brown-900 text-white flex items-center justify-center hover:brightness-110 transition-[filter]">
               {% if s.icon == "facebook" %}
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>

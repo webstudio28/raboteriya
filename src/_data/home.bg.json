@@ -341,7 +341,7 @@
       },
       {
         "platform": "Viber",
-        "url": "https://invite.viber.com/?number=%2B359894431048",
+        "url": "viber://chat?number=359894431048",
         "icon": "viber"
       }
     ]

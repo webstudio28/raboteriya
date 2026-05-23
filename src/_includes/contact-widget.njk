@@ -3,7 +3,7 @@
 {% set contact = i18n.home.en.contact %}
 {% set phoneHref = "tel:" ~ (contact.phone | replace(" ", "")) %}
 {% set waUrl = "https://wa.me/359894431048" %}
-{% set viberUrl = "https://invite.viber.com/?number=%2B359894431048" %}
+{% set viberUrl = "viber://chat?number=359894431048" %}
 {% set igUrl = "https://instagram.com/raboteriya" %}
 
 <div
@@ -27,8 +27,6 @@
       <li>
         <a
           href="{{ viberUrl }}"
-          target="_blank"
-          rel="noopener noreferrer"
           class="contact-widget__channel contact-widget__channel--viber"
           aria-label="Viber"
         >

@@ -206,7 +206,7 @@
       { "platform": "LinkedIn", "url": "https://www.linkedin.com/company/coworking-space-aprilov/posts/?feedView=all", "icon": "linkedin" },
       { "platform": "TikTok", "url": "https://tiktok.com/@raboteriya", "icon": "tiktok" },
       { "platform": "WhatsApp", "url": "https://wa.me/359894431048", "icon": "whatsapp" },
-      { "platform": "Viber", "url": "https://invite.viber.com/?number=%2B359894431048", "icon": "viber" }
+      { "platform": "Viber", "url": "viber://chat?number=359894431048", "icon": "viber" }
     ]
   },
   "features": [],
