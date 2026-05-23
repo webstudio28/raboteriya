@@ -7,15 +7,13 @@
   {% set googleReviewsUrl = "https://www.google.com/search?sca_esv=52562783aded96c3&sxsrf=ANbL-n76SxJCXiTo8_LUUzZnwTSeLPJWow:1779388617676&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOS_Wvlvk45gwnMqgeS_m485ALUgtloUrSlMuun_7J1HLwT0AZ8qa87tpfNAlnUWQbYON5wCYntPGlArklB3vej2x0LH4jQJsIE2RrvypnC6Gycrru_MIGMG4ERxaOVtUO1Iwim0%3D&q=RABOTERIYA+COWORKING+SPACE+PLOVDIV+%D0%9E%D1%82%D0%B7%D0%B8%D0%B2%D0%B8&sa=X&ved=2ahUKEwiBiOWTg8uUAxVBRvEDHey3JO8Q0bkNegQIKhAH&biw=1600&bih=689&dpr=1.2" %}
   {% set readAllLabel = "Read all on Google" %}
   {% set googleLabel = "Google" %}
-  {% set defaultHeading = "Our Google love notes" %}
   {% if locale == "bg" %}
     {% set readAllLabel = "Виж всички в Google" %}
-    {% set defaultHeading = "Нашите Google любовни бележки" %}
   {% endif %}
   {% set seeMoreLabel = i18n.ui[locale].faqSeeMore %}
   <div class="{{ localeClass(locale) }}" data-locale="{{ locale }}">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">{{ t.heading | default(defaultHeading) }}</h2>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">{{ t.heading }}</h2>
       <div class="mt-6 md:mt-8 flex flex-col items-center gap-3 text-gray-900">
         <div class="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2">
           <span class="text-sm font-semibold" aria-label="Google">
