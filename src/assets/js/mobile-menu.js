@@ -36,7 +36,7 @@
 
   input.addEventListener("change", onChange);
 
-  document.querySelectorAll(".mobile-menu-link").forEach(function (link) {
+  document.querySelectorAll(".mobile-menu-link, .mobile-menu-link--cta").forEach(function (link) {
     link.addEventListener("click", function () {
       input.checked = false;
       onChange();

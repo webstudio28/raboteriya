@@ -24,6 +24,7 @@ const FILES = [
   "space-gallery.js",
   "community-video.js",
   "community-show-more.js",
+  "contact-widget.js",
 ];
 
 const parts = FILES.map((name) => {

@@ -30,7 +30,7 @@
       {% for locale in i18n.locales %}
       {% set nav = i18n.nav[locale] %}
       {% if nav.headerCta %}
-      <a href="{{ nav.headerCta.url }}" class="{{ localeClass(locale) }} px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg rounded-xl bg-brown-900 text-white font-medium hover:brightness-110 shrink-0 transition-[filter]" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
+      <a href="{{ nav.headerCta.url }}" class="header-cta {{ localeClass(locale) }} px-5 py-2.5 lg:px-6 lg:py-3 lg:text-lg shrink-0" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
       {% endif %}
       {% endfor %}
     </div>
@@ -75,6 +75,14 @@
         <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#community" class="mobile-menu-link">Общност</a></li>
         <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#contact" class="mobile-menu-link">Контакт</a></li>
       </ul>
+      <div class="mobile-menu-footer">
+        {% for locale in i18n.locales %}
+        {% set nav = i18n.nav[locale] %}
+        {% if nav.headerCta %}
+        <a href="{{ nav.headerCta.url }}" class="header-cta mobile-menu-link--cta {{ localeClass(locale) }}" data-locale="{{ locale }}">{{ nav.headerCta.label }}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
     </nav>
   </div>
 </div>

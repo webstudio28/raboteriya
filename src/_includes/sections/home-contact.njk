@@ -20,7 +20,7 @@
         <div class="mt-auto pt-12 space-y-5">
           {% if c.email %}
           <div class="flex items-center gap-4">
-            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center">
+            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brown-900 text-white flex items-center justify-center">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </span>
             <div>
@@ -32,7 +32,7 @@
 
           {% if c.phone %}
           <div class="flex items-center gap-4">
-            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center">
+            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brown-900 text-white flex items-center justify-center">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </span>
             <div>
@@ -44,7 +44,7 @@
 
           {% if c.address %}
           <div class="flex items-center gap-4">
-            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center">
+            <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brown-900 text-white flex items-center justify-center">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             </span>
             <div>
@@ -75,7 +75,7 @@
             class="w-full rounded-xl border-2 border-gray-900/70 bg-transparent px-5 py-3.5 text-base text-gray-900 placeholder-gray-500 outline-none focus:border-gray-900 transition-colors resize-none"></textarea>
           <div>
             <button type="submit"
-              class="js-contact-submit mt-1 inline-block rounded-full bg-gray-900 px-8 py-3.5 text-base font-bold text-white hover:bg-gray-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+              class="js-contact-submit header-cta mt-1 inline-block px-8 py-3.5 text-base font-bold disabled:opacity-60 disabled:cursor-not-allowed">
               {{ c.submitLabel | default('Submit your message') }}
             </button>
           </div>
@@ -90,7 +90,7 @@
           <div class="mt-3 flex items-center gap-3">
             {% for s in c.socials %}
             <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ s.platform }}"
-              class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-gray-800 transition-colors">
+              class="flex-shrink-0 w-10 h-10 rounded-full bg-brown-900 text-white flex items-center justify-center hover:brightness-110 transition-[filter]">
               {% if s.icon == "facebook" %}
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               {% elif s.icon == "instagram" %}

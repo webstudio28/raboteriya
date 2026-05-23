@@ -45,6 +45,9 @@ const uiEn = {
   previousImage: "Previous image",
   nextImage: "Next image",
   close: "Close",
+  contactWidgetHello: "Hi! 😊",
+  contactWidgetOpen: "Open contact options",
+  contactWidgetClose: "Close contact options",
   placeholderImage: "Placeholder image",
   splitSectionQuote:
     "“I started coming to Raboteriya because I needed a place to focus. As a software engineer, working from home sounded great in theory but in reality, I needed a proper workspace.\n\nAfter a few days of joining the coworking space, I ended up sharing a table with a guy who I later found out was a marketing specialist. We started chatting during coffee breaks - about work, clients, random stuff.\n\nAt some point, it just clicked. I was building websites, he was running Google Ads and we realized we could help each other’s clients.\n\nNow we regularly collaborate on projects. Some of my clients use his services, and some of his clients need websites. It all started here - just two people working in the same space.”",
@@ -72,6 +75,9 @@ const uiBg = {
   previousImage: "Предишна",
   nextImage: "Следваща",
   close: "Затв.",
+  contactWidgetHello: "Здравей! 😊",
+  contactWidgetOpen: "Отвори начини за контакт",
+  contactWidgetClose: "Затвори контактите",
   placeholderImage: "Изображение",
   splitSectionQuote:
     "„Започнах да идвам в Raboteriya, защото ми трябваше място за концентрация. Като софтуерен инженер работата от вкъщи звучеше чудесно на теория, но на практика ми трябваше истинско работно пространство.\n\nСлед няколко дни в коворкинга седнах на една маса с човек, който по-късно разбрах, че е маркетинг специалист. Започнахме да си говорим по време на кафе паузите – за работа, клиенти, случайни неща.\n\nВ един момент всичко се нареди. Аз правех уебсайтове, той пускаше Google Ads и осъзнахме, че можем да си помагаме с клиентите.\n\nСега редовно работим заедно по проекти. Част от моите клиенти ползват неговите услуги, а част от неговите – моите. Всичко започна тук – просто двама души в едно пространство.“",
