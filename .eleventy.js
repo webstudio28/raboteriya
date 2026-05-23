@@ -30,16 +30,23 @@ function getVariants(manifest, src, maxWidth) {
 }
 
 module.exports = function (eleventyConfig) {
+  // Dev: serve assets from src/ instead of copying ~150MB into _site on every save.
+  // Production `eleventy` still copies everything (default "copy" behavior).
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
   // Allow access from phone/other devices on same WiFi
   eleventyConfig.setServerOptions({
     showAllHosts: true, // print local network URL for device testing
-    watch: ["_site/**/*.css"], // pick up Tailwind rebuilds
+    watch: ["_site/assets/css/styles.css"], // Tailwind output only (no full rebuild)
   });
+
+  // Debounce rapid saves (e.g. format-on-save) so we don't queue multiple full builds
+  eleventyConfig.setWatchThrottleWaitTime(150);
 
   // Passthrough copy: src/assets → _site/assets (exclude Tailwind source; browser uses compiled styles.css)
   eleventyConfig.addPassthroughCopy({
     "src/assets": "assets",
-    filter: ["**/*", "!**/css/tailwind.css"],
+    filter: ["**/*", "!**/css/tailwind.css", "!**/css/styles.css"],
   });
 
   // Favicon at site root so browsers and crawlers find it without any path guessing
@@ -51,8 +58,10 @@ module.exports = function (eleventyConfig) {
 
   // For sitemap lastmod
   eleventyConfig.addGlobalData("buildDate", () => new Date().toISOString().slice(0, 10));
-  // Bust stylesheet cache on each build (dev + production)
-  eleventyConfig.addGlobalData("stylesheetVersion", () => String(Date.now()));
+  // Bust stylesheet cache on production builds; stable during --serve
+  eleventyConfig.addGlobalData("stylesheetVersion", () =>
+    process.argv.includes("--serve") ? "dev" : String(Date.now())
+  );
 
   const optimizedManifest = loadOptimizedManifest();
 

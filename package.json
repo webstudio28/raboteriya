@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm-run-all --parallel css:watch serve",
     "dev": "npm start",
-    "serve": "eleventy --serve",
+    "serve": "eleventy --serve --incremental",
     "build": "npm-run-all bundle:js css:build build:site",
     "optimize:images": "node scripts/optimize-images.js",
     "bundle:js": "node scripts/bundle-js.js",
