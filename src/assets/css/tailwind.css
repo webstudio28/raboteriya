@@ -306,7 +306,7 @@
   .hero-section {
     margin-top: -5rem;
     min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 100svh;
     padding-top: 5rem;
   }
   /* Hero: headline uses font-black (900) – Helvetica Now Display Black is loaded */
