@@ -55,24 +55,14 @@
   <div id="mobile-menu-overlay" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-hidden="true">
     <nav class="mobile-menu-nav" aria-label="Mobile">
       <ul class="mobile-menu-list">
-        {# Hardcoded mobile menu — EN #}
-        <li class="i18n-locale" data-locale="en"><a href="#hero" class="mobile-menu-link">Home</a></li>
-        <li class="i18n-locale" data-locale="en"><a href="#about" class="mobile-menu-link">About</a></li>
-        <li class="i18n-locale" data-locale="en"><a href="#why-raboteriya" class="mobile-menu-link">Why choose us</a></li>
-        <li class="i18n-locale" data-locale="en"><a href="#the-space" class="mobile-menu-link">The space</a></li>
-        <li class="i18n-locale" data-locale="en"><a href="#memberships" class="mobile-menu-link">Memberships</a></li>
-        <li class="i18n-locale" data-locale="en"><a href="#testimonials" class="mobile-menu-link">Reviews</a></li>
-        <li class="i18n-locale" data-locale="en"><a href="#community" class="mobile-menu-link">Community</a></li>
-        <li class="i18n-locale" data-locale="en"><a href="#contact" class="mobile-menu-link">Contact</a></li>
-        {# Hardcoded mobile menu — BG #}
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#hero" class="mobile-menu-link">Нач.</a></li>
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#about" class="mobile-menu-link">Инфо</a></li>
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#why-raboteriya" class="mobile-menu-link">Защо ние</a></li>
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#the-space" class="mobile-menu-link">Място</a></li>
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#memberships" class="mobile-menu-link">Членства</a></li>
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#testimonials" class="mobile-menu-link">Отзиви</a></li>
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#community" class="mobile-menu-link">Общност</a></li>
-        <li class="i18n-locale i18n-hidden" data-locale="bg" hidden><a href="#contact" class="mobile-menu-link">Контакт</a></li>
+        <li><a href="#hero" class="mobile-menu-link">Home</a></li>
+        <li><a href="#about" class="mobile-menu-link">About</a></li>
+        <li><a href="#why-raboteriya" class="mobile-menu-link">Why choose us</a></li>
+        <li><a href="#the-space" class="mobile-menu-link">The space</a></li>
+        <li><a href="#memberships" class="mobile-menu-link">Memberships</a></li>
+        <li><a href="#testimonials" class="mobile-menu-link">Reviews</a></li>
+        <li><a href="#community" class="mobile-menu-link">Community</a></li>
+        <li><a href="#contact" class="mobile-menu-link">Contact</a></li>
       </ul>
       <div class="mobile-menu-footer">
         {% for locale in i18n.locales %}

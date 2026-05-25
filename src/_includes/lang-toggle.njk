@@ -1,3 +1,4 @@
+{% if i18n.locales.length > 1 %}
 <div class="lang-toggle" role="group" aria-label="{{ i18n.ui.en.languageToggle }}">
   <span class="lang-toggle__thumb" aria-hidden="true"></span>
   {% for locale in i18n.locales %}
@@ -10,3 +11,4 @@
   >{{ i18n.localeLabels[locale] }}</button>
   {% endfor %}
 </div>
+{% endif %}

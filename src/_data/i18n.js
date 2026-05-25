@@ -84,14 +84,30 @@ const uiBg = {
   splitSectionAttribution: "Андон Гошев, WebStudio28",
 };
 
+// Multi-language rendering is disabled for now: only "en" is built into the HTML.
+// To re-enable Bulgarian, change this array to ["en", "bg"].
+const ACTIVE_LOCALES = ["en"];
+
+const homeByLocale = { en: homeEn, bg: homeBg };
+const navByLocale = { en: siteConfig.nav, bg: navBg };
+const uiByLocale = { en: uiEn, bg: uiBg };
+
+function pick(obj) {
+  const out = {};
+  for (const locale of ACTIVE_LOCALES) {
+    if (obj[locale] !== undefined) out[locale] = obj[locale];
+  }
+  return out;
+}
+
 module.exports = {
   defaultLocale: "en",
-  locales: ["en", "bg"],
+  locales: ACTIVE_LOCALES,
   localeLabels: { en: "EN", bg: "БГ" },
-  home: { en: homeEn, bg: homeBg },
-  nav: { en: siteConfig.nav, bg: navBg },
-  ui: { en: uiEn, bg: uiBg },
-  modals: {
+  home: pick(homeByLocale),
+  nav: pick(navByLocale),
+  ui: pick(uiByLocale),
+  modals: pick({
     en: {
       discountTitle: "Get 10% off your first month",
       discountConsent: "Yes, send me my discount + updates from Raboteriya",
@@ -154,5 +170,5 @@ module.exports = {
       namePlaceholder: "Ваше име",
       emailPlaceholder: "you@example.com",
     },
-  },
+  }),
 };
