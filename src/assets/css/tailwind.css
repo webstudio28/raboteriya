@@ -261,23 +261,62 @@
       opacity: 1;
     }
   }
-  /* Header: shadow when scrolled (toggled by JS) */
+  /* Header: transparent dark on load → solid bg on scroll */
+  .site-header {
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  }
   .site-header.is-scrolled {
+    background-color: #faf9f6;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+  /* Nav links: white on transparent header */
+  .site-header:not(.is-scrolled) nav a {
+    color: white;
+  }
+  .site-header:not(.is-scrolled) nav a:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  /* Logo: invert to white on transparent header */
+  .site-header:not(.is-scrolled) .site-logo picture,
+  .site-header:not(.is-scrolled) .site-logo img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+  }
+  /* CTA button: white on transparent header */
+  .site-header:not(.is-scrolled) .header-cta {
+    background-color: #fff;
+    color: #1a120b;
+  }
+  .site-header:not(.is-scrolled) .header-cta:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  /* Hamburger: white bars on transparent header */
+  .site-header:not(.is-scrolled) .mobile-menu-toggle span,
+  .site-header:not(.is-scrolled) .mobile-menu-toggle span::before,
+  .site-header:not(.is-scrolled) .mobile-menu-toggle span::after {
+    background-color: white;
   }
 
   /* Mobile menu open: keep header + burger above the overlay panel */
   body:has(#mobile-menu-input:checked) .site-header {
     z-index: 108;
   }
-  /* Hero: fill viewport minus header so no extra scroll (100dvh = dynamic viewport on mobile) */
+  /* Hero: full viewport, pulled up behind transparent sticky header */
   .hero-section {
-    min-height: calc(100vh - 5rem);
-    min-height: calc(100dvh - 5rem);
+    margin-top: -5rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: 5rem;
   }
   /* Hero: headline uses font-black (900) – Helvetica Now Display Black is loaded */
   .hero-headline {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+  /* Hero: buttons pop against the image */
+  .hero-section .container-custom a,
+  .hero-section .container-custom button {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
   }
   /* Hero: full-bleed background — WebP on all modern browsers */
   .hero-bg {
@@ -286,14 +325,14 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-image: url("/assets/optimized/hero-bg-mobile-828w.webp");
+    background-image: url("/assets/optimized/hero-bg1-png-828w.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   @media (min-width: 768px) {
     .hero-bg {
-      background-image: url("/assets/optimized/hero-bg-1920w.webp");
+      background-image: url("/assets/optimized/hero-bg1-png-1920w.webp");
     }
   }
   /* Hero: flat dark overlay on top of background image */
@@ -301,7 +340,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     pointer-events: none;
   }
   /* Extras: slowly moving strip (marquee) */

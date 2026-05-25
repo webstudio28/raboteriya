@@ -15,8 +15,7 @@ const SPACES_WIDTHS = [400, 520, 1200];
 
 /** @type {{ file: string, widths: number[] }[]} */
 const BASE_JOBS = [
-  { file: "hero-bg-mobile.jpg", widths: [640, 828] },
-  { file: "hero-bg.jpg", widths: [1280, 1920] },
+  { file: "hero-bg1.png", widths: [640, 828, 1280, 1920] },
   { file: "about-mobile.jpg", widths: [400, 800] },
   { file: "about.jpg", widths: [800, 1200] },
   { file: "andton.jpg", widths: [384, 480] },

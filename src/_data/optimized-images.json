@@ -1,27 +1,25 @@
 {
   "images": {
-    "images/hero-bg-mobile.jpg": [
+    "images/hero-bg1.png": [
       {
         "width": 640,
-        "height": 1138,
-        "url": "/assets/optimized/hero-bg-mobile-jpg-640w.webp"
+        "height": 360,
+        "url": "/assets/optimized/hero-bg1-png-640w.webp"
       },
       {
         "width": 828,
-        "height": 1472,
-        "url": "/assets/optimized/hero-bg-mobile-jpg-828w.webp"
-      }
-    ],
-    "images/hero-bg.jpg": [
-      {
-        "width": 1280,
-        "height": 699,
-        "url": "/assets/optimized/hero-bg-jpg-1280w.webp"
+        "height": 466,
+        "url": "/assets/optimized/hero-bg1-png-828w.webp"
       },
       {
-        "width": 1920,
-        "height": 1048,
-        "url": "/assets/optimized/hero-bg-jpg-1920w.webp"
+        "width": 1280,
+        "height": 720,
+        "url": "/assets/optimized/hero-bg1-png-1280w.webp"
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "url": "/assets/optimized/hero-bg1-png-1920w.webp"
       }
     ],
     "images/about-mobile.jpg": [

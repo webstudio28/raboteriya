@@ -1,8 +1,8 @@
 {% from "macros/i18n.njk" import localeClass %}
 {% from "macros/image.njk" import responsiveImg %}
-<header class="site-header sticky top-0 z-[100] bg-page transition-shadow duration-200" id="site-header">
+<header class="site-header sticky top-0 z-[100]" id="site-header">
   <div class="container-custom flex items-center justify-between py-4">
-    <a href="{{ '/' | url }}" class="font-semibold text-lg flex items-center gap-2" aria-label="{{ site.brand.name }} home">
+    <a href="{{ '/' | url }}" class="site-logo font-semibold text-lg flex items-center gap-2" aria-label="{{ site.brand.name }} home">
       {% if site.brand.logo %}
         {{ responsiveImg(site.brand.logo, {
           alt: site.brand.logoAlt | default(site.brand.name),
