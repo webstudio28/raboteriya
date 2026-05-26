@@ -302,12 +302,15 @@
   body:has(#mobile-menu-input:checked) .site-header {
     z-index: 108;
   }
-  /* Hero: full viewport, pulled up behind transparent sticky header */
+  /* Hero: full viewport, pulled up behind transparent sticky header.
+     Uses --site-header-height (set by mobile-menu.js) so the hero always tucks
+     fully behind the header on mobile (~64px) and desktop (~84px). Fallback of
+     6rem exceeds the largest expected header height to avoid a gap at the top. */
   .hero-section {
-    margin-top: -5rem;
+    margin-top: calc(-1 * var(--site-header-height, 6rem));
     min-height: 100vh;
     min-height: 100svh;
-    padding-top: 5rem;
+    padding-top: var(--site-header-height, 6rem);
   }
   /* Hero: headline uses font-black (900) – Helvetica Now Display Black is loaded */
   .hero-headline {
